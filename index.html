@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+<head>
+
+	<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+	<style type="text/css">
+		* {margin: 0; padding: 0}
+		.flex-container {
+  display: flex;
+  flex-direction: row;
+   flex-wrap: wrap;
+   width: 100vw;
+   height: 100vh;
+}
+
+html {
+	height: 100vh;
+}
+
+body {
+	height: 100vh;
+}
+
+.flex-container div {
+	width: 32vw;
+	height: 90vh;
+	border: 1px red solid;
+	padding: 5px;
+	background-color: #e6e6e6;
+}
+
+h1 {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding : 5px;
+	border: green solid 1px;
+	background-color: white;
+}
+	</style>
+	<title></title>
+</head>
+<body style="height: 100%; width: 100%;">
+	<header style="height: 10vh; border: grey 1px solid; width: 100vw;
+	margin: 0px;"></header>
+	<div class="flex-container">
+  <div ondrop="drop(event)" ondragover="allowDrop(event)" class='to_be_done'>
+  	<h1 style="font-size: 350%" id='data' id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)">REDUX</h1>
+  	  	<h1 style="font-size: 350%" id='data' id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)">REACT</h1>
+  	  	  	<h1 style="font-size: 350%" id='data' id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)">WEBPACK</h1>
+  	  	  	  	<h1 style="font-size: 350%" id='data' id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)">1</h1>
+  </div>
+  <div class='being_done' ondrop="drop(event)" ondragover="allowDrop(event)">2</div>
+  <div class="done" ondrop="drop(event)" ondragover="allowDrop(event)">3</div>
+</div>
+</body>
+</html>
