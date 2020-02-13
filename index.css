@@ -30,8 +30,36 @@ body {
 .sidebar {
 	width: 4vw;
 	margin-right: 10px;
-	background-color: #E5DAD6;
+	background-color: #A8A8A8;
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-control {
+	height: 6.5vw;
+	text-align: center;
+
+}
+
+.side-control:hover {
+	background-color: #F4EFEB;
+}
+
+.side-control i {
+	color: #000008;
+	font-size: 2em;
+	vertical-align: middle;
+	padding: 50% 0;
+}
+
+.fas {
+	vertical-align: middle; 
+}
+
+.type_icon {
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: #000008;
 }
 
 h1 {
@@ -46,6 +74,7 @@ header h1 {
 	border: none;
 	color: #F4EFEB;
 	margin-top: 10px;
+	padding-top: 7px;
 	/*background-color: #E7E8EA;*/
 }
 
@@ -70,7 +99,7 @@ header {
 	border: #102234 1px solid;
 	width: 100vw;
 	margin: 0px; 
-	background-color: #000008;"
+	background-color: #000008;
 }
 
 .inner_div {

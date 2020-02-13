@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html style="height: 100%; width: 100%;">
 <head>
+	<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="index.css">
+
 
 	<script>
 		function allowDrop(ev) {
@@ -25,22 +27,44 @@
 </head>
 <body>
 	<header >
-		<h1>BUG TRACKER</h1>
+		<h1><i class="fas fa-cube" style="padding-right: 10px;"></i> BUG TRACKER<span style="display: block; float: right;"><i  class="fas fa-cog"></i></span></h1>
 	</header>
 	<div class="flex-container">
-		<div class='sidebar'></div>
+		<div class='sidebar'>
+			<div class='side-control' >
+				<i class="fas fa-fire"></i>
+			</div>
+			<div class='side-control' style="text-align: center">
+				<i class="far fa-clock"></i>
+			</div>
+			<div class='side-control' style="text-align: center">
+				<i class="fas fa-chart-pie"></i>
+			</div>
+			<div class='side-control' style="text-align: center">
+				<i  class="fas fa-file"></i>
+			</div>
+			<div class='side-control' style="text-align: center">
+				<i class="fas fa-plus"></i>
+			</div>
+			<div class='side-control' style="text-align: center">
+				<i class="fas fa-wrench"></i>
+			</div>
+						<div class='side-control' style="text-align: center">
+				<i class="fas fa-users"></i>
+			</div>
+		</div>
 		<div ondrop="drop(event)" ondragover="allowDrop(event)" class='to_be_done'>
 			<div class="inner_div">
 				<h3 class="section_title">TO DO <span class="h3_span_info">6 Items: 10 items</span></h3>
 				<div  id='redux' id="drag1" draggable="true" ondragstart="drag(event)">
-					
+					<i  class="fas fa-cog" style='font-size: 2em; color: #000008'></i>
 				</div>
 
 				<div  id='react' id="drag1" draggable="true" ondragstart="drag(event)">
-					REACT
+					
 				</div>
 				<div id='webpack' id="drag1" draggable="true" ondragstart="drag(event)">
-					WEBPACK
+					<i  class="fas fa-file" style='font-size: 2em; color: ##000008'></i>
 				</div>
 				<div id='data' id="drag1" draggable="true" ondragstart="drag(event)">1</div>
 			</div>
