@@ -5,6 +5,7 @@ html {
 	height: 100vh;
 }
 
+
 body {
 	height: 100vh;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -66,8 +67,8 @@ h1 {
 
 	margin-left: 10px;
 	margin-right: 10px;
-	padding : 5px;
-	border: green solid 1px;
+	/*padding : 5px;*/
+	/*border: green solid 1px;*/
 }
 
 header h1 {
@@ -109,31 +110,109 @@ header {
 	background-color: #E7E8EA;
 	padding: 5px;
 	border-radius: 3px;
+	min-width: 300px;
 }
 
 .inner_div > div {
 	margin: 10px;
 	padding: 10px;
-	height: 150px;
+	/*height: 200px;*/
 	/*border: #A8A8A8 solid 1px;*/
 	background-color: white;
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
 	border-radius: 3px;
 }
 
-.ticket-head {
-	height: 50%;
+.ticket-header {
+	margin-right: 10px;
+	margin-bottom: 10px;
 	width: 100%;
-	background-color: red;
-}
-
-.ticket-labels {
-	height: 25%;
-	width: 100%;
+	display: flex;
+	flex-wrap: flex;
+	flex-direction: wrap;
 }
 
 .ticket-footer {
-	height: 25%;
+	margin-right: 10px;
 	width: 100%;
-	background-color: black;
+	display: flex;
+
 }
+
+.ticket-footer i {
+	font-size: 175%;
+	padding-right: 20px;
+	color: #DCDCDC;
+}
+
+.header-text {
+	width: 60%;
+	height: 100%;
+}
+
+.header-text a {
+	color: blue;
+	text-decoration: none;
+}
+
+.avatar-container {
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.avatar {
+	height: 75px;
+	width: 75px;
+	background-color: #A8A8A8;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 50%;
+
+}
+
+.fas.fa-user-plus {
+	color: #F4EFEB;
+	font-size: 250%;
+}
+
+.ticket-labels {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+/*	display: flex;
+	justify-content: flex-start;*/
+}
+
+.ticket-labels li {
+	float: left;
+	list-style: none;
+	padding-bottom: 5px;
+}
+
+.ticket-label {
+	height: 40%;
+	padding: 5px;
+	padding-left: 10px;
+	margin: 5px;
+	border-radius: 10px;
+	color: white;
+	background-color: red;
+	float: left;
+}
+
+.del-label {
+	padding-right:3px;
+}
+
+.footer-info {
+	font-size: 150%;
+	padding-right: 25px;
+
+}
+
+/*p {
+	font-size: 1.3rem;
+}*/
