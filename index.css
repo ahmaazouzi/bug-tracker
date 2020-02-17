@@ -30,6 +30,7 @@ body {
 
 .sidebar {
 	width: 4vw;
+	height: auto;
 	margin-right: 10px;
 	background-color: #A8A8A8;
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
@@ -79,10 +80,11 @@ header h1 {
 	/*background-color: #E7E8EA;*/
 }
 
-h3 {
+/*test*/
+/*h3 {
 	padding: 5px;
 	margin: 5px;
-}
+}*/
 
 .h3_span_info {
 	color: #808080;
@@ -90,10 +92,12 @@ h3 {
 	float: right;
 }
 
-p {
+/*test*/
+
+/*p {
 	padding: 5px;
 	margin: 5px;
-}
+}*/
 
 header {
 	height: 10vh;
@@ -114,8 +118,8 @@ header {
 }
 
 .inner_div > div {
-	margin: 10px;
-	padding: 10px;
+	margin: 5px;
+	padding: 5px;
 	/*height: 200px;*/
 	/*border: #A8A8A8 solid 1px;*/
 	background-color: white;
@@ -125,7 +129,7 @@ header {
 
 .ticket-header {
 	margin-right: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	width: 100%;
 	display: flex;
 	flex-wrap: flex;
@@ -140,7 +144,7 @@ header {
 }
 
 .ticket-footer i {
-	font-size: 175%;
+	font-size: 120%;
 	padding-right: 20px;
 	color: #DCDCDC;
 }
@@ -163,8 +167,8 @@ header {
 }
 
 .avatar {
-	height: 75px;
-	width: 75px;
+	height: 50px;
+	width: 50px;
 	background-color: #A8A8A8;
 	display: flex;
 	justify-content: space-around;
@@ -175,7 +179,7 @@ header {
 
 .fas.fa-user-plus {
 	color: #F4EFEB;
-	font-size: 250%;
+	font-size: 130%;
 }
 
 .ticket-labels {
@@ -194,7 +198,8 @@ header {
 
 .ticket-label {
 	height: 40%;
-	padding: 5px;
+	padding: 3px;
+	font-size: 0.7rem;
 	padding-left: 10px;
 	margin: 5px;
 	border-radius: 10px;
@@ -208,7 +213,7 @@ header {
 }
 
 .footer-info {
-	font-size: 150%;
+	/*font-size: 1%;*/
 	padding-right: 25px;
 
 }
