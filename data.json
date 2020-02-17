@@ -1,0 +1,49 @@
+"data": {
+	"toDo": [
+		{
+			"id": "MXOV12309",
+			"summary": "",
+			"description": "",
+			"dateReported": "",
+			"reportedBy": {
+				"name": "",
+				"avatarURL": "",
+			},
+			"assignees": [
+				{
+					"name": "",
+					"avatarURL": ""
+				},
+			], 
+			"points": 0,
+			"criticalityLevel": 0,
+			"tags": [],
+			"messages": [
+
+			],
+			"attachments": [
+			],
+			"flags": [
+			],
+			"notifications": [
+			]
+
+			
+		},
+		{"id": "MXOV12301"},
+		{"id": "MXOV12302"},
+		{"id": "MXOV12304"},
+	],
+	"inProgress": [
+		{"id": "MXOV12209"},
+		{"id": "MXOV12109"},
+		{"id": "MXOV12909"},
+		{"id": "MXOV12809"},
+	],
+	"Completed": [
+		{"id": "WXOV12309"},
+		{"id": "DXOV12309"},
+		{"id": "LXOV12309"},
+		{"id": "VXOV12309"},
+	]
+}

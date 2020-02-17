@@ -218,6 +218,10 @@ header {
 
 }
 
+.section_title {
+	margin-bottom: 10px;
+}
+
 /*p {
 	font-size: 1.3rem;
 }*/
