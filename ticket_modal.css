@@ -1,0 +1,55 @@
+.modal-container {
+	opacity: 1;
+	/*padding-top: 100px;*/
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.7);
+	display: none;
+}
+.modal {
+	opacity: 1;
+	width: 80vw;
+	height: 80vh;
+	margin: 20px auto;
+	background-color: #efefef;
+	text-align: right;
+}
+.modal-title {
+	text-align: center;
+	height: 15%;
+}
+.modal-body {
+	height: 55%;
+	padding: 10px;
+	line-height: 2em;
+	text-align: left
+}
+.modal-footer {
+	height: 25%;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+}
+.modal-head {
+
+}
+
+
+.zaza {
+	text-align: center;
+	padding-top: 3vh;
+}
+
+p (){
+	margin: 4px;
+}
+.del{
+	width: 10px;
+	/*padding: 10px;*/
+	text-align: right;
+}
+.del:hover{
+	color: grey;
+	cursor: default;
+}

@@ -2,9 +2,9 @@
 <html style="height: 100%; width: 100%;">
 <head>
 	<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+	
 	<link rel="stylesheet" type="text/css" href="index.css">
-
-
+	<link rel="stylesheet" type="text/css" href="ticket_modal.css">
 	<script>
 		function allowDrop(ev) {
 			ev.preventDefault();
@@ -26,13 +26,41 @@
 <title></title>
 </head>
 <body>
+
+
+
+<!-- ======================================= -->
+	</div>
+		<div class="modal-container">
+		<div class="modal">
+			<div class="modal-head">
+				<div style="height: 20px; padding: 5px;">
+					<span style="padding-right: 5px; float: right;" class="del">X</span>
+				</div>
+			</div>
+
+			<div class="modal-title">
+				<h1>Important Info!!</h1>
+			</div>
+			<div class="modal-body">
+				<p >orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+				<p><textarea>ewewe</textarea>></p>
+				
+			</div>
+			<div class="modal-footer">		
+			</div>
+		</div>
+	</div>
+<!-- ======================================== -->
+
+
 	<header >
 		<h1><i class="fas fa-cube" style="padding-right: 10px;"></i> BUG TRACKER<span style="display: block; float: right;"><i  class="fas fa-cog"></i><i class="fas fa-bell" style="padding: 0 20px;"></i></span></h1>
 	</header>
 	<div class="flex-container">
 		<div class='sidebar'>
 			<div class='side-control' style="text-align: center">
-				<i class="fas fa-plus"></i>
+				<a class='sasa' href="#"><i class="fas fa-plus"></i><a>
 			</div>
 			<div class='side-control' >
 				<i class="fas fa-fire"></i>
@@ -56,7 +84,7 @@
 		<div ondrop="drop(event)" ondragover="allowDrop(event)" class='to_be_done'>
 			<div class="inner_div">
 				<h3 class="section_title">TO DO <span class="h3_span_info">6 Items: 10 items</span></h3>
-				<div  style="border-left: 5px red solid;" id='redux' id="drag1" draggable="true" ondragstart="drag(event)">
+				<div  class='ticket' style="border-left: 5px red solid;" id='redux' id="drag1" draggable="true" ondragstart="drag(event)">
 					<div class='ticket-header'>
 						<div class="header-text">
 							<h3>
@@ -80,9 +108,6 @@
 							<li><span class="ticket-label" style="background-color: rgb(2, 136, 209)">content | <span class="del-label">X</span></span></li>
 
 						</ul>
-<!-- 						<div class="ticket-label">CSS | X</div>
-						<div class="ticket-label">JS | X</div>
-						<div class="ticket-label">Java | X</div> -->
 					</div>
 					<div class='ticket-footer'>
 						<div class='footer-info'><span style="background-color: #000008; padding-right: 5px; padding-left: 5px; color: #F4EFEB; border-radius: 15px;">7</span></div>
@@ -93,7 +118,7 @@
 					</div>
 				</div>
 
-				<div  style="border-left: 5px green solid;" id='react' id="drag1" draggable="true" ondragstart="drag(event)">
+				<div style="border-left: 5px green solid;" id='react' id="drag1" draggable="true" ondragstart="drag(event)">
 					<div class='ticket-header'>
 						<div class="header-text">
 							<h3>
@@ -150,9 +175,6 @@
 							<li><span class="ticket-label" style="background-color: rgb(2, 136, 209)">content | <span class="del-label">X</span></span></li>
 
 						</ul>
-<!-- 						<div class="ticket-label">CSS | X</div>
-						<div class="ticket-label">JS | X</div>
-						<div class="ticket-label">Java | X</div> -->
 					</div>
 					<div class='ticket-footer'>
 						<div class='footer-info'><span style="background-color: #000008; padding-right: 5px; padding-left: 5px; color: #F4EFEB; border-radius: 15px;">7</span></div>
@@ -162,7 +184,7 @@
 						<div><i class="fas fa-bell"></i></div>
 					</div>
 				</div>
-				<div style="border-left: 5px brown solid;" id='data' id="drag1" draggable="true" ondragstart="drag(event)">
+				<div class='ticket'  style="border-left: 5px brown solid;" id='data' id="drag1" draggable="true" ondragstart="drag(event)">
 					<div class='ticket-header'>
 						<div class="header-text">
 							<h3>
@@ -176,7 +198,6 @@
 						<div class="avatar-container">
 							<div class="avatar" style="background-image: url('f.jpeg'); object-fit: fill; background-size: cover;">
 							</div>
-
 						</div>
 					</div>
 					<div class='ticket-labels'>
@@ -184,11 +205,7 @@
 							<li><span class="ticket-label" style="background-color: rgb(252, 201, 52)">javascript | <span class="del-label"> X</span></span></li>
 							<li><span class="ticket-label" style="background-color: rgb(244, 81, 30)">java | <span class="del-label">X</span></span></li>
 							<li><span class="ticket-label" style="background-color: rgb(2, 136, 209)">content | <span class="del-label">X</span></span></li>
-
 						</ul>
-<!-- 						<div class="ticket-label">CSS | X</div>
-						<div class="ticket-label">JS | X</div>
-						<div class="ticket-label">Java | X</div> -->
 					</div>
 					<div class='ticket-footer'>
 						<div class='footer-info'><span style="background-color: #000008; padding-right: 5px; padding-left: 5px; color: #F4EFEB; border-radius: 15px;">7</span></div>
@@ -211,6 +228,6 @@
 			</div>
 			
 		</div>
-	</div>
+	<script type="text/javascript" src="ticket_modal.js"></script>
 </body>
 </html>
