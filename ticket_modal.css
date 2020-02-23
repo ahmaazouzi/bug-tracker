@@ -1,23 +1,26 @@
+
+
 .modal-container {
 	opacity: 1;
 	/*padding-top: 100px;*/
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
+	color: #000008;
 	background-color: rgba(0,0,0,0.7);
 	display: none;
 }
 .modal {
 	opacity: 1;
-	width: 80vw;
-	height: 80vh;
+	width: 65vw;
+	height: 90vh;
 	margin: 20px auto;
-	background-color: #efefef;
-	text-align: right;
+	/*background-color: #E7E8EA;*/
+	background-color: white;
+	text-align: left;
+	border-radius: 3px;
 }
 .modal-title {
-	text-align: center;
-	height: 15%;
 }
 .modal-body {
 	height: 55%;
@@ -41,8 +44,9 @@
 	padding-top: 3vh;
 }
 
-p (){
-	margin: 4px;
+h3, h6 {
+	margin: 10px;
+	font-size: 1em;
 }
 .del{
 	width: 10px;
@@ -52,4 +56,88 @@ p (){
 .del:hover{
 	color: grey;
 	cursor: default;
+}
+
+.modal-body-section {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.col-title {
+	width: 20%;
+	text-align: right;
+}
+
+.col-content {
+	width: 70%;
+	text-align: left;
+}
+
+input {
+	font-size: 1em;
+	height: 1em;
+	  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+label {
+  width: 150px;
+  float: left;
+  text-align: right;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+input, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  width: 50%;
+  padding: 7px 0px 7px 3px;
+  margin: 10px 1px 3px 0px;
+  border: solid 1px grey;
+}
+ 
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  width: 50%;
+  padding: 7px 0px 7px 3px;
+  margin: 10px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+textarea {
+	width: 100%;
+	height: 150px;
+	font-size: 1em;
+	margin: 0px;
+	border: solid 1px #7a7a8c;
+}
+
+textarea:focus {
+	width: 100%;
+	margin: 0px;
+	border: none;
+	border: solid 1px #7a7a8c;
+
+}
+
+.text-controls {
+	padding: 7px 0px 7px 3px;
+	width: 100%;
+	border-top: solid 1px #7a7a8c;
+	border-right: solid 1px #7a7a8c;
+	border-left: solid 1px #7a7a8c;
+	background-color: #E7E8EA;
+}
+
+.text-controls i:hover {
+	background-color: white;
+	cursor: pointer;
 }
