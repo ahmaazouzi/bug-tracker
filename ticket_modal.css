@@ -154,3 +154,8 @@ textarea:focus {
 	background-color: white;
 	cursor: pointer;
 }
+
+.custom-select-drop-down {
+	background-color: red;
+	width: 33%;
+}

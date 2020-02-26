@@ -40,8 +40,124 @@
 			<div class="modal-title">
 				<h3>Create Issue:</h3>
 			</div>
+
 			<div class="modal-body-section">
-				<label for='assignee'>ZELECTOS:</label>
+				<label for='summary'>Summary:</label>
+				<input type="" name="summary">
+			</div>
+			<div class="modal-body-section">
+				<label for='summary'>Points:</label>
+				<input type="" name="summary">
+			</div>
+
+			<div class="modal-body-section">
+				<label for='description'>Description:</label>
+				<div style="width: 70%; margin-top: 10px;">
+					<div class="text-controls" style="color:#7a7a8c;">
+						<span style='padding: 3px; margin-right: 7px; margin-left: 7px;'>Style 
+							<i style='padding-left: 3px;' class="fas fa-caret-down"></i>
+						</span>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;' class="fas fa-bold"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-italic"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-underline"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-link"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-paperclip"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-list-ul"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-list-ol"></i>|
+						<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-code"></i>|
+					</div>
+					<textarea></textarea>
+				</div>
+			</div>
+
+			<div class="modal-body-section">
+				<label for='assignee'>Priority:</label>
+				<div class="taftaf" style="float: left; display: flex; padding: 0px;
+				-webkit-transition: all 0.30s ease-in-out;
+				-moz-transition: all 0.30s ease-in-out;
+				-ms-transition: all 0.30s ease-in-out;
+				-o-transition: all 0.30s ease-in-out;
+				outline: none;
+				width: 50%;
+				height: 100%;
+				border: solid 1px #dfe1e6;
+				background-color: #f5f5f5;
+				border-radius: 4px;
+				">
+			<div style="float: left; width: 100%;">
+				<input class="taftafin" type="" style="border: none;float: left; margin: 3px 0px 3px 0px; padding: 5px; width: 50%;" name="assignee">
+			</div>
+			<div><i class="fas fa-caret-down" style="margin: 7px 5px 7px 0px;"></i></div>
+		</div>	
+	</div>
+
+				<div class="modal-body-section">
+				<label for='assignee'>Labels:</label>
+				<div class="taftaf" style="float: left; display: flex; padding: 0px;
+				-webkit-transition: all 0.30s ease-in-out;
+				-moz-transition: all 0.30s ease-in-out;
+				-ms-transition: all 0.30s ease-in-out;
+				-o-transition: all 0.30s ease-in-out;
+				outline: none;
+				width: 50%;
+				height: 100%;
+				border: solid 1px #dfe1e6;
+				background-color: #f5f5f5;
+				border-radius: 4px;
+				">
+			<div style="float: left; width: 100%;">
+				<input class="taftafin" type="" style="border: none;float: left; margin: 3px 0px 3px 0px; padding: 5px; width: 50%;" name="assignee">
+			</div>
+			<div><i class="fas fa-caret-down" style="margin: 7px 5px 7px 0px;"></i></div>
+		</div>	
+	</div>
+
+	<!-- =========================================================== -->
+
+
+		<div>
+			<div class="modal-body-section">
+				<label for='assignee'>Reported by:</label>
+				<div class="taftaf" style="float: left; display: flex; padding: 0px;
+				-webkit-transition: all 0.30s ease-in-out;
+				-moz-transition: all 0.30s ease-in-out;
+				-ms-transition: all 0.30s ease-in-out;
+				-o-transition: all 0.30s ease-in-out;
+				outline: none;
+				width: 50%;
+				height: 100%;
+				border: solid 1px #dfe1e6;
+				background-color: #f5f5f5;
+				border-radius: 4px;
+				">
+				<div class="avatar" style="	width: 22px;height: 22px;
+				/*padding: 7px 0px 0px 3px;*/
+				margin: 4px 4px 4px 4px;
+				" >
+				<i class="fas fa-user-plus" style="font-size: .7em"></i>
+			</div>
+			<div style="float: left; width: 90%;">
+				<input class="taftafin" type="" style="border: none;float: left; margin: 3px 0px 3px 0px; padding: 5px; width: 50%;" name="assignee" >
+			</div>
+			<div><i class="fas fa-caret-down" style="margin: 7px 5px 7px 0px;" onclick="
+				const customSelectDropDown = document.querySelector('.custom-select-drop-down'); if (customSelectDropDown.style.display === 'none') customSelectDropDown.style.display = ''; else customSelectDropDown.style.display = 'none'"></i></div>
+		</div>	
+	</div>
+	<!-- <label for='assignee'></label> -->
+	</div>
+		<div class="custom-select-drop-down" style="margin:0 auto; z-index: 99; display: none;"
+		onchange="">
+			<div class="taftaf">POTQATO</div>
+			<div class="taftaf">TOMATO</div>
+			<div class="taftaf">MANGO</div>
+			<div class="taftaf">LOLO</div>
+			<div class="taftaf">DODO</div>
+			<div class="taftaf">NANO</div>
+	</div>
+
+	<!-- ============================================== -->
+			<div class="modal-body-section">
+				<label for='assignee'>Assigned to:</label>
 				<div class="taftaf" style="float: left; display: flex; padding: 0px;
 				-webkit-transition: all 0.30s ease-in-out;
 				-moz-transition: all 0.30s ease-in-out;
@@ -67,40 +183,10 @@
 		</div>	
 	</div>
 	<div class="modal-body-section">
-		<label for='assignee'>Assignee:</label>
+		<label for='assignee'>Points:</label>
 		<input type="" name="assignee" >
 	</div>
-	<div class="modal-body-section">
-		<label for='reportedBy'>Reported by:</label>
-		<input type="" name="assignee">
-	</div>
-	<div class="modal-body-section">
-		<label for='summary'>Summary:</label>
-		<input type="" name="summary">
-	</div>
-	<div class="modal-body-section">
-		<label for='summary'>Points:</label>
-		<input type="" name="summary">
-	</div>
-	<div class="modal-body-section">
-		<label for='description'>Description:</label>
-		<div style="width: 70%; margin-top: 10px;">
-			<div class="text-controls" style="color:#7a7a8c;">
-				<span style='padding: 3px; margin-right: 7px; margin-left: 7px;'>Style 
-					<i style='padding-left: 3px;' class="fas fa-caret-down"></i>
-				</span>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;' class="fas fa-bold"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-italic"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-underline"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-link"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-paperclip"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-list-ul"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-list-ol"></i>|
-				<i style='padding: 3px; margin-right: 7px; margin-left: 7px;'class="fas fa-code"></i>|
-			</div>
-			<textarea></textarea>
-		</div>
-	</div>
+
 	<div class="modal-footer">		
 	</div>
 </div>
@@ -282,6 +368,13 @@
 			</div>
 			
 		</div>
+				<script type="text/javascript">
+const customSelectDropDown = document.querySelector('.custom-select-drop-down');
+
+function tog(){
+	console.log('block');
+}
+	</script>
 		<script type="text/javascript" src="ticket_modal.js"></script>
 	</body>
 	</html>
