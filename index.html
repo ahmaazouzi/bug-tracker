@@ -116,13 +116,13 @@
 
 
 		<div>
-			<div class="modal-body-section">
+			<div class="modal-body-section" id='mama'>
 				<label for='assignee'>Reported by:</label>
 				<div class="taftaf" style="float: left; display: flex; padding: 0px;
-				-webkit-transition: all 0.30s ease-in-out;
+/*				-webkit-transition: all 0.30s ease-in-out;
 				-moz-transition: all 0.30s ease-in-out;
 				-ms-transition: all 0.30s ease-in-out;
-				-o-transition: all 0.30s ease-in-out;
+				-o-transition: all 0.30s ease-in-out;*/
 				outline: none;
 				width: 50%;
 				height: 100%;
@@ -139,20 +139,24 @@
 			<div style="float: left; width: 90%;">
 				<input class="taftafin" type="" style="border: none;float: left; margin: 3px 0px 3px 0px; padding: 5px; width: 50%;" name="assignee" >
 			</div>
-			<div><i class="fas fa-caret-down" style="margin: 7px 5px 7px 0px;" onclick="
-				const customSelectDropDown = document.querySelector('.custom-select-drop-down'); if (customSelectDropDown.style.display === 'none') customSelectDropDown.style.display = 'block'; else customSelectDropDown.style.display = 'none'"></i></div>
+			<div><i class="fas fa-caret-down" style="margin: 7px 5px 7px 0px;" onclick="logo()"></i></div>
 		</div>	
-	</div>
+
+		<!--  ================================== -->
+
+		<!--  ================================== -->
+		</div>
 	<!-- <label for='assignee'></label> -->
-	</div>
+			<div style="width: 50%; margin: 0 auto;">
 		<div class="custom-select-drop-down" style="margin:0 auto; z-index: 99;"
 		onchange="">
-			<div class="taftaf">POTQATO</div>
-			<div class="taftaf">TOMATO</div>
-			<div class="taftaf">MANGO</div>
-			<div class="taftaf">LOLO</div>
-			<div class="taftaf">DODO</div>
-			<div class="taftaf">NANO</div>
+			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">POTQATO</div>
+			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">TOMATO</div>
+			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">MANGO</div>
+		</div>
+	</div>
+	
+
 	</div>
 
 	<!-- ============================================== -->
@@ -368,13 +372,6 @@
 			</div>
 			
 		</div>
-				<script type="text/javascript">
-const customSelectDropDown = document.querySelector('.custom-select-drop-down');
-
-function tog(){
-	console.log('block');
-}
-	</script>
 		<script type="text/javascript" src="ticket_modal.js"></script>
 	</body>
 	</html>

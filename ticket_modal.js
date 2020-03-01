@@ -19,3 +19,28 @@ modal.addEventListener('click', (e) => {
 	e.stopPropagation();
 });
 mod.addEventListener('click', togglemoddel);
+
+
+const customSelectDropDown = document.querySelector('.custom-select-drop-down');
+
+function wawa(e){
+	e.stopPropagation();
+ 	if (customSelectDropDown.style.display === 'none')
+ 		customSelectDropDown.style.display = 'block';
+ 	else customSelectDropDown.style.display = 'none'
+}
+
+
+function fafa(e){
+	if (e.target !== customSelectDropDown)
+		customSelectDropDown.style.display = 'none';
+}
+
+const baba = document.querySelector('i');
+function logo(){
+	console.log(baba);
+}
+
+document.addEventListener('click', fafa);
+const mama = document.querySelector('#mama');
+mama.addEventListener('click', wawa);
