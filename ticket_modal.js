@@ -23,24 +23,38 @@ mod.addEventListener('click', togglemoddel);
 
 const customSelectDropDown = document.querySelector('.custom-select-drop-down');
 
+
+const caretUp = document.querySelector('#oop');
+const caretDown = document.querySelector('#dow');
+
 function wawa(e){
 	e.stopPropagation();
- 	if (customSelectDropDown.style.display === 'none')
+ 	if (customSelectDropDown.style.display === 'none'){
  		customSelectDropDown.style.display = 'block';
- 	else customSelectDropDown.style.display = 'none'
+ 		caretDown.style.display = 'none';
+ 		caretUp.style.display = '';
+
+ 	}
+ 	else {
+ 		customSelectDropDown.style.display = 'none'
+ 		caretDown.style.display = '';
+ 		caretUp.style.display = 'none';
+ 	} 
+
+ 	// if (caretDown.style.display === 'none') caretDown.style.display = 'inline';
+ 	// else caretDown.style.display = 'none'
+
+ 	// if (caretUp.style.display === 'none') caretUp.style.display = 'inline';
+ 	// else caretUp.style.display = 'none'
 }
 
 
-function fafa(e){
-	if (e.target !== customSelectDropDown)
+function fafa(){
 		customSelectDropDown.style.display = 'none';
 }
 
-const baba = document.querySelector('i');
-function logo(){
-	console.log(baba);
-}
 
-document.addEventListener('click', fafa);
+
+document.body.addEventListener('click', fafa);
 const mama = document.querySelector('#mama');
 mama.addEventListener('click', wawa);
