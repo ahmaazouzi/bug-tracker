@@ -40,12 +40,6 @@ function wawa(e){
  		caretDown.style.display = '';
  		caretUp.style.display = 'none';
  	} 
-
- 	// if (caretDown.style.display === 'none') caretDown.style.display = 'inline';
- 	// else caretDown.style.display = 'none'
-
- 	// if (caretUp.style.display === 'none') caretUp.style.display = 'inline';
- 	// else caretUp.style.display = 'none'
 }
 
 
@@ -54,7 +48,7 @@ function fafa(){
 }
 
 
-
+modal.addEventListener('click', fafa);
 document.body.addEventListener('click', fafa);
 const mama = document.querySelector('#mama');
 mama.addEventListener('click', wawa);
