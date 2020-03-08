@@ -119,10 +119,10 @@
 			<div class="modal-body-section" id='mama'>
 				<label for='assignee'>Reported by:</label>
 				<div class="taftaf" style="float: left; display: flex; padding: 0px;
-/*				-webkit-transition: all 0.30s ease-in-out;
+				-webkit-transition: all 0.30s ease-in-out;
 				-moz-transition: all 0.30s ease-in-out;
 				-ms-transition: all 0.30s ease-in-out;
-				-o-transition: all 0.30s ease-in-out;*/
+				-o-transition: all 0.30s ease-in-out;
 				outline: none;
 				width: 50%;
 				height: 100%;
@@ -137,7 +137,7 @@
 				<i class="fas fa-user-plus" style="font-size: .7em"></i>
 			</div>
 			<div style="float: left; width: 90%;">
-				<input class="taftafin" type="" style="border: none;float: left; margin: 3px 0px 3px 0px; padding: 5px; width: 50%;" name="assignee" >
+				<input class="taftafin" id='taftafins'type="" style="border: none;float: left; margin: 3px 0px 3px 0px; padding: 5px; width: 50%;" name="assignee" >
 			</div>
 			<div><i id="dow" class="fas fa-caret-down" style="margin: 7px 5px 7px 0px;" onclick="logo()"></i><i id='oop'class="fas fa-caret-up" style="margin: 7px 5px 7px 0px; display: none;" onclick="logo()"></i></div>
 		</div>	
@@ -148,11 +148,11 @@
 		</div>
 	<!-- <label for='assignee'></label> -->
 			<div style="width: 50%; margin: 0 auto;">
-		<div class="custom-select-drop-down" style="margin:0 auto; z-index: 99;"
-		onchange="">
-			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">POTQATO</div>
+		<div class="custom-select-drop-down" style="margin:0 auto; z-index: 99;">
+			<div class="taftaf" id='reporta' style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;" onclick="const taftafins = document.querySelector('#taftafins'); taftafins.value = 'Ahmed Maazouzi'">Ahmed Maazouzi (Current User)</div>
+			<!-- 
 			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">TOMATO</div>
-			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">MANGO</div>
+			<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;">MANGO</div> -->
 		</div>
 	</div>
 	

@@ -9,4 +9,7 @@
 
 ## Week One, Basic Board Design:
 ## Week Two, Ticket Design:
-## Styling Input Fields
+## Styling Input Fields (March 7, 2020):
+## Text Fields Autocomplete Suggestions:
+- At the moment, I'm having a hard time thinking of an implementation of autocomplete for some text fields such as the field for assigning a task to a user. I thought of using a trie (prefix tree) but found it might take too much time. I am still designing a mockup that needs to be translated into react components and still too far away from starting on the server side logic. 
+- Currently, I am thinking of a regex solution and don't if it will work.

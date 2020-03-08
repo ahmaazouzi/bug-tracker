@@ -2,6 +2,7 @@ const op = document.querySelector('.sasa');
 const mod = document.querySelector('.modal-container')
 const modal = document.querySelector('.modal');
 const del = document.querySelector('.del');
+
 togglemoddel = () => {
 	const display = window.getComputedStyle(mod).getPropertyValue('display');
 	if (display === 'none')
@@ -45,6 +46,29 @@ function wawa(e){
 
 function fafa(){
 		customSelectDropDown.style.display = 'none';
+		caretDown.style.display = '';
+ 		caretUp.style.display = 'none';
+}
+
+function flipSelectCaret(){
+
+}
+
+let names = ['AmaAdo Bandido', 'Malato Aagara', 'Zaza LaAla Baba', 'Wawa fafa McWanto', 'Fafa Fafa'];
+
+function selectName(userInput, names, searchLimit){
+	const results = [];
+
+	for (i in names){
+		let pattern = new RegExp('([^a-zA-Z]' + userInput + '|^' + userInput +')', 'gi');
+		let numMatches = 0;
+		if (pattern.test(names[i]) && numMatches <= searchLimit)
+			results.push(names[i]);
+			numMatches++;	
+
+	}
+
+	return results;
 }
 
 
@@ -52,3 +76,15 @@ modal.addEventListener('click', fafa);
 document.body.addEventListener('click', fafa);
 const mama = document.querySelector('#mama');
 mama.addEventListener('click', wawa);
+
+const taftafins = document.querySelector('#taftafins');
+taftafins.addEventListener('input', function(){
+	const results =  selectName(taftafins.value, names, 3);
+	customSelectDropDown.innerHTML = '';
+	for (i in results){
+		customSelectDropDown.insertAdjacentHTML('beforeend', 
+				`<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;" onclick="taftafins.value = \'${results[i]}\'"> ${results[i]} </div>`)
+	}
+})
+
+
