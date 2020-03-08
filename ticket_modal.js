@@ -59,15 +59,16 @@ let names = ['AmaAdo Bandido', 'Malato Aagara', 'Zaza LaAla Baba', 'Wawa fafa Mc
 function selectName(userInput, names, searchLimit){
 	const results = [];
 
+	let numMatches = 0;
 	for (i in names){
 		let pattern = new RegExp('([^a-zA-Z]' + userInput + '|^' + userInput +')', 'gi');
-		let numMatches = 0;
-		if (pattern.test(names[i]) && numMatches <= searchLimit)
+		if (pattern.test(names[i]) && userInput  && numMatches <= searchLimit){
 			results.push(names[i]);
-			numMatches++;	
+			numMatches++;
+		}	
 
 	}
-
+	console.log(results);
 	return results;
 }
 
@@ -79,7 +80,7 @@ mama.addEventListener('click', wawa);
 
 const taftafins = document.querySelector('#taftafins');
 taftafins.addEventListener('input', function(){
-	const results =  selectName(taftafins.value, names, 3);
+	const results =  selectName(taftafins.value, names, 2);
 	customSelectDropDown.innerHTML = '';
 	for (i in results){
 		customSelectDropDown.insertAdjacentHTML('beforeend', 
