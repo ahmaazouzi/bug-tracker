@@ -59,16 +59,19 @@ let names = ['AmaAdo Bandido', 'Malato Aagara', 'Zaza LaAla Baba', 'Wawa fafa Mc
 function selectName(userInput, names, searchLimit){
 	const results = [];
 
+	if (userInput.length == 0) results.push('Ahmed Maazouzi(Me)');
+
 	let numMatches = 0;
 	for (i in names){
 		let pattern = new RegExp('([^a-zA-Z]' + userInput + '|^' + userInput +')', 'gi');
+
 		if (pattern.test(names[i]) && userInput  && numMatches <= searchLimit){
 			results.push(names[i]);
 			numMatches++;
 		}	
 
 	}
-	console.log(results);
+
 	return results;
 }
 
@@ -79,12 +82,20 @@ const mama = document.querySelector('#mama');
 mama.addEventListener('click', wawa);
 
 const taftafins = document.querySelector('#taftafins');
+taftafins.addEventListener('click',
+	() => {
+		customSelectDropDown.insertAdjacentHTML('beforeend', 
+				`<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;" onclick="taftafins.value = \'Ahmed Maazouzi (Me)\'"> Ahmed Maazouzi (Me) </div>`);
+	},
+	{once: true})
 taftafins.addEventListener('input', function(){
+	customSelectDropDown.style.display = 'block';
 	const results =  selectName(taftafins.value, names, 2);
 	customSelectDropDown.innerHTML = '';
+	{once: true}
 	for (i in results){
 		customSelectDropDown.insertAdjacentHTML('beforeend', 
-				`<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;" onclick="taftafins.value = \'${results[i]}\'"> ${results[i]} </div>`)
+				`<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;" onclick="taftafins.value = \'${results[i]}\'"> ${results[i]} </div>`);
 	}
 })
 
