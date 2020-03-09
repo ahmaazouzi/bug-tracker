@@ -31,7 +31,7 @@ const caretDown = document.querySelector('#dow');
 function wawa(e){
 	e.stopPropagation();
  	if (customSelectDropDown.style.display === 'none'){
- 		customSelectDropDown.style.display = 'block';
+ 		customSelectDropDown.style.display = '';
  		caretDown.style.display = 'none';
  		caretUp.style.display = '';
 
@@ -50,9 +50,26 @@ function fafa(){
  		caretUp.style.display = 'none';
 }
 
-function flipSelectCaret(){
+const stylesDropDown = document.querySelector('#styles-drop-down');
+const styleCaretDown= document.querySelector('#style-caret-down');
+const styleCaretUp= document.querySelector('#style-caret-up');
+function toggleTextStyles(e){
+	e.stopPropagation();
+ 	if (stylesDropDown.style.display === 'none'){
+ 		stylesDropDown.style.display = 'block';
+ 		styleCaretDown.style.display = 'none';
+ 		styleCaretUp.style.display = '';
 
+ 	}
+ 	else {
+ 		stylesDropDown.style.display = 'none'
+ 		styleCaretDown .style.display = '';
+ 		styleCaretUp.style.display = 'none';
+ 	} 
 }
+
+const stylesButton = document.querySelector('#style-button');
+stylesButton.addEventListener('click', toggleTextStyles);
 
 let names = ['AmaAdo Bandido', 'Malato Aagara', 'Zaza LaAla Baba', 'Wawa fafa McWanto', 'Fafa Fafa'];
 
@@ -69,9 +86,7 @@ function selectName(userInput, names, searchLimit){
 			results.push(names[i]);
 			numMatches++;
 		}	
-
 	}
-
 	return results;
 }
 

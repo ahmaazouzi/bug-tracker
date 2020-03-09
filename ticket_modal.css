@@ -160,3 +160,8 @@ textarea:focus {
 	position: absolute;
 	display: none;
 }
+
+#styles-drop-down {
+		width: 33%;
+	position: absolute;
+}
