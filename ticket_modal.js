@@ -31,7 +31,7 @@ const caretDown = document.querySelector('#dow');
 function wawa(e){
 	e.stopPropagation();
  	if (customSelectDropDown.style.display === 'none'){
- 		customSelectDropDown.style.display = '';
+ 		customSelectDropDown.style.display = 'block';
  		caretDown.style.display = 'none';
  		caretUp.style.display = '';
 
@@ -48,10 +48,14 @@ function fafa(){
 		customSelectDropDown.style.display = 'none';
 		caretDown.style.display = '';
  		caretUp.style.display = 'none';
+
+ 		stylesDropDown.style.display = 'none';
+ 		styleCaretDown.style.display = '';
+ 		styleCaretUp.style.display = 'none';
 }
 
 const stylesDropDown = document.querySelector('#styles-drop-down');
-const styleCaretDown= document.querySelector('#style-caret-down');
+const styleCaretDown = document.querySelector('#style-caret-down');
 const styleCaretUp= document.querySelector('#style-caret-up');
 function toggleTextStyles(e){
 	e.stopPropagation();
@@ -70,6 +74,24 @@ function toggleTextStyles(e){
 
 const stylesButton = document.querySelector('#style-button');
 stylesButton.addEventListener('click', toggleTextStyles);
+
+const description = document.querySelector('textarea');
+
+function heading1(){
+	description.value += '\n# ';
+}
+
+function heading2(){
+	description.value += '\n## ';
+}
+
+function heading3(){
+	description.value += '\n### ';
+}
+
+function normalText(){
+	description.value  += '\n';
+}
 
 let names = ['AmaAdo Bandido', 'Malato Aagara', 'Zaza LaAla Baba', 'Wawa fafa McWanto', 'Fafa Fafa'];
 
@@ -113,5 +135,16 @@ taftafins.addEventListener('input', function(){
 				`<div class="taftaf" style="width: 100%; margin: 0px; border-radius: 0px; margin-left: -30px;" onclick="taftafins.value = \'${results[i]}\'"> ${results[i]} </div>`);
 	}
 })
+
+const head1= document.querySelector('#heading-1');
+const head2= document.querySelector('#heading-2');
+const head3= document.querySelector('#heading-3');
+const normalTxt= document.querySelector('#normal-text');
+
+head1.addEventListener('click', heading1);
+head2.addEventListener('click', heading2);
+head3.addEventListener('click', heading3);
+normalTxt.addEventListener('click', normalText);
+
 
 
