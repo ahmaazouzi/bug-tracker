@@ -146,5 +146,41 @@ head2.addEventListener('click', heading2);
 head3.addEventListener('click', heading3);
 normalTxt.addEventListener('click', normalText);
 
+function boldify(){
+	description.value += '****';
+	let sel = description.SelectionStart;
+	sel = description.SelectionStart - 2;
+}
+
+function italify(){
+	description.value += '**';
+	let sel = description.SelectionStart;
+	sel = description.SelectionStart - 2;
+}
+
+function underline(){
+	description.value += '__';
+	let sel = description.SelectionStart;
+	sel = description.SelectionStart - 2;
+}
+
+function link(){
+	description.value += '[link name](url)';
+	let sel = description.SelectionStart;
+	sel = description.SelectionStart - 2;
+}
+
+const bold = document.querySelector('.fa-bold');
+bold.addEventListener('click', boldify);
+
+const ital = document.querySelector('.fa-italic');
+ital.addEventListener('click', italify);
+
+const underl = document.querySelector('.fa-underline');
+underl.addEventListener('click', underline);
+
+const linko = document.querySelector('.fa-link');
+linko.addEventListener('click', link);
+
 
 
