@@ -182,5 +182,44 @@ underl.addEventListener('click', underline);
 const linko = document.querySelector('.fa-link');
 linko.addEventListener('click', link);
 
+function parseMarkdown(text){
+	const rawLines = text.split('\n');
+	let processedText = "";
+	for (i in rawLines){
+		const line = rawLines[i];
+		const boldified = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+		const italicized = boldified.replace(/\*(.+?)\*/g, '<em>$1</em>');
+		const underlined = italicized.replace(/_(.+?)_/g, '<u>$1</u>');
+		if ((/^\s*###(\w+|\s+)/).test(underlined))
+			processedText += `<h5>${underlined.replace(/^\s*###/,'')}</h5>`;
+		else if ((/^\s*##(\w+|\s+)/).test(underlined))
+			processedText += `<h4>${underlined.replace(/^##/,'')}</h4>`;
+		else if ((/^\s*#(\w+|\s+)/).test(underlined))
+			processedText += `<h3>${underlined.replace(/^#/,'')}</h3>`;
+		else
+			processedText += `<p>${underlined}</p>`;
+	}
+
+	return processedText;
+}
+
+const previewBody = document.querySelector('#preview-body');
+
+function showPreview(){
+	description.style.display = 'none';
+	previewBody.innerHTML = parseMarkdown(description.value);
+	previewBody.style.display = '';
+}
+
+const editButton = document.querySelector('.fa-pencil-alt')
+function showEdit(){
+	description.style.display = '';
+	previewBody.style.display = 'none';
+}
+
+const preview = document.querySelector('.fa-eye');
+preview.addEventListener('click', () => showPreview());
+editButton.addEventListener('click', () => showEdit());
+
 
 
