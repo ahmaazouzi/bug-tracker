@@ -13,7 +13,7 @@
 ## Text Fields Autocomplete Suggestions:
 - At the moment, I'm having a hard time thinking of an implementation of autocomplete for some text fields such as the field for assigning a task to a user. I thought of using a trie (prefix tree) but found it might take too much time. I am still designing a mockup that needs to be translated into react components and still too far away from starting on the server side logic. 
 - Currently, I am thinking of a regex solution and don't if it will work.
-- I managed to implement a simplistic autocomplete mechanism using regex. It was a no-brainer but it might be a memory hog. I also managed to make the text area styling buttons function and add pseudo-markdown symbols such as asterixes for bold and italic. These are far from perfect, but I will not spend too much time on making them perfect. I am still just doing a basic HTML mockup of the freaking front end.
+- I managed to implement a simplistic autocomplete mechanism using regex. It was a no-brainer but it might be a memory hog. I also managed to make the text area styling buttons function and add pseudo-markdown symbols such as asterisks for bold and italic. These are far from perfect, but I will not spend too much time on making them perfect. I am still just doing a basic HTML mockup of the freaking front end.
 
 ## A Primitive Markdown (March 15, 2020):
 - Changing the style of my primitive markdown by selecting part of the text area or placing the cursor in the correct position after clicking a styling button proved challenging and time wasting. I am moving now to writing code to translate the input markdown into viewable HTML. I will definitely come back to styling the input. I don't even know if I really need a text area. Many websites seem to use mechanisms that don't depend on any input fields. It seems like they use a blinking pipe symbol `|` with a large font as the input cursor and the 'input' is translated immediately to the desired viewable HTML. Anyways, my immediate goal this week (ISA) is to parse the markdown and generate some HTML out of it if the coronavirus doesn't consume me. I am again thinking of resorting to a combination of regex and linear traversal of a string. These are obviously very inefficient, but I am just trying to get a working skeleton that I can improve on in the future.
@@ -24,4 +24,10 @@
 	+ Rework the description section of the ticket modal and replace the textarea with a contenteditable div.
 	+ Work on the general layout of application and make it mobile friendly. As it stands, the app layout is terrible and can't accommodate different screen sizes.
 	+ Start converting the mockup into React components. This step, however, needs to have the previous step done correctly. The messed up layout is preventing me from moving to componentizing the mockup. React will also require a revision of Redux, webpack, probably Gulp and some testing library.
+
+## Corona Rattles the World, and I am a little bored of CSS (March 20, 2020):
+- This disease is wreaking havoc in the northern hemisphere and I started getting paranoid myself.
+
+## Webpack and Babel and all that Jazz (March 21, 2020):
+- I spent yesterday watching a few videos on tools I will definitely need in this projectas  I am using this project as a learning tool mainly. I got the hang of how gulp.js and now will move to webpack and babel.
 

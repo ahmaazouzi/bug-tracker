@@ -1,0 +1,1 @@
+ module.exports = ['bano', 'damo', 'zamo'];
