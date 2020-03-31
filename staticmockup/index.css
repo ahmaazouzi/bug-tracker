@@ -3,6 +3,7 @@
 
 html {
 	height: 100vh;
+	line-height: 1.5;
 }
 
 
@@ -94,10 +95,10 @@ header h1 {
 
 /*test*/
 
-/*p {
-	padding: 5px;
-	margin: 5px;
-}*/
+p {
+	padding-bottom: 10px;
+	/*margin: 5px;*/
+}
 
 header {
 	height: 10vh;
