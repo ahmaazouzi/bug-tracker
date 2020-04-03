@@ -1,0 +1,228 @@
+
+* {margin: 0; padding: 0}
+
+html {
+	height: 100vh;
+	line-height: 1.5;
+}
+
+
+body {
+	height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	height: 100%;
+	width: 100%;
+}
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100vw;
+	height: 100vh;
+}
+
+.to_be_done, .being_done, .done {
+	width: 30%;
+	height: 90vh;
+	padding: .8%;
+}
+
+.sidebar {
+	width: 4vw;
+	height: auto;
+	margin-right: 10px;
+	background-color: #A8A8A8;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-control {
+	height: 6.5vw;
+	text-align: center;
+
+}
+
+.side-control:hover {
+	background-color: #F4EFEB;
+}
+
+.side-control i {
+	color: #000008;
+	font-size: 2em;
+	vertical-align: middle;
+	padding: 50% 0;
+}
+
+.fas {
+	vertical-align: middle; 
+}
+
+.type_icon {
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background-color: #000008;
+}
+
+h1 {
+
+	margin-left: 10px;
+	margin-right: 10px;
+	/*padding : 5px;*/
+	/*border: green solid 1px;*/
+}
+
+header h1 {
+	border: none;
+	color: #F4EFEB;
+	margin-top: 10px;
+	padding-top: 7px;
+	/*background-color: #E7E8EA;*/
+}
+
+/*test*/
+/*h3 {
+	padding: 5px;
+	margin: 5px;
+}*/
+
+.h3_span_info {
+	color: #808080;
+	font-size: .8%;
+	float: right;
+}
+
+/*test*/
+
+p {
+	padding-bottom: 10px;
+	/*margin: 5px;*/
+}
+
+header {
+	height: 10vh;
+	border: #102234 1px solid;
+	width: 100vw;
+	margin: 0px; 
+	background-color: #000008;
+}
+
+.inner_div {
+	height: auto;
+	width: auto;
+	min-height: 90vh;
+	background-color: #E7E8EA;
+	padding: 5px;
+	border-radius: 3px;
+	min-width: 300px;
+}
+
+.inner_div > div {
+	margin: 5px;
+	padding: 5px;
+	/*height: 200px;*/
+	/*border: #A8A8A8 solid 1px;*/
+	background-color: white;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 3px;
+}
+
+.ticket-header {
+	margin-right: 10px;
+	margin-bottom: 5px;
+	width: 100%;
+	display: flex;
+	flex-wrap: flex;
+	flex-direction: wrap;
+}
+
+.ticket-footer {
+	margin-right: 10px;
+	width: 100%;
+	display: flex;
+
+}
+
+.ticket-footer i {
+	font-size: 120%;
+	padding-right: 20px;
+	color: #DCDCDC;
+}
+
+.header-text {
+	width: 60%;
+	height: 100%;
+}
+
+.header-text a {
+	color: blue;
+	text-decoration: none;
+}
+
+.avatar-container {
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.avatar {
+	height: 50px;
+	width: 50px;
+	background-color: #A8A8A8;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 50%;
+
+}
+
+.fas.fa-user-plus {
+	color: #F4EFEB;
+	font-size: 130%;
+}
+
+.ticket-labels {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+/*	display: flex;
+	justify-content: flex-start;*/
+}
+
+.ticket-labels li {
+	float: left;
+	list-style: none;
+	padding-bottom: 5px;
+}
+
+.ticket-label {
+	height: 40%;
+	padding: 3px;
+	font-size: 0.7rem;
+	padding-left: 10px;
+	margin: 5px;
+	border-radius: 10px;
+	color: white;
+	background-color: red;
+	float: left;
+}
+
+.del-label {
+	padding-right:3px;
+}
+
+.footer-info {
+	/*font-size: 1%;*/
+	padding-right: 25px;
+
+}
+
+.section_title {
+	margin-bottom: 10px;
+}
+
+/*p {
+	font-size: 1.3rem;
+}*/

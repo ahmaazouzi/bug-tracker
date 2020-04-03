@@ -8,7 +8,7 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
-        }
+        },
       },
       {
         test: /\.html$/,
@@ -17,7 +17,11 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   plugins: [
