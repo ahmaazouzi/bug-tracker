@@ -4,29 +4,35 @@ import { faPlus, faFire, faClock, faChartPie, faFile, faWrench, faUsers } from '
 
 class Sidebar extends Component {
   render() {
+	  	const iconStyle = {
+		color: '#000008',
+		fontSize: '2em',
+		verticalAlign: 'middle',
+		padding: '50% 0',
+	}
     return (
 		<div className='sidebar'>
 			<div className='side-control' style={{textAlign: 'center'}}>
 				<a className='sasa' href="#">
-				<FontAwesomeIcon icon={faPlus} /></a>
+				<FontAwesomeIcon icon={faPlus} style={iconStyle} /></a>
 			</div>
 			<div className='side-control'>
-				<FontAwesomeIcon icon={faFire} />
+				<FontAwesomeIcon icon={faFire} style={iconStyle} />
 			</div>
 			<div className='side-control' style={{textAlign: 'center'}}>
-				<FontAwesomeIcon icon={faClock} />
+				<FontAwesomeIcon icon={faClock} style={iconStyle} />
 			</div>
 			<div className='side-control' style={{textAlign: 'center'}}>
-				<FontAwesomeIcon icon={faChartPie} />
+				<FontAwesomeIcon icon={faChartPie} style={iconStyle} />
 			</div>
 			<div className='side-control' style={{textAlign: 'center'}}>
-				<FontAwesomeIcon  icon={faFile} />
+				<FontAwesomeIcon  icon={faFile} style={iconStyle} />
 			</div>
 			<div className='side-control' style={{textAlign: 'center'}}>
-				<FontAwesomeIcon icon={faWrench} />
+				<FontAwesomeIcon icon={faWrench} style={iconStyle} />
 			</div>
 			<div className='side-control' style={{textAlign: 'center'}}>
-				<FontAwesomeIcon icon={faUsers} />
+				<FontAwesomeIcon icon={faUsers} style={iconStyle} />
 			</div>
 		</div>
 

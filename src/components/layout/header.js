@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCube, faCog, faBell } from '@fortawesome/free-solid-svg-icons'
+
 class Header extends Component {
   render() {
     return (
