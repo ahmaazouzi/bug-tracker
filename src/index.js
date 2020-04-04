@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 
-import Header from "./js/components/layout/header";
-import Sidebar from "./js/components/layout/sidebar";
+import Header from "./components/layout/header";
+import Sidebar from "./components/layout/sidebar";
+import Dashboard from "./components/dashboard/dashboard-body";
 import css from './index.css';
 
 class App extends Component {
@@ -14,11 +15,13 @@ class App extends Component {
 				<Header />
 				<div className='flex-container'>
 					<Sidebar />
+					<Dashboard />
 				</div>
 			</div>
 			);
 	}
 }
+			
 
 const wrapper = document.getElementById("container");
 wrapper ? ReactDOM.render(<App />, wrapper) : false;

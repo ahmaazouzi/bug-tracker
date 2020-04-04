@@ -14,10 +14,10 @@
 			ev.dataTransfer.setData("text", ev.target.id);
 		}
 
-		function drop(ev) {
+		function drop(ev, el) {
 			ev.preventDefault();
 			var data = ev.dataTransfer.getData("text");
-			ev.target.appendChild(document.getElementById(data));
+			el.appendChild(document.getElementById(data));
 		}
 	</script>
 
@@ -240,8 +240,8 @@
 				<i class="fas fa-users"></i>
 			</div>
 		</div>
-		<div ondrop="drop(event)" ondragover="allowDrop(event)" class='to_be_done'>
-			<div class="inner_div">
+		<div class='to_be_done'>
+			<div class="inner_div" ondrop="drop(event, this)" ondragover="allowDrop(event)" >
 				<h3 class="section_title">TO DO <span class="h3_span_info">6 Items: 10 items</span></h3>
 				<div  class='ticket' style="border-left: 5px red solid;" id='redux' id="drag1" draggable="true" ondragstart="drag(event)">
 					<div class='ticket-header'>
@@ -376,13 +376,13 @@
 				</div>
 			</div>
 		</div>
-		<div class='being_done' ondrop="drop(event)" ondragover="allowDrop(event)">
-			<div class="inner_div">
+		<div class='being_done'>
+			<div class="inner_div"  ondrop="drop(event, this)" ondragover="allowDrop(event)">
 				<h3 class="section_title">IN PROGRESS <span class="h3_span_info">6 Items: 10 items</span></h3>
 			</div>
 		</div>
-		<div class="done" ondrop="drop(event)" ondragover="allowDrop(event)">
-			<div class="inner_div">
+		<div class="done">
+			<div class="inner_div" ondrop="drop(event, this)" ondragover="allowDrop(event)">
 				<h3 class="section_title">COMPLETE <span class="h3_span_info">6 Items: 10 items</span></h3>
 			</div>
 			
