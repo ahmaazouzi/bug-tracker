@@ -13,7 +13,7 @@ class App extends Component {
 		return (
 			<div>
 				<Header />
-				<div className='flex-container'>
+				<div className='flex-container' style={{backgroundColor: 'blue'}}>
 					<Sidebar />
 					<Dashboard />
 				</div>

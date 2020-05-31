@@ -29,5 +29,20 @@
 - This disease is wreaking havoc in the northern hemisphere and I started getting paranoid myself.
 
 ## Webpack and Babel and all that Jazz (March 21, 2020):
-- I spent yesterday watching a few videos on tools I will definitely need in this projectas  I am using this project as a learning tool mainly. I got the hang of how gulp.js and now will move to webpack and babel.
+- I spent yesterday watching a few videos on tools I will definitely need in this project as  I am using this project as a learning tool mainly. I got the hang of how gulp.js and now will move to webpack and babel.
+
+## An infinite rabbit hole:
+- I got bored of frontend wiring and configuration and thought I could take a break and go over the principles of how server side programming works irrespective of what frameworks and platforms offer. 
+
+## Learning C# and Sick of Weboack Boilerplate (May 30, 2020):
+- I haven't touched the project for more than 2 months. I started learning C# a little over a week ago. The similarities between C# are kinda annoying and makes it hard to decide between what I should skip and what I should focus on. 
+- I am sick of webpack and will just use *Create React App* to abstracts all those headaches away.
+- Before I can start writing the backend I need to also learn something about the .NET environment and ASP.NET Core.
+- The next thing to do will be setting the database. I was thinking of *SQL Server*, but I am not sure. I might just use *MySQL*.
+
+
+
+
+
+
 

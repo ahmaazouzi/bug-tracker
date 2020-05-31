@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 class Dashboard extends Component{
 	render(){
 		return (
-			<div>
+			<div style={{display: 'flex'}}>
 				<div className='to_be_done'>
 					<div className="inner_div">
 						<h3 className="section_title">TO DO <span className="h3_span_info">6 Items: 10 items</span></h3>
