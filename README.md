@@ -34,15 +34,14 @@
 ## An infinite rabbit hole:
 - I got bored of frontend wiring and configuration and thought I could take a break and go over the principles of how server side programming works irrespective of what frameworks and platforms offer. 
 
-## Learning C# and Sick of Weboack Boilerplate (May 30, 2020):
+## Learning C# and Sick of Webpack Boilerplate (May 30, 2020):
 - I haven't touched the project for more than 2 months. I started learning C# a little over a week ago. The similarities between C# are kinda annoying and makes it hard to decide between what I should skip and what I should focus on. 
 - I am sick of webpack and will just use *Create React App* to abstracts all those headaches away.
 - Before I can start writing the backend I need to also learn something about the .NET environment and ASP.NET Core.
 - The next thing to do will be setting the database. I was thinking of *SQL Server*, but I am not sure. I might just use *MySQL*.
 
-
-
-
-
-
+## ASP.NET Core and Visual Studio (June 15, 2020):
+- I remember trying to start a simple Java web application. It was a really torturous. I had to install tomcat and configure it to work with eclipse and go through so much voodoo to print a hello world. ASP.NET Core is totally different. You can do all that with a command or a click. I have to admit that I am not a big fan of the whole frameworks and dependency injection thing. I hate how they abstract so much away from the developer to the point where you sometimes have no idea what you're doing. For a couple of hours, I was trying to examine the project structure and understand what it was doing. I soon discovered I was working with a tutorial that might have not been updated in a while. I switched to another tutorial and things started to make sense gradually. I still feel the need to understand the different components of an ASP project and how they sing together, but I prefer learning while doing something and seeing the results. This framework works great with Microsoft's SQL server, but it can also work with MySQL or SQLite. I will stick to SQLite for now. 
+- I worked with the database schema in the last few days. I am still confused about how to structure the database. Should data from different organizations that use the app be mixed in one database and in the same tables? I really have no idea. Can I start with the simple scenario where I am working with only one organization/team and then expand it later to handle different teams? I generally prefer starting with a simple prototype and then expand it later to handle more complex scenarios. The problem with this approach is that I will have to do a lot of rewriting in the future.
+- Visual Studio is also AMAZING! The only thing that kinda pisses me off about it that it doesn't have a built-in console, or maybe there is one and I have to dig it out. Everything else, though, is smooth and obvious. I am not finding myself having to do any learning. It just works and makes sense and most of the shortcuts I am familiar with already work. Its predictive capabilities and unmatched and the few new shortcuts I have to learn are easy to follow.
 
