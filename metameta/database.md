@@ -4,6 +4,9 @@
 ## Tables:
 - After some thought, it sounds like the following tables are all I need. This might be altered in the future. I am not sure if a ticket's description, for example, would be better served with TEXT rather than VARCHAR.
 
+### Team or Project or Organization:
+- To be done!!!
+
 ### Account:
 	- accountID INT PRIMARY KEY AUTO_INCREMENT
 	- FirstName VARCHAR(16)

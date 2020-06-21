@@ -1,3 +1,7 @@
+CREATE TABLE team or project or organization(
+	TBD
+	);
+
 CREATE TABLE account(
 	accountID INT PRIMARY KEY AUTO_INCREMENT,
 	firstName VARCHAR(16) NOT NULL,
@@ -8,17 +12,17 @@ CREATE TABLE account(
 	spiritAnimal VARCHAR(32) NOT NULL,
 	bio VARCHAR(1024),
 	role VARCHAR(16) NOT NULL
-);
+	);
 
 CREATE TABLE comment(
 	commentID INT PRIMARY KEY AUTO_INCREMENT,
 	commenter INT NOT NULL,
 	ticket INT NOT NULL,
-	FOREIGN KEY (commenter) REFERENCES Account(accountID),
-	FOREIGN KEY (ticket) REFERENCES Account(accountID),
+	FOREIGN KEY (commenter) REFERENCES account(accountID),
+	FOREIGN KEY (ticket) REFERENCES account(accountID),
 	payload VARCHAR(32000),
 	date DATE
-);
+	);
 
 CREATE TABLE ticket(
 	ticketID INT PRIMARY KEY AUTO_INCREMENT,
@@ -36,9 +40,9 @@ CREATE TABLE ticket(
 	points TINYINT NOT NULL,
 	tag INT,
 	FOREIGN KEY (tag) REFERENCES tag(tagId)
-);
+	);
 
 CREATE TABLE tag(
 	tagId INT PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(100)
-);
+	);
