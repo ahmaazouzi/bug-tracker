@@ -9,7 +9,14 @@ namespace BugTracker.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly MockAccountRepo _repository = new MockAccountRepo();
+        private readonly IAccountRepo _repository;
+
+        public AccountController(IAccountRepo repository)
+        {
+            _repository = repository;
+        }
+
+        //private readonly MockAccountRepo _repository = new MockAccountRepo();
 
         [HttpGet]
         public ActionResult<IEnumerable<Account>> GetAccounts()

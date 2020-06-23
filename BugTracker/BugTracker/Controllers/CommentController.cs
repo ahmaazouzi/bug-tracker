@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using BugTracker.Models;
-using BugTracker.Data;
 
 namespace BugTracker.Controllers
 {
@@ -9,7 +8,14 @@ namespace BugTracker.Controllers
     [ApiController]
     public class CommentController: ControllerBase
     {
-        private readonly MockCommentRepo _repository = new MockCommentRepo();
+        private readonly ICommentRepo _repository;
+
+        public CommentController(ICommentRepo repository)
+        {
+            _repository = repository;
+        }
+
+        //private readonly MockCommentRepo _repository = new MockCommentRepo();
 
         [HttpGet]
         public ActionResult<IEnumerable<Comment>> GetComments()

@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using BugTracker.Data;
 
 namespace BugTracker
 {
@@ -26,6 +27,10 @@ namespace BugTracker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<ITicketRepo, MockTicketRepo>();
+            services.AddScoped<ITeamRepo, MockTeamRepo>();
+            services.AddScoped<ICommentRepo, MockCommentRepo>();
+            services.AddScoped<IAccountRepo, MockAccountRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

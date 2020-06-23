@@ -49,3 +49,12 @@
 - One thing that annoyed me about the framework is the zealous enthusiasm about the so-called scaffolding. I'd rather know as much as possible about what's going on, but the official tutorials insist on scaffolding that knowledge away. I finally found a [tutorial](https://www.youtube.com/watch?v=fmvcAzHpsk8) that is as allergic to this scaffolding as I am. Now I can have a better understanding of some of the points hidden in the official tutorials. 
 - I don't totally hate scaffolding, though!! It helps reduce typing and I have used it to generate a model for the database schema. The generated code still have some parts that don't make sense to me. Let me finish this tutorial first.
 
+## Code First(June 23, 2020):
+- The lockdown was supposed to be lifted (wholly or partially) and I don't care! I am trying to focus on this application and get done with it as soon as possible.
+- My original intent was to write the database first and generate models from it, but this practice doesn't seem very popular in the ASP community. I don't know much about the framework and in many ways it takes radical departures from practices used in other frameworks I'm familiar and I Like more such as Express and Flask. The favored approach in this community is cringely labeled as *code first*. So you write your models and use something called *migration* to generate your database tables from it. Most of the tutorials I came across use this approach, so I will follow the herd, not out of a keenness on dogma, but as a newcomer to ASP, I have no choice but to work with standard practices to finish this project as fast as possible.
+- My biggest problem so far is that I am not sure how relationships handled in the database. My `Account` model has a field that lists the tickets the owner of the account is working on. When I pull an account, does that also pull all the tickets? I've read something called *lazy loading*. Anyways, I am learning new things as I progress through the project and I don't have a problem changing models code.
+
+
+
+
+

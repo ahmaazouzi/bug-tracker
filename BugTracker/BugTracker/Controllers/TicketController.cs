@@ -9,7 +9,14 @@ namespace BugTracker.Controllers
     [ApiController]
     public class TicketController: ControllerBase
     {
-        private readonly MockTicketRepo _repository = new MockTicketRepo();
+        private readonly ITicketRepo _repository;
+
+        public TicketController(ITicketRepo repository)
+        {
+            _repository = repository;
+        }
+
+        //private readonly MockTicketRepo _repository = new MockTicketRepo();
 
         [HttpGet]
         public ActionResult <IEnumerable<Ticket>> GetTickets()

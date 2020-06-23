@@ -4,7 +4,7 @@ using BugTracker.Models;
 
 namespace BugTracker.Data
 {
-    public class MockCommentRepo : IComment
+    public class MockCommentRepo : ICommentRepo
     {
         public Comment GetCommentById(int id)
         {

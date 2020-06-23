@@ -9,7 +9,14 @@ namespace BugTracker.Controllers
     [ApiController]
     public class TeamController: ControllerBase
     {
-        private readonly MockTeamRepo _repository = new MockTeamRepo();
+        private readonly ITeamRepo _repository;
+
+        public TeamController(ITeamRepo repository)
+        {
+            _repository = repository;
+        }
+
+        //private readonly MockTeamRepo _repository = new MockTeamRepo();
 
         [HttpGet]
         public ActionResult<IEnumerable<Team>> GetTeams()
