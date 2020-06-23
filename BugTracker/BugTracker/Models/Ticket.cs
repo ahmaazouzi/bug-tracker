@@ -5,6 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BugTracker.Models
 {
+    public enum Status
+    {
+        ToDo, InProgress, Done
+    }
+
     public class Ticket
     {
         public int ID { get; set; }
@@ -14,7 +19,7 @@ namespace BugTracker.Models
         public string Summary { get; set; }
 
         [MaxLength(30000)]
-        [Required]
+        [DisplayFormat(NullDisplayText = "No grade")]
         public string Description { get; set; }
 
         [Required]
@@ -27,10 +32,7 @@ namespace BugTracker.Models
 
         public int AssigneeID { get; set; }
 
-        public enum Status
-        {
-            ToDO, InProgress, Done
-        }
+        public Status Status { get; set; }
 
         public bool Active { get; set; }
 
@@ -38,11 +40,15 @@ namespace BugTracker.Models
 
         public byte Points { get; set; }
 
-        public Account Assignee { get; set; }
+        [DisplayFormat(NullDisplayText = "Not assigned yet")]
+        # nullable enable
+        public Account? Assignee { get; set; }
 
         [Required]
         public Account Reporter { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
+
+        public ICollection<Attachment> Attachments { get; set; }
     }
 }

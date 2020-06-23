@@ -37,7 +37,5 @@ namespace BugTracker.Models
         public ICollection<Ticket> TicketsReported { get; set; }
 
         public ICollection<Ticket> TicketsAssigned { get; set; }
-
-        public ICollection<Attachment> Attachments { get; set; }
     }
 }

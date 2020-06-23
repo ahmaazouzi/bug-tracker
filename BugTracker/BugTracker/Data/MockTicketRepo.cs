@@ -15,13 +15,22 @@ namespace BugTracker.Data
             return new Ticket
             {
                 ID = 1,
-                Summary = "Need Create a bugtracker",
+                Summary = "Write Models",
                 Description = "I mean, this bugtracker will revolutionize the whole world of bug tracking",
-                Status = "ToDo", Active = 1,
                 DateReported = DateTime.Now,
-                DateAssigned = new DateTime(2020, 6, 20),
-                DateClosed = new DateTime(20, 6, 30)
-
+                DateAssigned = DateTime.Now,
+                AssigneeID = 33,
+                Status = Status.ToDo,
+                Active = false,
+                DateClosed = new DateTime(20, 6, 30),
+                Points = 3,
+                Reporter = new Account { FirstName = "Ahmed" },
+                Assignee = new Account { FirstName = "Ahmed" },
+                Comments = new HashSet<Comment> {
+                        new Comment { Payload = "You are lazy!"},
+                        new Comment { Payload = "Do you think you know what you're doing?"} ,
+                        new Comment { Payload = "Do you even know what's happening?"}
+                        }
             };
         }
 
@@ -29,39 +38,63 @@ namespace BugTracker.Data
         {
             var tickets = new List<Ticket>
             {
-                new Ticket {ID = 1, Summary = "Need Create a bugtracker",
+                new Ticket {
+                    ID = 1,
+                    Summary = "Write Models",
                     Description = "I mean, this bugtracker will revolutionize the whole world of bug tracking",
-                    Status = "ToDo", Active = 1,
+                    DateReported = DateTime.Now,
+                    Status = Status.ToDo,
+                    Active = false,
+                    DateClosed = new DateTime(20, 6, 30),
+                    Points = 3,
+                    Reporter = new Account {FirstName = "Ahmed"},
+                    Comments = new HashSet<Comment> {
+                        new Comment { Payload = "You are lazy!"},
+                        new Comment { Payload = "Do you think you know what you're doing?"} ,
+                        new Comment { Payload = "Do you even know what's happening?"}
+                        }
+                },
+                new Ticket {
+                    ID = 1,
+                    Summary = "Write Models",
+                    Description = "I mean, this bugtracker will revolutionize the whole world of bug tracking",
                     DateReported = DateTime.Now,
                     DateAssigned = DateTime.Now,
-                    DateClosed = new DateTime(20, 6, 30)
+                    AssigneeID = 33,
+                    Status = Status.ToDo,
+                    Active = false,
+                    DateClosed = new DateTime(20, 6, 30),
+                    Points = 3,
+                    Reporter = new Account {FirstName = "Ahmed"},
+                    Assignee = new Account {FirstName = "Ahmed"},
+                    Comments = new HashSet<Comment> {
+                        new Comment { Payload = "You are lazy!"},
+                        new Comment { Payload = "Do you think you know what you're doing?"} ,
+                        new Comment { Payload = "Do you even know what's happening?"}
+                        }
                 },
-                new Ticket {ID = 1, Summary = "Need Create a bugtracker",
+                new Ticket {
+                    ID = 1,
+                    Summary = "Write Models",
                     Description = "I mean, this bugtracker will revolutionize the whole world of bug tracking",
-                    Status = "ToDo", Active = 1,
-                    DateReported = new DateTime(2020, 6, 10),
-                    DateAssigned = new DateTime(2020, 6, 20),
-                    DateClosed = new DateTime(20, 6, 30)
+                    DateReported = DateTime.Now,
+                    DateAssigned = DateTime.Now,
+                    AssigneeID = 33,
+                    Status = Status.ToDo,
+                    Active = false,
+                    DateClosed = new DateTime(20, 6, 30),
+                    Points = 3,
+                    Reporter = new Account {FirstName = "Ahmed"},
+                    Assignee = new Account {FirstName = "Ahmed"},
+                    Comments = new HashSet<Comment> {
+                        new Comment { Payload = "You are lazy!"},
+                        new Comment { Payload = "Do you think you know what you're doing?"} ,
+                        new Comment { Payload = "Do you even know what's happening?"}
+                        }
                 },
-                new Ticket {ID = 1, Summary = "Need Create a bugtracker",
-                    Description = "I mean, this bugtracker will revolutionize the whole world of bug tracking",
-                    Status = "ToDo", Active = 1,
-                    DateReported = new DateTime(2020, 6, 10),
-                    DateAssigned = new DateTime(2020, 6, 20),
-                    DateClosed = new DateTime(20, 6, 30)
-                },
-                new Ticket {ID = 1, Summary = "Need Create a bugtracker",
-                    Description = "I mean, this bugtracker will revolutionize the whole world of bug tracking",
-                    Status = "ToDo", Active = 1,
-                    DateReported = new DateTime(2020, 6, 10),
-                    DateAssigned = new DateTime(2020, 6, 20),
-                    DateClosed = new DateTime(20, 6, 30)
-                }
             };
 
             return tickets;
-
-
         }
     }
 }

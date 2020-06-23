@@ -1,18 +1,18 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using BugTracker.Models;
 using BugTracker.Data;
 
 namespace BugTracker.Controllers
 {
-    [Route("api/tickets")]
+    [Route("bugtracker/tickets")]
     [ApiController]
     public class TicketController: ControllerBase
     {
         private readonly MockTicketRepo _repository = new MockTicketRepo();
+
         [HttpGet]
-        public ActionResult <IEnumerable<Ticket>> GetAllTickets()
+        public ActionResult <IEnumerable<Ticket>> GetTickets()
         {
             var tickets = _repository.GetTickets();
             return Ok(tickets);
