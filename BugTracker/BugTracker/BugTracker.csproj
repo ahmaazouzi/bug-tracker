@@ -15,6 +15,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.20" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -22,5 +23,8 @@
     <Folder Include="Dtos\" />
     <Folder Include="Profiles\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="appsettings.json" />
   </ItemGroup>
 </Project>

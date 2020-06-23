@@ -53,6 +53,7 @@
 - The lockdown was supposed to be lifted (wholly or partially) and I don't care! I am trying to focus on this application and get done with it as soon as possible.
 - My original intent was to write the database first and generate models from it, but this practice doesn't seem very popular in the ASP community. I don't know much about the framework and in many ways it takes radical departures from practices used in other frameworks I'm familiar and I Like more such as Express and Flask. The favored approach in this community is cringely labeled as *code first*. So you write your models and use something called *migration* to generate your database tables from it. Most of the tutorials I came across use this approach, so I will follow the herd, not out of a keenness on dogma, but as a newcomer to ASP, I have no choice but to work with standard practices to finish this project as fast as possible.
 - My biggest problem so far is that I am not sure how relationships handled in the database. My `Account` model has a field that lists the tickets the owner of the account is working on. When I pull an account, does that also pull all the tickets? I've read something called *lazy loading*. Anyways, I am learning new things as I progress through the project and I don't have a problem changing models code.
+- The data modeling problems I am having now have to do directly with the Entity Framework, the equivalent of Hibernate in the Java world. I might have to set aside some time to learn the basics of the framework.
 
 
 
