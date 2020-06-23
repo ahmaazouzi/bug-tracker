@@ -1,10 +1,28 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using BugTracker.Models;
+using BugTracker.Data;
+
 namespace BugTracker.Controllers
 {
-    public class TeamController
+    [Route("bugtracker/teams")]
+    [ApiController]
+    public class TeamController: ControllerBase
     {
-        public TeamController()
+        private readonly MockTeamRepo _repository = new MockTeamRepo();
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Team>> GetTeams()
         {
+            var teams = _repository.GetTeams();
+            return Ok(teams);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Team> GetTeamById(int id)
+        {
+            var team = _repository.GetTeamById(id);
+            return Ok(team);
         }
     }
 }

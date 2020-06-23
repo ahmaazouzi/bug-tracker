@@ -1,10 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using BugTracker.Models;
+
 namespace BugTracker
 {
-    public class IComment
+    public interface IComment
     {
-        public IComment()
-        {
-        }
+        public IEnumerable<Comment> GetComments();
+        public Comment GetCommentById(int id);
     }
 }
+
