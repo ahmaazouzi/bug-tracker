@@ -1,9 +1,13 @@
-CREATE TABLE team or project or organization(
-	TBD
+CREATE TABLE team(
+	accountID INT PRIMARY KEY AUTO_INCREMENT,
+	FOREIGN KEY (team) REFERENCES team(teamID),
+	members,
+	head
 	);
 
 CREATE TABLE account(
 	accountID INT PRIMARY KEY AUTO_INCREMENT,
+	FOREIGN KEY (team) REFERENCES team(teamID),
 	firstName VARCHAR(16) NOT NULL,
 	middleName VARCHAR(16) NOT NULL,
 	lastName VARCHAR(16),

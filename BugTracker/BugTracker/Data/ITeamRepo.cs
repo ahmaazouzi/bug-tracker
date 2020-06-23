@@ -5,7 +5,7 @@ namespace BugTracker.Data
 {
     public interface ITeamRepo
     {
-    IEnumerable<Ticket> GetTeams();
-    Ticket GetTeamById(int id);
+        IEnumerable<Team> GetTeams();
+        Team GetTeamById(int id);
     }
 }
