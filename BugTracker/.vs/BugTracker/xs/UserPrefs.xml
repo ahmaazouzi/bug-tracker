@@ -1,23 +1,15 @@
-﻿<Properties StartupConfiguration="{CB085254-E2F9-42F1-AB16-5AD004F5471C}|Default">
+﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.BugTracker PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Data/MockTicketRepo.cs">
-    <Files>
-      <File FileName="BugTracker.csproj" Line="22" Column="1" />
-      <File FileName="Data/ITicketRepo.cs" />
-      <File FileName="Data/MockTicketRepo.cs" Line="18" Column="44" />
-      <File FileName="Models/Ticket.cs" />
-      <File FileName="Controllers/TicketController.cs" />
-      <File FileName="Models/Account.cs" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BugTracker" expanded="True" />
+          <Node name="BugTracker" expanded="True" selected="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
         <State name="__root__">
-          <Node name="BugTracker" expanded="True" selected="True" />
+          <Node name="BugTracker" selected="True" />
         </State>
       </Pad>
     </Pads>
