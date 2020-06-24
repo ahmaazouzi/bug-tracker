@@ -30,7 +30,7 @@ namespace BugTracker.Models
 
         public DateTime? DateAssigned { get; set; }
 
-        public int AssigneeID { get; set; }
+        public int AssignmentID { get; set; }
 
         public Status Status { get; set; }
 
@@ -41,8 +41,8 @@ namespace BugTracker.Models
         public byte Points { get; set; }
 
         [DisplayFormat(NullDisplayText = "Not assigned yet")]
-        # nullable enable
-        public Account? Assignee { get; set; }
+
+        public Assignment Assignment { get; set; }
 
         [Required]
         public Account Reporter { get; set; }

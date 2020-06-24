@@ -19,10 +19,9 @@ namespace BugTracker.Data
                 Bio = "The creator of the nonrevolutionary bug tracker",
                 TeamID = 4,
                 Team = new Team { Name = "BugTracker" },
-                TicketsAssigned = new HashSet<Ticket> {
-                    new Ticket(), new Ticket()
-                }
-                ,
+                Assignments = new HashSet<Assignment> {
+                    new Assignment(), new Assignment()
+                },
                 TicketsReported = new HashSet<Ticket> {
                     new Ticket(), new Ticket()
                 }
@@ -44,10 +43,9 @@ namespace BugTracker.Data
                     Bio = "The creator of the nonrevolutionary bug tracker",
                     TeamID = 4,
                     Team = new Team { Name = "BugTracker" },
-                    TicketsAssigned = new HashSet<Ticket> {
-                        new Ticket(), new Ticket()
-                    }
-                    ,
+                Assignments = new HashSet<Assignment> {
+                    new Assignment(), new Assignment()
+                },
                     TicketsReported = new HashSet<Ticket> {
                         new Ticket(), new Ticket()
                     }
@@ -63,10 +61,9 @@ namespace BugTracker.Data
                     Bio = "The creator of the nonrevolutionary bug tracker",
                     TeamID = 4,
                     Team = new Team { Name = "BugTracker" },
-                    TicketsAssigned = new HashSet<Ticket> {
-                        new Ticket(), new Ticket()
-                    }
-                    ,
+                    Assignments = new HashSet<Assignment> {
+                        new Assignment(), new Assignment()
+                    },
                     TicketsReported = new HashSet<Ticket> {
                         new Ticket(), new Ticket()
                     }
@@ -82,10 +79,9 @@ namespace BugTracker.Data
                     Bio = "The creator of the nonrevolutionary bug tracker",
                     TeamID = 4,
                     Team = new Team { Name = "BugTracker" },
-                    TicketsAssigned = new HashSet<Ticket> {
-                        new Ticket(), new Ticket()
-                    }
-                    ,
+                    Assignments = new HashSet<Assignment> {
+                        new Assignment(), new Assignment()
+                    },
                     TicketsReported = new HashSet<Ticket> {
                         new Ticket(), new Ticket()
                     }

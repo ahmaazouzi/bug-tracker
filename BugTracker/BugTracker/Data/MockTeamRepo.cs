@@ -16,7 +16,6 @@ namespace BugTracker.Data
             {
                 ID = 1,
                 Name = "BugTracker",
-                Lead = new Account { FirstName = "Ahmed" },
                 Members = new HashSet<Account> {
                     new Account(), new Account(), new Account()
                 },
@@ -34,7 +33,6 @@ namespace BugTracker.Data
                 {
                     ID = 1,
                     Name = "BugTracker",
-                    Lead = new Account { FirstName = "Ahmed" },
                     Members = new HashSet<Account> {
                         new Account(), new Account(), new Account()
                     },
@@ -46,7 +44,6 @@ namespace BugTracker.Data
                 {
                     ID = 1,
                     Name = "BugTracker",
-                    Lead = new Account { FirstName = "Ahmed" },
                     Members = new HashSet<Account> {
                         new Account(), new Account(), new Account()
                     },
@@ -58,7 +55,6 @@ namespace BugTracker.Data
                 {
                     ID = 1,
                     Name = "BugTracker",
-                    Lead = new Account { FirstName = "Ahmed" },
                     Members = new HashSet<Account> {
                         new Account(), new Account(), new Account()
                     },
