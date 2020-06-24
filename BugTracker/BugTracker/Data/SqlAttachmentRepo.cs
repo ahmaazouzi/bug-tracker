@@ -1,7 +1,7 @@
 ﻿using System;
 namespace BugTracker.Data
 {
-    public class SqlAttachmentRepo
+    public class SqlAttachmentRepo : IAttachmentRepo
     {
         public SqlAttachmentRepo()
         {
