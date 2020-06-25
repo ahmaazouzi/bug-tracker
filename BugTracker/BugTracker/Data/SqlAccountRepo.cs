@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BugTracker.Models;
 
 namespace BugTracker.Data
 {
     public class SqlAccountRepo: IAccountRepo
+
     {
-        public SqlAccountRepo()
+        private readonly BugTrackerContext _context;
+
+        public SqlAccountRepo(BugTrackerContext context)
         {
+            _context = context;
         }
 
         public Account GetAccountById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Accounts.FirstOrDefault(a => a.ID == id);
         }
 
         public IEnumerable<Account> GetAccounts()
         {
-            throw new NotImplementedException();
+            return _context.Accounts.ToList();
         }
     }
 }

@@ -1,17 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using BugTracker.Data;
-using MySql.Data.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BugTracker
@@ -33,10 +25,11 @@ namespace BugTracker
 
             services.AddControllers();
 
-            services.AddScoped<ITicketRepo, MockTicketRepo>();
-            services.AddScoped<ITeamRepo, MockTeamRepo>();
-            services.AddScoped<ICommentRepo, MockCommentRepo>();
-            services.AddScoped<IAccountRepo, MockAccountRepo>();
+            services.AddScoped<ITicketRepo, SqlTicketRepo>();
+            services.AddScoped<ITeamRepo, SqlTeamRepo>();
+            services.AddScoped<ICommentRepo, SqlCommentRepo>();
+            services.AddScoped<IAccountRepo, SqlAccountRepo>();
+            services.AddScoped<IAttachmentRepo, SqlAttachmentRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
