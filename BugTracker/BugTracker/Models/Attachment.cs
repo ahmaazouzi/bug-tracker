@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BugTracker.Models
 {
@@ -11,6 +10,7 @@ namespace BugTracker.Models
         [MaxLength(2500)]
         public string Url { get; set; }
 
+        [Display(Name = "Attac")]
         public int TicketID { get; set; }
 
         public Ticket Ticket { get; set; }

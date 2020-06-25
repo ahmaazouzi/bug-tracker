@@ -14,7 +14,7 @@ namespace BugTracker.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,11 +27,11 @@ namespace BugTracker.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(maxLength: 256, nullable: true),
+                    FirstName = table.Column<string>(maxLength: 256, nullable: false),
                     MiddleName = table.Column<string>(maxLength: 256, nullable: true),
-                    LastName = table.Column<string>(maxLength: 256, nullable: true),
+                    LastName = table.Column<string>(maxLength: 256, nullable: false),
                     PhotoUrl = table.Column<string>(maxLength: 1024, nullable: true),
-                    Email = table.Column<string>(maxLength: 256, nullable: true),
+                    Email = table.Column<string>(maxLength: 256, nullable: false),
                     SpiritAnimal = table.Column<string>(maxLength: 256, nullable: true),
                     Bio = table.Column<string>(maxLength: 5000, nullable: true),
                     TeamID = table.Column<int>(nullable: false)
@@ -136,7 +136,7 @@ namespace BugTracker.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CommenterID = table.Column<int>(nullable: false),
                     TicketID = table.Column<int>(nullable: false),
-                    Payload = table.Column<string>(maxLength: 16000, nullable: true),
+                    Payload = table.Column<string>(maxLength: 16000, nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

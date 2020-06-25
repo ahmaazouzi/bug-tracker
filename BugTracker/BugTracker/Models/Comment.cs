@@ -12,6 +12,7 @@ namespace BugTracker.Models
         public int TicketID { get; set; }
 
         [MaxLength(16000)]
+        [Required]
         public string Payload { get; set; }
 
         public DateTime Date { get; set; }

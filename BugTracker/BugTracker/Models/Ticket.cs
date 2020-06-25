@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BugTracker.Models
 {
@@ -19,7 +18,6 @@ namespace BugTracker.Models
         public string Summary { get; set; }
 
         [MaxLength(30000)]
-        [DisplayFormat(NullDisplayText = "No grade")]
         public string Description { get; set; }
 
         [Required]
@@ -30,21 +28,23 @@ namespace BugTracker.Models
 
         public DateTime? DateAssigned { get; set; }
 
-        public int AssignmentID { get; set; }
+        public int? AssignmentID { get; set; }
 
+        [Required]
         public Status Status { get; set; }
 
+        [Required]
         public bool Active { get; set; }
 
         public DateTime? DateClosed { get; set; }
 
+        [DisplayFormat(NullDisplayText = "No points?")]
+        [Range(1,25)]
         public byte Points { get; set; }
 
-        [DisplayFormat(NullDisplayText = "Not assigned yet")]
 
         public Assignment Assignment { get; set; }
 
-        [Required]
         public Account Reporter { get; set; }
 
         public ICollection<Comment> Comments { get; set; }

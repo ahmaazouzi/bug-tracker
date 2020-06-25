@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(BugTrackerContext))]
-    [Migration("20200624172407_fm")]
+    [Migration("20200625201028_fm")]
     partial class fm
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,14 +30,17 @@ namespace BugTracker.Migrations
                         .HasMaxLength(5000);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
 
@@ -119,6 +122,7 @@ namespace BugTracker.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Payload")
+                        .IsRequired()
                         .HasColumnType("varchar(16000)")
                         .HasMaxLength(16000);
 
@@ -141,6 +145,7 @@ namespace BugTracker.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("ID");
