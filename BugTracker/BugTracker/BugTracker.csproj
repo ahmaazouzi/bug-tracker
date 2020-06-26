@@ -6,6 +6,11 @@
 
 
   <ItemGroup>
+    <None Remove="vs\BugTracker\xs\UserPrefs.xml" />
+    <None Remove="vs\BugTracker\xs\sqlite3\db.lock" />
+    <None Remove="vs\BugTracker\xs\sqlite3\storage.ide" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="BugTracker.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -16,6 +21,7 @@
     </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.20" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.20" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -26,5 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="appsettings.json" />
+    <Content Remove="vs\BugTracker\xs\project-cache\BugTracker-Debug.json" />
   </ItemGroup>
 </Project>

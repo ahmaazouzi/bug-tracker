@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BugTracker.Data;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using System;
 
 namespace BugTracker
 {
@@ -24,6 +26,8 @@ namespace BugTracker
              opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ITicketRepo, SqlTicketRepo>();
             services.AddScoped<ITeamRepo, SqlTeamRepo>();

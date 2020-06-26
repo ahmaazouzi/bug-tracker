@@ -38,9 +38,9 @@ INSERT INTO Accounts VALUES(
 );
 
 INSERT INTO Accounts VALUES(
-	3,
+	4,
 	"Mahesh",
-	"A",
+	"",
 	"Maheshani",
 	"https://www.photos.ph/3",
 	"mahesh@bugtracker.com",

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using BugTracker.Models;
+using BugTracker.Dtos;
 using BugTracker.Data;
+using AutoMapper;
 
 namespace BugTracker.Controllers
 {
@@ -10,26 +11,30 @@ namespace BugTracker.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAccountRepo _repository;
+        private readonly IMapper _mapper;
 
-        public AccountController(IAccountRepo repository)
+        public AccountController(IAccountRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         //private readonly MockAccountRepo _repository = new MockAccountRepo();
 
         [HttpGet]
-        public ActionResult<IEnumerable<Account>> GetAccounts()
+        public ActionResult<IEnumerable<AccountReadDto>> GetAccounts(int team)
         {
             var accounts = _repository.GetAccounts();
-            return Ok(accounts);
+            return Ok(_mapper.Map<IEnumerable<AccountReadDto>>(accounts));
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Account> GetAccountById(int id)
+        public ActionResult<AccountReadDto> GetAccountById(int id)
         {
             var account = _repository.GetAccountById(id);
-            return Ok(account);
+            if (account != null)
+                return Ok(_mapper.Map<AccountReadDto>(account));
+            return NotFound();
         }
     }
 }

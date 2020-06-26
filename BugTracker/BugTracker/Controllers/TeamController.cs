@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using BugTracker.Models;
 using BugTracker.Data;
+using BugTracker.Dtos;
+using AutoMapper;
 
 namespace BugTracker.Controllers
 {
@@ -10,10 +12,12 @@ namespace BugTracker.Controllers
     public class TeamController: ControllerBase
     {
         private readonly ITeamRepo _repository;
+        private readonly IMapper _mapper;
 
-        public TeamController(ITeamRepo repository)
+        public TeamController(ITeamRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         //private readonly MockTeamRepo _repository = new MockTeamRepo();
@@ -22,14 +26,14 @@ namespace BugTracker.Controllers
         public ActionResult<IEnumerable<Team>> GetTeams()
         {
             var teams = _repository.GetTeams();
-            return Ok(teams);
+            return Ok(_mapper.Map<IEnumerable<TeamReadDto>>(teams));
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Team> GetTeamById(int id)
+        public ActionResult<TeamReadDto> GetTeamById(int id)
         {
             var team = _repository.GetTeamById(id);
-            return Ok(team);
+            return Ok(_mapper.Map<TeamReadDto>(team));
         }
     }
 }
