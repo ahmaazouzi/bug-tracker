@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using BugTracker.Dtos;
 using BugTracker.Data;
 using AutoMapper;
+using System.Linq;
 
 namespace BugTracker.Controllers
 {
-    [Route("bugtracker/accounts")]
+    [Route("bugtracker/team{teamID}/accounts")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -22,9 +23,9 @@ namespace BugTracker.Controllers
         //private readonly MockAccountRepo _repository = new MockAccountRepo();
 
         [HttpGet]
-        public ActionResult<IEnumerable<AccountReadDto>> GetAccounts(int team)
+        public ActionResult<IEnumerable<AccountReadDto>> GetAccounts(int teamID)
         {
-            var accounts = _repository.GetAccounts();
+            var accounts = _repository.GetAccounts().Where(a => a.TeamID == teamID);
             return Ok(_mapper.Map<IEnumerable<AccountReadDto>>(accounts));
         }
 

@@ -5,7 +5,7 @@ namespace BugTracker.Dtos
 {
     public class AccountReadDto
     {
-        public int ID { get;}
+        public int ID { get; set; }
 
         public string FullName { get; set; }
 
