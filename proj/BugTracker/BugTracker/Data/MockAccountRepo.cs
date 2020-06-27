@@ -18,13 +18,10 @@ namespace BugTracker.Data
                 SpiritAnimal = "NAD83",
                 Bio = "The creator of the nonrevolutionary bug tracker",
                 TeamID = 4,
-                Team = new Team { Name = "BugTracker" },
+                //Team = new Team { Name = "BugTracker" },
                 Assignments = new HashSet<Assignment> {
                     new Assignment(), new Assignment()
                 },
-                TicketsReported = new HashSet<Ticket> {
-                    new Ticket(), new Ticket()
-                }
             };
         }
 
@@ -42,12 +39,24 @@ namespace BugTracker.Data
                     SpiritAnimal = "NAD83",
                     Bio = "The creator of the nonrevolutionary bug tracker",
                     TeamID = 4,
-                    Team = new Team { Name = "BugTracker" },
+                    //Team = new Team { Name = "BugTracker" },
                 Assignments = new HashSet<Assignment> {
                     new Assignment(), new Assignment()
+                }
                 },
-                    TicketsReported = new HashSet<Ticket> {
-                        new Ticket(), new Ticket()
+                new Account
+                {
+                    ID = 1,
+                    FirstName = "Ahmed",
+                    LastName = "Maghribi",
+                    PhotoUrl = "https://avatars3.githubusercontent.com/u/12423336",
+                    Email = "a.maa@bugtracker.com",
+                    SpiritAnimal = "NAD83",
+                    Bio = "The creator of the nonrevolutionary bug tracker",
+                    TeamID = 4,
+                    //Team = new Team { Name = "BugTracker" },
+                    Assignments = new HashSet<Assignment> {
+                        new Assignment(), new Assignment()
                     }
                 },
                 new Account
@@ -60,30 +69,9 @@ namespace BugTracker.Data
                     SpiritAnimal = "NAD83",
                     Bio = "The creator of the nonrevolutionary bug tracker",
                     TeamID = 4,
-                    Team = new Team { Name = "BugTracker" },
+                    //Team = new Team { Name = "BugTracker" },
                     Assignments = new HashSet<Assignment> {
                         new Assignment(), new Assignment()
-                    },
-                    TicketsReported = new HashSet<Ticket> {
-                        new Ticket(), new Ticket()
-                    }
-                },
-                new Account
-                {
-                    ID = 1,
-                    FirstName = "Ahmed",
-                    LastName = "Maghribi",
-                    PhotoUrl = "https://avatars3.githubusercontent.com/u/12423336",
-                    Email = "a.maa@bugtracker.com",
-                    SpiritAnimal = "NAD83",
-                    Bio = "The creator of the nonrevolutionary bug tracker",
-                    TeamID = 4,
-                    Team = new Team { Name = "BugTracker" },
-                    Assignments = new HashSet<Assignment> {
-                        new Assignment(), new Assignment()
-                    },
-                    TicketsReported = new HashSet<Ticket> {
-                        new Ticket(), new Ticket()
                     }
                 }
             };

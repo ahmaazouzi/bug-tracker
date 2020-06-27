@@ -7,6 +7,7 @@ using BugTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using System;
+using Newtonsoft;
 
 namespace BugTracker
 {
@@ -25,7 +26,9 @@ namespace BugTracker
             services.AddDbContext<BugTrackerContext>(opt =>
              opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

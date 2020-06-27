@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace BugTracker.Controllers
 {
-    [Route("bugtracker/teams")]
+    [Route("teams")]
     [ApiController]
     public class TeamController: ControllerBase
     {

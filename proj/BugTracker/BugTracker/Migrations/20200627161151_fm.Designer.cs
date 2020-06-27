@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(BugTrackerContext))]
-    [Migration("20200625201028_fm")]
+    [Migration("20200627161151_fm")]
     partial class fm
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -131,8 +131,6 @@ namespace BugTracker.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CommenterID");
-
                     b.HasIndex("TicketID");
 
                     b.ToTable("Comments");
@@ -162,7 +160,7 @@ namespace BugTracker.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<int>("AssignmentID")
+                    b.Property<int?>("AssignmentID")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("DateAssigned")
@@ -207,7 +205,7 @@ namespace BugTracker.Migrations
 
             modelBuilder.Entity("BugTracker.Models.Account", b =>
                 {
-                    b.HasOne("BugTracker.Models.Team", "Team")
+                    b.HasOne("BugTracker.Models.Team", null)
                         .WithMany("Members")
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -216,7 +214,7 @@ namespace BugTracker.Migrations
 
             modelBuilder.Entity("BugTracker.Models.Assignment", b =>
                 {
-                    b.HasOne("BugTracker.Models.Account", "Account")
+                    b.HasOne("BugTracker.Models.Account", null)
                         .WithMany("Assignments")
                         .HasForeignKey("AccountID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -231,7 +229,7 @@ namespace BugTracker.Migrations
 
             modelBuilder.Entity("BugTracker.Models.Attachment", b =>
                 {
-                    b.HasOne("BugTracker.Models.Ticket", "Ticket")
+                    b.HasOne("BugTracker.Models.Ticket", null)
                         .WithMany("Attachments")
                         .HasForeignKey("TicketID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -240,13 +238,7 @@ namespace BugTracker.Migrations
 
             modelBuilder.Entity("BugTracker.Models.Comment", b =>
                 {
-                    b.HasOne("BugTracker.Models.Account", "Commenter")
-                        .WithMany()
-                        .HasForeignKey("CommenterID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BugTracker.Models.Ticket", "Ticket")
+                    b.HasOne("BugTracker.Models.Ticket", null)
                         .WithMany("Comments")
                         .HasForeignKey("TicketID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -256,7 +248,7 @@ namespace BugTracker.Migrations
             modelBuilder.Entity("BugTracker.Models.Ticket", b =>
                 {
                     b.HasOne("BugTracker.Models.Account", "Reporter")
-                        .WithMany("TicketsReported")
+                        .WithMany()
                         .HasForeignKey("ReporterID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

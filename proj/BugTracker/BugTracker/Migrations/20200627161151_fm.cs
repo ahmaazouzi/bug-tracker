@@ -58,7 +58,7 @@ namespace BugTracker.Migrations
                     DateReported = table.Column<DateTime>(nullable: false),
                     ReporterID = table.Column<int>(nullable: false),
                     DateAssigned = table.Column<DateTime>(nullable: true),
-                    AssignmentID = table.Column<int>(nullable: false),
+                    AssignmentID = table.Column<int>(nullable: true),
                     Status = table.Column<int>(nullable: false),
                     Active = table.Column<bool>(nullable: false),
                     DateClosed = table.Column<DateTime>(nullable: true),
@@ -143,12 +143,6 @@ namespace BugTracker.Migrations
                 {
                     table.PrimaryKey("PK_Comments", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Comments_Accounts_CommenterID",
-                        column: x => x.CommenterID,
-                        principalTable: "Accounts",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Comments_Tickets_TicketID",
                         column: x => x.TicketID,
                         principalTable: "Tickets",
@@ -176,11 +170,6 @@ namespace BugTracker.Migrations
                 name: "IX_Attachments_TicketID",
                 table: "Attachments",
                 column: "TicketID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_CommenterID",
-                table: "Comments",
-                column: "CommenterID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_TicketID",

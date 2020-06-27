@@ -16,10 +16,5 @@ namespace BugTracker.Models
         public string Payload { get; set; }
 
         public DateTime Date { get; set; }
-
-
-        public Account Commenter { get; set; }
-
-        public Ticket Ticket { get; set; }
     }
 }

@@ -40,11 +40,6 @@ namespace BugTracker.Models
 
         public int TeamID { get; set; }
 
-
-        public Team Team { get; set; }
-
-        public ICollection<Ticket> TicketsReported { get; set; }
-
         public ICollection<Assignment> Assignments { get; set; }
     }
 }

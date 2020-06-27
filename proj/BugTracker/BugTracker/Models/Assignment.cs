@@ -12,6 +12,5 @@ namespace BugTracker.Models
         public int AccountID { get; set; }
 
         public Ticket Ticket { get; set; }
-        public Account Account { get; set; }
     }
 }

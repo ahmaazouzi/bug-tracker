@@ -12,7 +12,5 @@ namespace BugTracker.Models
 
         [Display(Name = "Attac")]
         public int TicketID { get; set; }
-
-        public Ticket Ticket { get; set; }
     }
 }

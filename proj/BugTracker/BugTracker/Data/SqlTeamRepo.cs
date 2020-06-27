@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BugTracker.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BugTracker.Data
 {
@@ -16,7 +17,10 @@ namespace BugTracker.Data
 
         public Team GetTeamById(int id)
         {
-            return _context.Teams.FirstOrDefault(t => t.ID == id);
+            var team = _context.Teams.FirstOrDefault(t => t.ID == id);
+            _context.Entry(team).Collection(v => v.Members).Load();
+            //_context.Entry(t).Collection(t => t.Tickets).Load();
+            return team;
         }
 
         public IEnumerable<Team> GetTeams()

@@ -14,14 +14,7 @@ namespace BugTracker.Data
                 CommenterID = 1,
                 TicketID = 1,
                 Payload = "You are not a good bug tracker!",
-                Date = DateTime.Now,
-                Commenter = new Account { FirstName = "Ahmed" },
-                Ticket = new Ticket
-                {
-                    Summary = "What what!",
-                    Description = "Yes Yes Yes Yes Yes!"
-                }
-
+                Date = DateTime.Now
             };
         }
 
@@ -33,39 +26,21 @@ namespace BugTracker.Data
                     CommenterID = 1,
                     TicketID = 1,
                     Payload = "You are not a good bug tracker!",
-                    Date = DateTime.Now,
-                    Commenter = new Account { FirstName = "Ahmed" },
-                    Ticket = new Ticket
-                    {
-                        Summary = "What what!",
-                        Description = "Yes Yes Yes Yes Yes!"
-                    }
+                    Date = DateTime.Now
                 },
                 new Comment{
                     ID = 1,
                     CommenterID = 1,
                     TicketID = 1,
                     Payload = "You are not a good bug tracker!",
-                    Date = DateTime.Now,
-                    Commenter = new Account { FirstName = "Ahmed" },
-                    Ticket = new Ticket
-                    {
-                        Summary = "What what!",
-                        Description = "Yes Yes Yes Yes Yes!"
-                    }
+                    Date = DateTime.Now
                 },
                 new Comment{
                     ID = 1,
                     CommenterID = 1,
                     TicketID = 1,
                     Payload = "You are not a good bug tracker!",
-                    Date = DateTime.Now,
-                    Commenter = new Account { FirstName = "Ahmed" },
-                    Ticket = new Ticket
-                    {
-                        Summary = "What what!",
-                        Description = "Yes Yes Yes Yes Yes!"
-                    }
+                    Date = DateTime.Now
                 }
             };
 

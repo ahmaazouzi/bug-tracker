@@ -42,7 +42,6 @@ namespace BugTracker.Models
         [Range(1,25)]
         public byte Points { get; set; }
 
-
         public Assignment Assignment { get; set; }
 
         public Account Reporter { get; set; }
