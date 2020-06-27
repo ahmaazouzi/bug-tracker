@@ -46,6 +46,8 @@ namespace BugTracker.Models
 
         public Account Reporter { get; set; }
 
+        public int TeamID { get; set; }
+
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<Attachment> Attachments { get; set; }

@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace BugTracker.Controllers
 {
-    [Route("teams")]
+    [Route("")]
     [ApiController]
     public class TeamController: ControllerBase
     {
@@ -22,14 +22,15 @@ namespace BugTracker.Controllers
 
         //private readonly MockTeamRepo _repository = new MockTeamRepo();
 
-        [HttpGet]
+        [HttpGet("teams")]
         public ActionResult<IEnumerable<Team>> GetTeams()
         {
             var teams = _repository.GetTeams();
             return Ok(_mapper.Map<IEnumerable<TeamReadDto>>(teams));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("teams/{id}")]
+        [HttpGet("team{id}/team")]
         public ActionResult<TeamReadDto> GetTeamById(int id)
         {
             var team = _repository.GetTeamById(id);

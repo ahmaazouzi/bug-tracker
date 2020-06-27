@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace BugTracker.Controllers
 {
-    [Route("bugtracker/team{teamID}/accounts")]
+    [Route("team{teamID}/accounts")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -35,6 +35,16 @@ namespace BugTracker.Controllers
             var account = _repository.GetAccountById(id);
             if (account != null)
                 return Ok(_mapper.Map<AccountReadDto>(account));
+            return NotFound();
+        }
+
+        [HttpGet("{id}/assigned")]
+        public ActionResult<TicketReadDto> GetAssiged(int id)
+        {
+            var account = _repository.GetAccountById(id);
+
+            if (account != null)
+                return Ok(account.Assignments);
             return NotFound();
         }
     }

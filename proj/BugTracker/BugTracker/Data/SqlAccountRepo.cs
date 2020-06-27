@@ -17,12 +17,19 @@ namespace BugTracker.Data
 
         public Account GetAccountById(int id)
         {
-            return _context.Accounts.FirstOrDefault(a => a.ID == id);
+            var account = _context.Accounts.FirstOrDefault(a => a.ID == id);
+            GetAssigned(account, id);
+            return account;
         }
 
         public IEnumerable<Account> GetAccounts()
         {
             return _context.Accounts.ToList();
+        }
+
+        private void GetAssigned(Account account, int id)
+        {
+            _context.Entry(account).Collection(a => a.Assignments).Load();
         }
     }
 }

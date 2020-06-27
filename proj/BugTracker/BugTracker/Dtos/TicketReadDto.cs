@@ -33,6 +33,7 @@ namespace BugTracker.Dtos
 
         public byte Points { get; set; }
 
+        public int TeamID { get; set; }
 
         public Assignment Assignment { get; set; }
 

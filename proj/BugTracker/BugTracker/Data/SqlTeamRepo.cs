@@ -19,7 +19,7 @@ namespace BugTracker.Data
         {
             var team = _context.Teams.FirstOrDefault(t => t.ID == id);
             _context.Entry(team).Collection(v => v.Members).Load();
-            //_context.Entry(t).Collection(t => t.Tickets).Load();
+            _context.Entry(team).Collection(t => t.Tickets).Load();
             return team;
         }
 
