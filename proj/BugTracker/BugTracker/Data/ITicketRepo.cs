@@ -5,7 +5,10 @@ namespace BugTracker.Data
 {
     public interface ITicketRepo
     {
+        bool SaveChanges();
+
         IEnumerable<Ticket> GetTickets();
         Ticket GetTicketById(int id);
+        void CreateTicket(Ticket ticket);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using BugTracker.Models;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BugTracker.Data
 {
@@ -22,6 +23,13 @@ namespace BugTracker.Data
                 .HasOne(t => t.Assignment).WithOne(a => a.Ticket)
                 .HasForeignKey<Assignment>(a => a.TicketID)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            var converter = new EnumToStringConverter<BugTracker.Models.Status>();
+
+            modelBuilder
+                .Entity<Ticket>()
+                .Property(t => t.Status)
+                .HasConversion<string>();
         }
     }
 }

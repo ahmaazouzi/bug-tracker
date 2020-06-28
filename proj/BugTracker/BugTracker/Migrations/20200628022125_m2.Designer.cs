@@ -3,14 +3,16 @@ using System;
 using BugTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(BugTrackerContext))]
-    partial class BugTrackerContextModelSnapshot : ModelSnapshot
+    [Migration("20200628022125_m2")]
+    partial class m2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

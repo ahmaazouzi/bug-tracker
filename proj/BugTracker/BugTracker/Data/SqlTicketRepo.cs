@@ -14,6 +14,14 @@ namespace BugTracker.Data
             _context = context;
         }
 
+        public void CreateTicket(Ticket ticket)
+        {
+            if (ticket == null)
+                throw new ArgumentNullException(nameof(ticket));
+
+            _context.Tickets.Add(ticket);
+        }
+
         public Ticket GetTicketById(int id)
         {
             return _context.Tickets.FirstOrDefault(p => p.ID == id);
@@ -22,6 +30,11 @@ namespace BugTracker.Data
         public IEnumerable<Ticket> GetTickets()
         {
             return _context.Tickets.ToList();
+        }
+
+        public bool SaveChanges()
+        {
+           return  (_context.SaveChanges() >= 0);
         }
     }
 }

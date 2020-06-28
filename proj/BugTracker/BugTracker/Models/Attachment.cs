@@ -10,7 +10,7 @@ namespace BugTracker.Models
         [MaxLength(2500)]
         public string Url { get; set; }
 
-        [Display(Name = "Attac")]
+        [Display(Name = "Attach")]
         public int TicketID { get; set; }
     }
 }

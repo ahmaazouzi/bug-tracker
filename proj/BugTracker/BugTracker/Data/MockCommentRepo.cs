@@ -18,7 +18,7 @@ namespace BugTracker.Data
             };
         }
 
-        public IEnumerable<Comment> GetComments()
+        public IEnumerable<Comment> GetComments(int ticketID)
         {
             var tickets = new List<Comment> {
                 new Comment{

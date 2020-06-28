@@ -10,6 +10,11 @@ namespace BugTracker.Data
         {
         }
 
+        public void CreateTicket(Ticket ticket)
+        {
+            throw new NotImplementedException();
+        }
+
         public Ticket GetTicketById(int id)
         {
             return new Ticket
@@ -101,6 +106,11 @@ namespace BugTracker.Data
             };
 
             return tickets;
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

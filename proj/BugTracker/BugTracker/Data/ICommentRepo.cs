@@ -5,7 +5,7 @@ namespace BugTracker
 {
     public interface ICommentRepo
     {
-        public IEnumerable<Comment> GetComments();
+        public IEnumerable<Comment> GetComments(int ticketID);
         public Comment GetCommentById(int id);
     }
 }

@@ -4,6 +4,7 @@ using BugTracker.Data;
 using AutoMapper;
 using BugTracker.Dtos;
 using System.Linq;
+using BugTracker.Models;
 
 namespace BugTracker.Controllers
 {
@@ -44,6 +45,16 @@ namespace BugTracker.Controllers
         {
             var ticket = _repository.GetTicketById(id);
             return Ok(_mapper.Map<TicketReadDto>(ticket));
+        }
+
+        [HttpPost("tickets")]
+        public ActionResult<TicketReadDto> CreateTicket(TicketTCreateDto ticketTCreateDto)
+        {
+            var ticketModel = _mapper.Map<Ticket>(ticketTCreateDto);
+            _repository.CreateTicket(ticketModel);
+            _repository.SaveChanges();
+            return Ok(ticketModel);
+            
         }
     }
 }

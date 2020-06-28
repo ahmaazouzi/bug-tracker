@@ -6,7 +6,7 @@ using AutoMapper;
 
 namespace BugTracker.Controllers
 {
-    [Route("bugtracker/comments")]
+    [Route("tickets/{ticketID}/comments")]
     [ApiController]
     public class CommentController: ControllerBase
     {
@@ -22,10 +22,10 @@ namespace BugTracker.Controllers
         //private readonly MockCommentRepo _repository = new MockCommentRepo();
 
         [HttpGet]
-        public ActionResult<IEnumerable<CommentReadDto>> GetComments()
+        public ActionResult<IEnumerable<CommentReadDto>> GetComments(int ticketID)
         {
-            var comments = _repository.GetComments();
-            return Ok(_mapper.Map<IEnumerable<CommentCreateDto>>(comments));
+            var comments = _repository.GetComments(ticketID);
+            return Ok(_mapper.Map<IEnumerable<CommentReadDto>>(comments));
         }
 
         [HttpGet("{id}")]

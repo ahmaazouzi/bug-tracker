@@ -9,6 +9,7 @@ namespace BugTracker.Profiles
         public TicketProfile()
         {
             CreateMap<Ticket, TicketReadDto>();
+            CreateMap<TicketTCreateDto, Ticket>();
         }
     }
 }

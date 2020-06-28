@@ -19,9 +19,9 @@ namespace BugTracker.Data
             return _context.Comments.FirstOrDefault(c => c.ID == id);
         }
 
-        public IEnumerable<Comment> GetComments()
+        public IEnumerable<Comment> GetComments(int ticketID)
         {
-            return _context.Comments.ToList();
+            return _context.Comments.Where(c => c.TicketID == ticketID);
         }
     }
 }

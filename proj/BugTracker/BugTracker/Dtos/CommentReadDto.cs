@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace BugTracker.Dtos
 {
@@ -6,9 +6,12 @@ namespace BugTracker.Dtos
     {
         public int ID { get; set; }
 
-        public string Name { get; set; }
+        public int CommenterID { get; set; }
 
-        public ICollection<AccountReadDto> Members { get; set; }
-        public ICollection<TicketReadDto> Tickets { get; set; }
+        public int TicketID { get; set; }
+
+        public string Payload { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

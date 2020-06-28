@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BugTracker.Models
 {
     public enum Status
     {
-        ToDo, InProgress, Done
+        ToDo,
+        InProgress,
+        Don
     }
 
     public class Ticket

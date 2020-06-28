@@ -4,11 +4,6 @@ using BugTracker.Models;
 
 namespace BugTracker.Dtos
 {
-    public enum Status
-    {
-        ToDo, InProgress, Done
-    }
-
     public class TicketReadDto
     {
         public int ID { get; set; }

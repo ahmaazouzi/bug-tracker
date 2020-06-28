@@ -4,6 +4,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BugTracker.Models
 {
+    public enum Role
+    {
+        Lead,
+        Regular
+    }
+
     public class Account
     {
         public int ID { get; set; }
@@ -29,6 +35,8 @@ namespace BugTracker.Models
         [Required]
         [MaxLength(256)]
         public string Email { get; set; }
+
+        public Role Role { get; set; }
 
         [DisplayFormat(NullDisplayText = "You need a spirit animal!")]
         [MaxLength(256)]
