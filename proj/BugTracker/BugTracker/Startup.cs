@@ -7,7 +7,7 @@ using BugTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using System;
-using Newtonsoft;
+using Newtonsoft.Json.Serialization;
 
 namespace BugTracker
 {
@@ -26,9 +26,9 @@ namespace BugTracker
             services.AddDbContext<BugTrackerContext>(opt =>
              opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
+            services.AddControllers()
+                //.AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                .AddNewtonsoftJson(s => s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

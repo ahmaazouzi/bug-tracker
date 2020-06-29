@@ -5,6 +5,7 @@ using AutoMapper;
 using BugTracker.Dtos;
 using System.Linq;
 using BugTracker.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
@@ -55,6 +56,38 @@ namespace BugTracker.Controllers
             _repository.SaveChanges();
             return Ok(ticketModel);
             
+        }
+
+        [HttpDelete("tickets/{id}")]
+        public ActionResult DeleteTicket(int id)
+        {
+            var ticket = _repository.GetTicketById(id);
+            if (ticket == null)
+                return NotFound();
+
+            _repository.DeleteTicket(ticket);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpPatch("tickets/{id}")]
+        public ActionResult UpdateTicket(int id, JsonPatchDocument<TicketUpdateDto> jsonPatchDocument)
+        {
+            var ticket = _repository.GetTicketById(id);
+            if (ticket == null)
+                return NotFound();
+
+            var ticketToPatch = _mapper.Map<TicketUpdateDto>(ticket);
+            jsonPatchDocument.ApplyTo(ticketToPatch, ModelState);
+
+            if (!TryValidateModel(ticketToPatch))
+                return ValidationProblem(ModelState);
+
+            _mapper.Map(ticketToPatch, ticket);
+            _repository.SaveChanges();
+
+            return NoContent();
         }
     }
 }

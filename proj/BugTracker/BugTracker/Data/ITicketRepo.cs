@@ -10,5 +10,7 @@ namespace BugTracker.Data
         IEnumerable<Ticket> GetTickets();
         Ticket GetTicketById(int id);
         void CreateTicket(Ticket ticket);
+        void UpdateTicket(Ticket ticket);
+        void DeleteTicket(Ticket ticket);
     }
 }

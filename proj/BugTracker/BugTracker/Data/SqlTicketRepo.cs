@@ -21,6 +21,14 @@ namespace BugTracker.Data
             _context.Tickets.Add(ticket);
         }
 
+        public void DeleteTicket(Ticket ticket)
+        {
+            if (ticket == null)
+                throw new ArgumentNullException(nameof(ticket));
+            _context.Tickets.Remove(ticket);
+            _context.SaveChanges();
+        }
+
         public Ticket GetTicketById(int id)
         {
             return _context.Tickets.FirstOrDefault(p => p.ID == id);
@@ -34,6 +42,11 @@ namespace BugTracker.Data
         public bool SaveChanges()
         {
            return  (_context.SaveChanges() >= 0);
+        }
+
+        public void UpdateTicket(Ticket ticket)
+        {
+            throw new NotImplementedException();
         }
     }
 }

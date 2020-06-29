@@ -15,6 +15,11 @@ namespace BugTracker.Data
             throw new NotImplementedException();
         }
 
+        public void DeleteTicket(Ticket ticket)
+        {
+            throw new NotImplementedException();
+        }
+
         public Ticket GetTicketById(int id)
         {
             return new Ticket
@@ -109,6 +114,11 @@ namespace BugTracker.Data
         }
 
         public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTicket(Ticket ticket)
         {
             throw new NotImplementedException();
         }
