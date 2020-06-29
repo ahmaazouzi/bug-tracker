@@ -14,6 +14,13 @@ namespace BugTracker.Data
             _context = context;
         }
 
+        public void CreateComment(Comment comment, int ticketID)
+        {
+            if (comment == null)
+                throw new ArgumentNullException(nameof(comment));
+            _context.Comments.Add(comment);
+        }
+
         public Comment GetCommentById(int id)
         {
             return _context.Comments.FirstOrDefault(c => c.ID == id);
@@ -22,6 +29,11 @@ namespace BugTracker.Data
         public IEnumerable<Comment> GetComments(int ticketID)
         {
             return _context.Comments.Where(c => c.TicketID == ticketID);
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

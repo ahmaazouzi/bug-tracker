@@ -36,5 +36,15 @@ namespace BugTracker.Controllers
                 return Ok(_mapper.Map<CommentReadDto>(comment));
             return NotFound();
         }
+
+        [HttpPost]
+        public ActionResult<CommentReadDto>CreateComment(CommentCreateDto commentCreateDto, int ticketID)
+        {
+            var commentModel = _mapper.Map<Comment>(commentCreateDto);
+            commentModel.TicketID = ticketID;
+            _repository.CreateComment(commentModel, ticketID);
+            _repository.SaveChanges();
+            return Ok(commentModel);
+        }
     }
 }

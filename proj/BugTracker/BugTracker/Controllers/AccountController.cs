@@ -4,6 +4,7 @@ using BugTracker.Dtos;
 using BugTracker.Data;
 using AutoMapper;
 using System.Linq;
+using BugTracker.Models;
 
 namespace BugTracker.Controllers
 {
@@ -46,6 +47,16 @@ namespace BugTracker.Controllers
             if (account != null)
                 return Ok(account.Assignments);
             return NotFound();
+        }
+
+        [HttpPost("")]
+        public ActionResult<AccountReadDto> CreateTicket(AccountCreateDto accountCreateDto, int teamID)
+        {
+            var accountModel = _mapper.Map<Account>(accountCreateDto);
+            _repository.CreateAccount(accountModel, teamID);
+            _repository.SaveChanges();
+            return Ok(accountModel);
+
         }
     }
 }

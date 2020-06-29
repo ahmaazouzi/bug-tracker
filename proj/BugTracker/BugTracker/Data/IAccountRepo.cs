@@ -8,5 +8,7 @@ namespace BugTracker.Data
     {
         IEnumerable<Account> GetAccounts();
         Account GetAccountById(int id);
+        void CreateAccount(Account account, int teamID);
+        bool SaveChanges();
     }
 }

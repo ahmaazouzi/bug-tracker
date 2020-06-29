@@ -14,6 +14,13 @@ namespace BugTracker.Data
             _context = context;
         }
 
+        public void CreateAttachment(Attachment attachment)
+        {
+            if (attachment == null)
+                throw new ArgumentNullException(nameof(attachment));
+            _context.Attachments.Add(attachment);
+        }
+
         public Attachment GetAttachmentById(int id)
         {
             return _context.Attachments.FirstOrDefault(a => a.ID == id);
@@ -22,6 +29,11 @@ namespace BugTracker.Data
         public IEnumerable<Attachment> GetAttachments()
         {
             return _context.Attachments.ToList();
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

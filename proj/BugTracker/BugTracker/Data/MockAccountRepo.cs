@@ -6,6 +6,11 @@ namespace BugTracker.Data
 {
     public class MockAccountRepo: IAccountRepo
     {
+        public void CreateAccount(Account account, int teamID)
+        {
+            throw new NotImplementedException();
+        }
+
         public Account GetAccountById(int id)
         {
             return new Account
@@ -77,5 +82,14 @@ namespace BugTracker.Data
             };
         }
 
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        bool IAccountRepo.SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

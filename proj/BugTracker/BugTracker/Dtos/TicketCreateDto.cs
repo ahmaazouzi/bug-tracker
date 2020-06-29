@@ -16,11 +16,21 @@ namespace BugTracker.Dtos
 
     public class TicketTCreateDto
     {
+        public TicketTCreateDto()
+        {
+            var date = DateTime.Now;
+            this.DateReported = new DateTime(date.Year,
+                date.Month,
+                date.Day,
+                date.Hour,
+                date.Minute,
+                date.Second);
+        }
+
         public string Summary { get; set; }
 
         public string Description { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime? DateReported { set; get; }
 
         public int ReporterID { get; set; }

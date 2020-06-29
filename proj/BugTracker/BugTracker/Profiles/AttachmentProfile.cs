@@ -9,6 +9,7 @@ namespace BugTracker.Profiles
         public AttachmentProfile()
         {
             CreateMap<Attachment, AttachmentReadDto>();
+            CreateMap<AttachmentCreateDto, Attachment>();
         }
     }
 }

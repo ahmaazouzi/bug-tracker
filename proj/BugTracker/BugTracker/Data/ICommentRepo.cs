@@ -7,6 +7,8 @@ namespace BugTracker
     {
         public IEnumerable<Comment> GetComments(int ticketID);
         public Comment GetCommentById(int id);
+        public void CreateComment(Comment comment, int ticketID);
+        public bool SaveChanges();
     }
 }
 

@@ -6,6 +6,11 @@ namespace BugTracker.Data
 {
     public class MockCommentRepo : ICommentRepo
     {
+        public void CreateComment(Comment comment, int ticketID)
+        {
+            throw new NotImplementedException();
+        }
+
         public Comment GetCommentById(int id)
         {
             return new Comment
@@ -45,6 +50,11 @@ namespace BugTracker.Data
             };
 
             return tickets;
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

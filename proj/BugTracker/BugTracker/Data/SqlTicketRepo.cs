@@ -18,7 +18,6 @@ namespace BugTracker.Data
         {
             if (ticket == null)
                 throw new ArgumentNullException(nameof(ticket));
-
             _context.Tickets.Add(ticket);
         }
 

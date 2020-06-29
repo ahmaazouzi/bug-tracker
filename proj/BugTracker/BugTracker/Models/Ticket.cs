@@ -23,7 +23,6 @@ namespace BugTracker.Models
         [MaxLength(30000)]
         public string Description { get; set; }
 
-        [Required]
         public DateTime? DateReported { get; set; }
 
         [Required]

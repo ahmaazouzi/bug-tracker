@@ -9,6 +9,7 @@ namespace BugTracker.Profiles
         public AccountProfile()
         {
             CreateMap<Account, AccountReadDto>();
+            CreateMap<AccountCreateDto, Account>();
         }
     }
 }

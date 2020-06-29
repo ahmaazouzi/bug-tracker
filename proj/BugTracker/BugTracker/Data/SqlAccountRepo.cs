@@ -18,7 +18,7 @@ namespace BugTracker.Data
         public Account GetAccountById(int id)
         {
             var account = _context.Accounts.FirstOrDefault(a => a.ID == id);
-            GetAssigned(account, id);
+            GetAssigned(account);
             return account;
         }
 
@@ -27,9 +27,22 @@ namespace BugTracker.Data
             return _context.Accounts.ToList();
         }
 
-        private void GetAssigned(Account account, int id)
+        private void GetAssigned(Account account)
         {
             _context.Entry(account).Collection(a => a.Assignments).Load();
+        }
+
+        public void CreateAccount(Account account, int teamID)
+        {
+            if (account == null)
+                throw new ArgumentNullException(nameof(account));
+
+            _context.Accounts.Add(account);
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }
