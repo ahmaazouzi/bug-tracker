@@ -50,11 +50,11 @@ INSERT INTO Accounts VALUES(
 );
 
 INSERT INTO Tickets VALUES(
-	1,
+	77,
 	"Fix a bug",
 	"Fixing a bug that's bugging me",
 	NOW(),
-	1,
+	21,
 	NOW(),
 	1,
 	1,

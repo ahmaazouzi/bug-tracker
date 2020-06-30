@@ -24,7 +24,10 @@ namespace BugTracker.Data
 
         public void DeleteTeam(Team team)
         {
-            throw new NotImplementedException();
+            if (team == null)
+                throw new ArgumentNullException(nameof(team));
+            _context.Teams.Remove(team);
+            _context.SaveChanges();
         }
 
         public Team GetTeamById(int id)

@@ -14,6 +14,10 @@
 | /team{id}/accounts/{id}/assigned | GET | READ | Show tickets assigned to account | 200 OK |  |
 | /team{id}/tickets |GET | READ | Shows all tickets (inactive, too) | 200 OK | 400 Bad Request<br>404 Not Found |
 | /team{id}/tickets/{id} |GET | READ | Info about a ticket | 200 OK | 400 Bad Request<br>404 Not Found |
+| /tickets/{ticketID}/comments |GET | READ | Comments on a ticket | 200 OK | 400 Bad Request<br>404 Not Found |
+| /tickets/{ticketID}/comments/{id} |GET | READ | A comment a ticket | 200 OK | 400 Bad Request<br>404 Not Found |
+| /tickets/{ticketID}/attachments |GET | READ | Attachments of a ticket | 200 OK | 400 Bad Request<br>404 Not Found |
+| /tickets/{ticketID}/attachments/{id} |GET | READ | an attachment of a ticket | 200 OK | 400 Bad Request<br>404 Not Found |
 
 
 

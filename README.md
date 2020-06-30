@@ -77,13 +77,14 @@
 - As the codebase gets bigger, the problems grow both individually and in the way they affect each other and the program in general. This is a quick list of things I feel I need to do before having a pseudo-finished backend. When all these are done, I might be able to move back to the frontend or maybe start working and learning on authentication/authorization and JWT:
 - [ ] Avoid 500 server errors with good and extensive annotations one the CREATE and UPDATE DTOs.
 - [ ] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
-- [ ] Have uniform and intuitive URIs with a focus best practices.
+- [ ] Have uniform and intuitive URIs with a focus on best practices.
 - [ ] Work on loading related data.
-- [ ] Have scripts to seed the database. Maybe some prebaked JSON snippets.
+- [ ] Have scripts to seed the database. Maybe some pre-baked JSON snippets.
 - [ ] Fix enums.
+- [ ] Fix ticket/attachment relationship.
 - [ ] Try to eliminate all repetitions where possible. Use composition rather than inheritance.
 - [ ] Minimize data to be entered by the user if it can be derived from the data you have already
-- [ ] Work on the types of users restrictions on what they can do before even starting to work on authentication/authorization.
+- [ ] Work on the types of users restrictions on what they can do before even starting to work on authentication/authorization. Either add a roles table or add a role field to the account table.
 - [ ] Keep the use of DTOs, models and repositories uniform and simple.
 - [ ] Database redesign
 - [ ] Learn more about the available testing tools and gradually roll them especially unit test.

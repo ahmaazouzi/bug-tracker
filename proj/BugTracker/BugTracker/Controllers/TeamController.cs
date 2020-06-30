@@ -4,6 +4,7 @@ using BugTracker.Models;
 using BugTracker.Data;
 using BugTracker.Dtos;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
@@ -48,5 +49,39 @@ namespace BugTracker.Controllers
             return CreatedAtRoute(nameof(GetTeamById),
                 new { ID = teamReadDto.ID }, teamReadDto);
         }
+
+        [HttpPatch("teams/{id}")]
+        public ActionResult UpdateTeam(int id, JsonPatchDocument<TeamUpdateDto> jsonPatchDocument)
+        {
+            var team = _repository.GetTeamById(id);
+            if (team == null)
+                return NotFound();
+
+            var teamToPatch = _mapper.Map<TeamUpdateDto>(team);
+            jsonPatchDocument.ApplyTo(teamToPatch, ModelState);
+
+            if (!TryValidateModel(teamToPatch))
+                return ValidationProblem(ModelState);
+
+            _mapper.Map(teamToPatch, team);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("teams/{id}")]
+        public ActionResult DeleteTeam(int id)
+        {
+            var team = _repository.GetTeamById(id);
+            if (team == null)
+                return NotFound();
+
+            _repository.DeleteTeam(team);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+
     }
 }

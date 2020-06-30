@@ -29,6 +29,7 @@ namespace BugTracker
             services.AddControllers()
                 //.AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
                 .AddNewtonsoftJson(s => s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
+            services.AddControllers(options => options.SuppressAsyncSuffixInActionNames = false);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

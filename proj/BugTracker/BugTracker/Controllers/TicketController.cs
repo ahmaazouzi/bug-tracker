@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
-    [Route("team{teamID}")]
+    [Route("teams/tickets")]
     [ApiController]
     public class TicketController: ControllerBase
     {
@@ -24,31 +24,30 @@ namespace BugTracker.Controllers
 
         //private readonly MockTicketRepo _repository = new MockTicketRepo();
 
-        [HttpGet]
-        [HttpGet("activetickets")]
-        public ActionResult <IEnumerable<TicketReadDto>> GetTickets(int teamID)
-        {
-            var tickets = _repository.GetTickets().Where(t => t.TeamID
-            == teamID && t.Active);
-            return Ok(_mapper.Map<IEnumerable<TicketReadDto>>(tickets));
-        }
+        //[HttpGet("activetickets")]
+        //public ActionResult <IEnumerable<TicketReadDto>> GetTickets(int teamID)
+        //{
+        //    var tickets = _repository.GetTickets().Where(t => t.TeamID
+        //    == teamID && t.Active);
+        //    return Ok(_mapper.Map<IEnumerable<TicketReadDto>>(tickets));
+        //}
 
-        [HttpGet("tickets")]
+        [HttpGet]
         public ActionResult<IEnumerable<TicketReadDto>> GetAllTickets(int teamID)
         {
-            var tickets = _repository.GetTickets().Where(t => t.TeamID
-            == teamID);
+            var tickets = _repository.GetTickets(); //.Where(t => t.TeamID
+             //== teamID);
             return Ok(_mapper.Map<IEnumerable<TicketReadDto>>(tickets));
         }
 
-        [HttpGet("tickets/{id}")]
+        [HttpGet("{id}", Name = "GetTicketById")]
         public ActionResult<TicketReadDto> GetTicketById(int id)
         {
             var ticket = _repository.GetTicketById(id);
             return Ok(_mapper.Map<TicketReadDto>(ticket));
         }
 
-        [HttpPost("tickets")]
+        [HttpPost]
         public ActionResult<TicketReadDto> CreateTicket(TicketTCreateDto ticketTCreateDto)
         {
             var ticketModel = _mapper.Map<Ticket>(ticketTCreateDto);
