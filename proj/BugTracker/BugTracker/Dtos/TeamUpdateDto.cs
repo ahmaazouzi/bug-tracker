@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BugTracker.Dtos
 {
-    public class TeamCreateDto
+    public class TeamUpdateDto
     {
         [Required]
         public string Name { get; set; }

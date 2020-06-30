@@ -12,6 +12,8 @@ namespace BugTracker.Profiles
         {
             CreateMap<Comment, CommentReadDto>();
             CreateMap<CommentCreateDto, Comment>();
+            CreateMap<CommentUpdateDto, Comment>();
+            CreateMap<Comment, CommentUpdateDto>();
         }
     }
 }

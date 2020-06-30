@@ -10,6 +10,16 @@ namespace BugTracker.Data
         {
         }
 
+        public void CreateTeam(Team team)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteTeam(Team team)
+        {
+            throw new NotImplementedException();
+        }
+
         public Team GetTeamById(int id)
         {
             return new Team
@@ -64,6 +74,16 @@ namespace BugTracker.Data
                 },
 
             };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTeam(Team team)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -10,6 +10,8 @@ namespace BugTracker.Profiles
         {
             CreateMap<Attachment, AttachmentReadDto>();
             CreateMap<AttachmentCreateDto, Attachment>();
+            CreateMap<AttachmentUpdateDto, Attachment>();
+            CreateMap<Attachment, AttachmentUpdateDto>();
         }
     }
 }

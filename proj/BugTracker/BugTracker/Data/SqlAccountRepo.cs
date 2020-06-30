@@ -32,7 +32,7 @@ namespace BugTracker.Data
             _context.Entry(account).Collection(a => a.Assignments).Load();
         }
 
-        public void CreateAccount(Account account, int teamID)
+        public void CreateAccount(Account account)
         {
             if (account == null)
                 throw new ArgumentNullException(nameof(account));
@@ -43,6 +43,19 @@ namespace BugTracker.Data
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
+        }
+
+        public void DeleteAccount(Account account)
+        {
+            if (account == null)
+                throw new ArgumentNullException(nameof(account));
+            _context.Accounts.Remove(account);
+            _context.SaveChanges();
+        }
+
+        public void UpdateAccount(Account account)
+        {
+            throw new NotImplementedException();
         }
     }
 }

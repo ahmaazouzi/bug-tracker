@@ -6,7 +6,12 @@ namespace BugTracker.Data
 {
     public class MockAccountRepo: IAccountRepo
     {
-        public void CreateAccount(Account account, int teamID)
+        public void CreateAccount(Account account)
+        {
+            
+        }
+
+        public void DeleteAccount(Account account)
         {
             throw new NotImplementedException();
         }
@@ -83,6 +88,11 @@ namespace BugTracker.Data
         }
 
         public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateAccount(Account account)
         {
             throw new NotImplementedException();
         }

@@ -5,6 +5,7 @@ using BugTracker.Models;
 using System.Collections.Generic;
 using System.Linq;
 using BugTracker.Dtos;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
@@ -35,7 +36,7 @@ namespace BugTracker.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Attachment> CreateComment(AttachmentCreateDto attachmentCreateDto, int ticketID)
+        public ActionResult<Attachment> CreateAttachment(AttachmentCreateDto attachmentCreateDto, int ticketID)
         {
             var attachmentModel = _mapper.Map<Attachment>(attachmentCreateDto);
             attachmentModel.TicketID = ticketID;
@@ -45,6 +46,25 @@ namespace BugTracker.Controllers
             return CreatedAtRoute(nameof(GetAttachmentById),
                 new { ticketID = attachmentModel.TicketID ,ID = attachmentModel.ID },
                 attachmentModel);
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult UpdateAttachment(int id, JsonPatchDocument<AttachmentUpdateDto> jsonPatchDocument)
+        {
+            var attachment = _repository.GetAttachmentById(id);
+            if (attachment == null)
+                return NotFound();
+
+            var attachmentToPatch = _mapper.Map<AttachmentUpdateDto>(attachment);
+            jsonPatchDocument.ApplyTo(attachmentToPatch, ModelState);
+
+            if (!TryValidateModel(attachmentToPatch))
+                return ValidationProblem(ModelState);
+
+            _mapper.Map(attachmentToPatch, attachment);
+            _repository.SaveChanges();
+
+            return NoContent();
         }
 
     }

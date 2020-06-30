@@ -7,5 +7,10 @@ namespace BugTracker.Data
     {
         IEnumerable<Team> GetTeams();
         Team GetTeamById(int id);
+        void CreateTeam(Team team);
+        void UpdateTeam(Team team);
+        void DeleteTeam(Team team);
+
+        bool SaveChanges();
     }
 }

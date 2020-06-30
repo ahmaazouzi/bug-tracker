@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BugTracker.Models;
 using BugTracker.Dtos;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
@@ -45,6 +46,34 @@ namespace BugTracker.Controllers
             _repository.CreateComment(commentModel, ticketID);
             _repository.SaveChanges();
             return Ok(commentModel);
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult UpdateComment(int id, JsonPatchDocument<CommentUpdateDto> jsonPatchDocument)
+        {
+            var comment = _repository.GetCommentById(id);
+            if (comment == null)
+                return NotFound();
+
+            var commentToPatch = _mapper.Map<CommentUpdateDto>(comment);
+            jsonPatchDocument.ApplyTo(commentToPatch, ModelState);
+
+            if (!TryValidateModel(commentToPatch))
+                return ValidationProblem(ModelState);
+
+            _mapper.Map(commentToPatch, comment);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteComment(int id)
+        {
+            var comment = _repository.GetCommentById(id);
+            _repository.DeleteComment(comment);
+            _repository.SaveChanges();
+            return NoContent();
         }
     }
 }

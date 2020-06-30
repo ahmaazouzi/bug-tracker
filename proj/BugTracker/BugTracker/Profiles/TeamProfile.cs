@@ -9,6 +9,9 @@ namespace BugTracker.Profiles
         public TeamProfile()
         {
             CreateMap<Team, TeamReadDto>();
+            CreateMap<TeamCreateDto, Team>();
+            CreateMap<TeamUpdateDto, Team>();
+            CreateMap<Team, TeamUpdateDto>();
         }
     }
 }

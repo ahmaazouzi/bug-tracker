@@ -11,6 +11,16 @@ namespace BugTracker.Data
             throw new NotImplementedException();
         }
 
+        public void DeleteComment(Comment comment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EditComment(Comment comment)
+        {
+            throw new NotImplementedException();
+        }
+
         public Comment GetCommentById(int id)
         {
             return new Comment

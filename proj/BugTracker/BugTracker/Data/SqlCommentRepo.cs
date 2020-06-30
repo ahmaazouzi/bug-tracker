@@ -21,6 +21,19 @@ namespace BugTracker.Data
             _context.Comments.Add(comment);
         }
 
+        public void DeleteComment(Comment comment)
+        {
+            if (comment == null)
+                throw new ArgumentNullException(nameof(comment));
+            _context.Comments.Remove(comment);
+        }
+
+
+        public void EditComment(Comment comment)
+        {
+            throw new NotImplementedException();
+        }
+
         public Comment GetCommentById(int id)
         {
             return _context.Comments.FirstOrDefault(c => c.ID == id);

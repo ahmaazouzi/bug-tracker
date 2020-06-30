@@ -29,12 +29,24 @@ namespace BugTracker.Controllers
             return Ok(_mapper.Map<IEnumerable<TeamReadDto>>(teams));
         }
 
-        [HttpGet("teams/{id}")]
-        [HttpGet("team{id}/team")]
+        [HttpGet("team{id}/team", Name = "GetTeamById")]
         public ActionResult<TeamReadDto> GetTeamById(int id)
         {
             var team = _repository.GetTeamById(id);
             return Ok(_mapper.Map<TeamReadDto>(team));
+        }
+
+        [HttpPost("teams")]
+        public ActionResult<TeamReadDto> CreateTeam(TeamCreateDto teamCreateDto)
+        {
+            var teamModel = _mapper.Map<Team>(teamCreateDto);
+            _repository.CreateTeam(teamModel);
+            _repository.SaveChanges();
+
+            var teamReadDto = _mapper.Map<TeamReadDto>(teamModel);
+
+            return CreatedAtRoute(nameof(GetTeamById),
+                new { ID = teamReadDto.ID }, teamReadDto);
         }
     }
 }

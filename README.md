@@ -71,12 +71,41 @@
 
 ## The Bright Side of Convenience over Configuration (June 27, 2020):
 - My reluctant use of the code first approach to handle the databases turned out to be a good decision. I found myself having to the change tables structures. It would've been a great mess if I went with the database-first approach. It was easy to quickly change the models and fix the broken references in mock repos and DTOs that were pointed to by Visual Studio. Then I had to delete the old migration and create a new one and update the database. This was just cool.
-- The problem I grappled with in the last few hours had to do with loading related data. I have to do something about this as it can be a big performance hit. I want to load thumbnails of active tickets associated with a team or a user, but don't want to load all tickets and then filter them. Can I store the filtered result somewhere. An even worse problem was that I had references to parent models in child models, which gave some really bad results. For example, loading a team resulted in loading its accounts. These accounts loaded their parent team and all the data associated with  the team. It was just a mess. Basically I figured I should reference any parent models and instead keep just their team ID which can be used to load the associated team through a link or something. 
+- The problem I grappled with in the last few hours had to do with loading related data. I have to do something about this as it can be a big performance hit. I want to load thumbnails of active tickets associated with a team or a user, but don't want to load all tickets and then filter them. Can I store the filtered result somewhere. An even worse problem was that I had references to parent models in child models, which gave some really bad results. For example, loading a team resulted in loading its accounts. These accounts loaded their parent team and all the data associated with  the team. It was just a mess. Basically I figured I should reference any parent models and instead keep just their team ID which can be used to load the associated team through a link or something.
 
+## A Checklist (June 28, 2020):
+- As the codebase gets bigger, the problems grow both individually and in the way they affect each other and the program in general. This is a quick list of things I feel I need to do before having a pseudo-finished backend. When all these are done, I might be able to move back to the frontend or maybe start working and learning on authentication/authorization and JWT:
+- [ ] Avoid 500 server errors with good and extensive annotations one the CREATE and UPDATE DTOs.
+- [ ] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
+- [ ] Have uniform and intuitive URIs with a focus best practices.
+- [ ] Work on loading related data.
+- [ ] Have scripts to seed the database. Maybe some prebaked JSON snippets.
+- [ ] Fix enums.
+- [ ] Try to eliminate all repetitions where possible. Use composition rather than inheritance.
+- [ ] Minimize data to be entered by the user if it can be derived from the data you have already
+- [ ] Work on the types of users restrictions on what they can do before even starting to work on authentication/authorization.
+- [ ] Keep the use of DTOs, models and repositories uniform and simple.
+- [ ] Database redesign
+- [ ] Learn more about the available testing tools and gradually roll them especially unit test.
+- [ ] Eliminate cargo code.
+- [ ] Clean code.
 
-
-
-
+- Patching a document is done with the following:
+```json
+[
+    {
+        "op": "replace",
+        "path": "/summary",
+        "value": "n"
+    },
+        {
+        "op": "replace",
+        "path": "/active",
+        "value": false
+    }
+]
+```
+- There are 6 patching operations: Add, Remove, Replace, Copy, Move and Test.
 
 
 

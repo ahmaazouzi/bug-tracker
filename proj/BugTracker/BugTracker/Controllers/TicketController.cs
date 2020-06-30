@@ -54,8 +54,11 @@ namespace BugTracker.Controllers
             var ticketModel = _mapper.Map<Ticket>(ticketTCreateDto);
             _repository.CreateTicket(ticketModel);
             _repository.SaveChanges();
-            return Ok(ticketModel);
-            
+
+            var ticketReadDto = _mapper.Map<TicketReadDto>(ticketModel);
+
+            return CreatedAtRoute(nameof(GetTicketById),
+                new { ID = ticketReadDto.ID }, ticketReadDto);        
         }
 
         [HttpDelete("tickets/{id}")]

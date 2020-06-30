@@ -10,6 +10,8 @@ namespace BugTracker.Profiles
         {
             CreateMap<Account, AccountReadDto>();
             CreateMap<AccountCreateDto, Account>();
+            CreateMap<AccountUpdateDto, Account>();
+            CreateMap<Account, AccountUpdateDto>();
         }
     }
 }
