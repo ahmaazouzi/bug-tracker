@@ -27,7 +27,7 @@ namespace BugTracker.Controllers
             return Ok(_mapper.Map<IEnumerable<CommentReadDto>>(comments));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetCommentById")]
         public ActionResult<CommentReadDto> GetCommentById(int id)
         {
             var comment = _repository.GetCommentById(id);
@@ -37,11 +37,10 @@ namespace BugTracker.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CommentReadDto>CreateComment(CommentCreateDto commentCreateDto, int ticketID)
+        public ActionResult<CommentReadDto>CreateComment(CommentCreateDto commentCreateDto)
         {
             var commentModel = _mapper.Map<Comment>(commentCreateDto);
-            commentModel.TicketID = ticketID;
-            _repository.CreateComment(commentModel, ticketID);
+            _repository.CreateComment(commentModel);
             _repository.SaveChanges();
 
             var commentReadDto = _mapper.Map<CommentReadDto>(commentModel);

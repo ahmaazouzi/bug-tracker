@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
-    [Route("")]
+    [Route("teams")]
     [ApiController]
     public class TeamController: ControllerBase
     {
@@ -21,21 +21,23 @@ namespace BugTracker.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("teams")]
+        [HttpGet]
         public ActionResult<IEnumerable<Team>> GetTeams()
         {
             var teams = _repository.GetTeams();
             return Ok(_mapper.Map<IEnumerable<TeamReadDto>>(teams));
         }
 
-        [HttpGet("team{id}/team", Name = "GetTeamById")]
+        [HttpGet("{id}", Name = "GetTeamById")]
         public ActionResult<TeamReadDto> GetTeamById(int id)
         {
             var team = _repository.GetTeamById(id);
+            if (team == null)
+                return NotFound();
             return Ok(_mapper.Map<TeamReadDto>(team));
         }
 
-        [HttpPost("teams")]
+        [HttpPost]
         public ActionResult<TeamReadDto> CreateTeam(TeamCreateDto teamCreateDto)
         {
             var teamModel = _mapper.Map<Team>(teamCreateDto);
@@ -48,7 +50,7 @@ namespace BugTracker.Controllers
                 new { ID = teamReadDto.ID }, teamReadDto);
         }
 
-        [HttpPatch("teams/{id}")]
+        [HttpPatch("{id}")]
         public ActionResult UpdateTeam(int id, JsonPatchDocument<TeamUpdateDto> jsonPatchDocument)
         {
             var team = _repository.GetTeamById(id);
@@ -67,7 +69,7 @@ namespace BugTracker.Controllers
             return NoContent();
         }
 
-        [HttpDelete("teams/{id}")]
+        [HttpDelete("{id}")]
         public ActionResult DeleteTeam(int id)
         {
             var team = _repository.GetTeamById(id);

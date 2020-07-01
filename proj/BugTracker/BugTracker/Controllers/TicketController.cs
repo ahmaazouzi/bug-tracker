@@ -44,6 +44,9 @@ namespace BugTracker.Controllers
         public ActionResult<TicketReadDto> GetTicketById(int id)
         {
             var ticket = _repository.GetTicketById(id);
+            if (ticket == null)
+                return NotFound();
+
             return Ok(_mapper.Map<TicketReadDto>(ticket));
         }
 

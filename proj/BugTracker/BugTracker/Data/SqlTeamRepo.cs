@@ -15,11 +15,33 @@ namespace BugTracker.Data
             _context = context;
         }
 
+        public IEnumerable<Team> GetTeams()
+        {
+            return _context.Teams.ToList();
+        }
+
+        public Team GetTeamById(int id)
+        {
+            var team = _context.Teams.FirstOrDefault(t => t.ID == id);
+            if (team != null)
+            {
+                _context.Entry(team).Collection(v => v.Members).Load();
+                _context.Entry(team).Collection(t => t.Tickets).Load();
+            }
+
+            return team;
+        }
+
         public void CreateTeam(Team team)
         {
             if (team == null)
                 throw new ArgumentNullException(nameof(team));
             _context.Teams.Add(team);
+        }
+
+        public void UpdateTeam(Team team)
+        {
+            throw new NotImplementedException();
         }
 
         public void DeleteTeam(Team team)
@@ -30,27 +52,9 @@ namespace BugTracker.Data
             _context.SaveChanges();
         }
 
-        public Team GetTeamById(int id)
-        {
-            var team = _context.Teams.FirstOrDefault(t => t.ID == id);
-            _context.Entry(team).Collection(v => v.Members).Load();
-            _context.Entry(team).Collection(t => t.Tickets).Load();
-            return team;
-        }
-
-        public IEnumerable<Team> GetTeams()
-        {
-            return _context.Teams.ToList() ;
-        }
-
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
-        }
-
-        public void UpdateTeam(Team team)
-        {
-            throw new NotImplementedException();
         }
     }
 }

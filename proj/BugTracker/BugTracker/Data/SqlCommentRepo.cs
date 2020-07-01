@@ -14,7 +14,7 @@ namespace BugTracker.Data
             _context = context;
         }
 
-        public void CreateComment(Comment comment, int ticketID)
+        public void CreateComment(Comment comment)
         {
             if (comment == null)
                 throw new ArgumentNullException(nameof(comment));

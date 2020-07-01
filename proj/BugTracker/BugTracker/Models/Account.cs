@@ -26,7 +26,6 @@ namespace BugTracker.Models
         [MaxLength(256)]
         public string LastName { get; set; }
 
-        [Display(Name = "Full Name")]
         public string FullName => FirstName + (string.IsNullOrEmpty(MiddleName) ? " " : (" " + MiddleName + " ")) + LastName;
 
         [MaxLength(1024)]

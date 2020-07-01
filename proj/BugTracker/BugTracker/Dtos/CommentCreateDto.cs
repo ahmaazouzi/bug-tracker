@@ -5,7 +5,7 @@ namespace BugTracker.Dtos
 {
     public class CommentCreateDto
     {
-        public CommentCreateDto(int ticketID)
+        public CommentCreateDto()
         {
             var date = DateTime.Now;
             this.Date = new DateTime(date.Year,
@@ -15,7 +15,6 @@ namespace BugTracker.Dtos
                 date.Minute,
                 date.Second);
 
-            //this.TicketID = ticketID;
         }
 
         public int CommenterID { get; set; }

@@ -25,7 +25,6 @@ namespace BugTracker.Data
             return new Team
             {
                 ID = 1,
-                Name = "BugTracker",
                 Members = new HashSet<Account> {
                     new Account(), new Account(), new Account()
                 },
@@ -42,7 +41,6 @@ namespace BugTracker.Data
                 new Team
                 {
                     ID = 1,
-                    Name = "BugTracker",
                     Members = new HashSet<Account> {
                         new Account(), new Account(), new Account()
                     },
@@ -53,7 +51,6 @@ namespace BugTracker.Data
                 new Team
                 {
                     ID = 1,
-                    Name = "BugTracker",
                     Members = new HashSet<Account> {
                         new Account(), new Account(), new Account()
                     },
@@ -64,7 +61,6 @@ namespace BugTracker.Data
                 new Team
                 {
                     ID = 1,
-                    Name = "BugTracker",
                     Members = new HashSet<Account> {
                         new Account(), new Account(), new Account()
                     },

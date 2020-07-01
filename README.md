@@ -76,9 +76,9 @@
 ## A Checklist (June 28, 2020):
 - As the codebase gets bigger, the problems grow both individually and in the way they affect each other and the program in general. This is a quick list of things I feel I need to do before having a pseudo-finished backend. When all these are done, I might be able to move back to the frontend or maybe start working and learning on authentication/authorization and JWT:
 - [ ] Avoid 500 server errors with good and extensive annotations one the CREATE and UPDATE DTOs.
+- [ ] Work on loading related data.
 - [ ] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
 - [ ] Have uniform and intuitive URIs with a focus on best practices.
-- [x] Work on loading related data.
 - [ ] Have scripts to seed the database. Maybe some pre-baked JSON snippets.
 - [ ] Fix enums.
 - [ ] Fix ticket/attachment relationship.

@@ -6,7 +6,7 @@ namespace BugTracker.Data
 {
     public class MockCommentRepo : ICommentRepo
     {
-        public void CreateComment(Comment comment, int ticketID)
+        public void CreateComment(Comment comment)
         {
             throw new NotImplementedException();
         }
