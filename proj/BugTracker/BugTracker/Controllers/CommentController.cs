@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
-    [Route("tickets/{ticketID}/comments")]
+    [Route("comments")]
     [ApiController]
     public class CommentController: ControllerBase
     {
@@ -19,8 +19,6 @@ namespace BugTracker.Controllers
             _repository = repository;
             _mapper = mapper;
         }
-
-        //private readonly MockCommentRepo _repository = new MockCommentRepo();
 
         [HttpGet]
         public ActionResult<IEnumerable<CommentReadDto>> GetComments(int ticketID)
@@ -45,7 +43,11 @@ namespace BugTracker.Controllers
             commentModel.TicketID = ticketID;
             _repository.CreateComment(commentModel, ticketID);
             _repository.SaveChanges();
-            return Ok(commentModel);
+
+            var commentReadDto = _mapper.Map<CommentReadDto>(commentModel);
+
+            return CreatedAtRoute(nameof(GetCommentById),
+                new { ID = commentReadDto.ID }, commentReadDto);
         }
 
         [HttpPatch("{id}")]

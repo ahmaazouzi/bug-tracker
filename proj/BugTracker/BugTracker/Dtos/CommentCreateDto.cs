@@ -15,7 +15,7 @@ namespace BugTracker.Dtos
                 date.Minute,
                 date.Second);
 
-            this.TicketID = ticketID;
+            //this.TicketID = ticketID;
         }
 
         public int CommenterID { get; set; }

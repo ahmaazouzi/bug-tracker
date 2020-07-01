@@ -78,7 +78,7 @@
 - [ ] Avoid 500 server errors with good and extensive annotations one the CREATE and UPDATE DTOs.
 - [ ] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
 - [ ] Have uniform and intuitive URIs with a focus on best practices.
-- [ ] Work on loading related data.
+- [x] Work on loading related data.
 - [ ] Have scripts to seed the database. Maybe some pre-baked JSON snippets.
 - [ ] Fix enums.
 - [ ] Fix ticket/attachment relationship.
@@ -107,6 +107,32 @@
 ]
 ```
 - There are 6 patching operations: Add, Remove, Replace, Copy, Move and Test.
+
+## Analysis Paralysis (June 30, 2020):
+- I am losing it! The URIs are a  showed it was a common problem. I tried several suggestions and none worked except for a comment by somebody that suggested the cause might be the dynamic parts in a URI. The more variables in a URI, the more likely the problem I was having surfaces. I experimented with the idea and it worked! I didn't do much for the rest of the day! I spent most of it thinking of what to do next and how it would take me to finish the whole application. I added a little task list to this document to reduce some of the analysis paralysis, but got stuck on what to start with.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

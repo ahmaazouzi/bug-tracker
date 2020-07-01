@@ -21,8 +21,6 @@ namespace BugTracker.Controllers
             _mapper = mapper;
         }
 
-        //private readonly MockTeamRepo _repository = new MockTeamRepo();
-
         [HttpGet("teams")]
         public ActionResult<IEnumerable<Team>> GetTeams()
         {
@@ -81,7 +79,5 @@ namespace BugTracker.Controllers
 
             return NoContent();
         }
-
-
     }
 }

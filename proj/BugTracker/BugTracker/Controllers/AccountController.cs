@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
-    [Route("teams/{teamID}/accounts")]
+    [Route("accounts")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -22,12 +22,10 @@ namespace BugTracker.Controllers
             _mapper = mapper;
         }
 
-        //private readonly MockAccountRepo _repository = new MockAccountRepo();
-
         [HttpGet]
         public ActionResult<IEnumerable<AccountReadDto>> GetAccounts(int teamID)
         {
-            var accounts = _repository.GetAccounts().Where(a => a.TeamID == teamID);
+            var accounts = _repository.GetAccounts();
             return Ok(_mapper.Map<IEnumerable<AccountReadDto>>(accounts));
         }
 

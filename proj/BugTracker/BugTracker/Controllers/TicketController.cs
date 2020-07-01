@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
-    [Route("teams/tickets")]
+    [Route("tickets")]
     [ApiController]
     public class TicketController: ControllerBase
     {

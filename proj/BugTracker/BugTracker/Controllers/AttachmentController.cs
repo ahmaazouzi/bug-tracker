@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace BugTracker.Controllers
 {
-    [Route("tickets/{ticketID}/attachments")]
+    [Route("attachments")]
     [ApiController]
     public class AttachmentController: ControllerBase
     {
@@ -25,7 +25,7 @@ namespace BugTracker.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Attachment>> GetAttachments(int ticketID)
         {
-            var attachments = _repository.GetAttachments().Where(a => a.TicketID == ticketID);
+            var attachments = _repository.GetAttachments();
             return Ok(attachments);
         }
 
@@ -66,6 +66,5 @@ namespace BugTracker.Controllers
 
             return NoContent();
         }
-
     }
 }
