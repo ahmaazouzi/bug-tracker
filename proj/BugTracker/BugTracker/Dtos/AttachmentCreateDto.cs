@@ -11,6 +11,7 @@ namespace BugTracker.Dtos
         [MaxLength(2500)]
         public string Url { get; set; }
 
+        [Required]
         public int TicketID { get; set; }
     }
 }

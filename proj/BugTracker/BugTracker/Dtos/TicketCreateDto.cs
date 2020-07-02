@@ -27,33 +27,39 @@ namespace BugTracker.Dtos
                 date.Second);
         }
 
+        [Required]
         public string Summary { get; set; }
 
         public string Description { get; set; }
 
         public DateTime? DateReported { set; get; }
 
+        [Required]
         public int ReporterID { get; set; }
 
         public DateTime? DateAssigned { get; set; }
 
         public int? AssignmentID { get; set; }
 
+        [Required]
+        [DefaultValue(Status.ToDo)]
         public Status Status { get; set; }
 
+        [DefaultValue(true)]
         public bool Active { get; set; }
 
         public DateTime? DateClosed { get; set; }
 
-        [DisplayFormat(NullDisplayText = "No points?")]
+        [Required]
         [Range(1, 25)]
         public byte Points { get; set; }
 
         public Assignment Assignment { get; set; }
 
-        public Account Reporter { get; set; }
-
+        [Required]
         public int TeamID { get; set; }
+
+        public Account Reporter { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
 

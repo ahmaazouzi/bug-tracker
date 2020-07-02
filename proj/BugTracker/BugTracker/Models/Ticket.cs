@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,11 +10,22 @@ namespace BugTracker.Models
     {
         ToDo,
         InProgress,
-        Don
+        Done
     }
 
     public class Ticket
     {
+        public Ticket()
+        {
+            var date = DateTime.Now;
+            this.DateReported = new DateTime(date.Year,
+                date.Month,
+                date.Day,
+                date.Hour,
+                date.Minute,
+                date.Second);
+        }
+
         public int ID { get; set; }
 
         [MaxLength(3000)]
@@ -33,22 +45,25 @@ namespace BugTracker.Models
         public int? AssignmentID { get; set; }
 
         [Required]
+        [DefaultValue(Status.ToDo)]
         public Status Status { get; set; }
 
         [Required]
+        [DefaultValue(true)]
         public bool Active { get; set; }
 
         public DateTime? DateClosed { get; set; }
 
-        [DisplayFormat(NullDisplayText = "No points?")]
+        [Required]
         [Range(1,25)]
         public byte Points { get; set; }
 
         public Assignment Assignment { get; set; }
 
-        public Account Reporter { get; set; }
-
+        [Required]
         public int TeamID { get; set; }
+
+        public Account Reporter { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
 

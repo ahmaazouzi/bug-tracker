@@ -22,8 +22,6 @@ namespace BugTracker.Controllers
             _mapper = mapper;
         }
 
-        //private readonly MockTicketRepo _repository = new MockTicketRepo();
-
         //[HttpGet("activetickets")]
         //public ActionResult <IEnumerable<TicketReadDto>> GetTickets(int teamID)
         //{
@@ -35,8 +33,8 @@ namespace BugTracker.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<TicketReadDto>> GetAllTickets(int teamID)
         {
-            var tickets = _repository.GetTickets(); //.Where(t => t.TeamID
-             //== teamID);
+            var tickets = _repository.GetTickets();
+
             return Ok(_mapper.Map<IEnumerable<TicketReadDto>>(tickets));
         }
 
@@ -63,7 +61,7 @@ namespace BugTracker.Controllers
                 new { ID = ticketReadDto.ID }, ticketReadDto);        
         }
 
-        [HttpDelete("tickets/{id}")]
+        [HttpDelete("{id}")]
         public ActionResult DeleteTicket(int id)
         {
             var ticket = _repository.GetTicketById(id);
@@ -76,7 +74,7 @@ namespace BugTracker.Controllers
             return NoContent();
         }
 
-        [HttpPatch("tickets/{id}")]
+        [HttpPatch("{id}")]
         public ActionResult UpdateTicket(int id, JsonPatchDocument<TicketUpdateDto> jsonPatchDocument)
         {
             var ticket = _repository.GetTicketById(id);

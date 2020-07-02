@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using BugTracker.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace BugTracker.Data
 {

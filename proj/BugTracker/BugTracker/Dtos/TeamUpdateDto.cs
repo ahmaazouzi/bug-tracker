@@ -8,3 +8,4 @@ namespace BugTracker.Dtos
         public string Name { get; set; }
     }
 }
+

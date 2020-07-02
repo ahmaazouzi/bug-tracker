@@ -19,7 +19,6 @@ namespace BugTracker.Models
         public string FirstName { get; set; }
 
         [MaxLength(256)]
-        [DefaultValue(" ")]
         public string MiddleName { get; set; }
 
         [Required]
@@ -35,16 +34,16 @@ namespace BugTracker.Models
         [MaxLength(256)]
         public string Email { get; set; }
 
+        [Required]
         public Role Role { get; set; }
 
-        [DisplayFormat(NullDisplayText = "You need a spirit animal!")]
         [MaxLength(256)]
         public string SpiritAnimal { get; set; }
 
-        [DisplayFormat(NullDisplayText = "I have no bio!")]
         [MaxLength(5000)]
         public string Bio { get; set; }
 
+        [Required]
         public int TeamID { get; set; }
 
         public ICollection<Assignment> Assignments { get; set; }

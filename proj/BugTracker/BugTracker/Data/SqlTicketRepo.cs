@@ -31,7 +31,15 @@ namespace BugTracker.Data
 
         public Ticket GetTicketById(int id)
         {
-            return _context.Tickets.FirstOrDefault(p => p.ID == id);
+
+            var ticket = _context.Tickets.FirstOrDefault(p => p.ID == id);
+            if (ticket != null)
+            {
+                _context.Entry(ticket).Collection(v => v.Comments).Load();
+                _context.Entry(ticket).Collection(t => t.Attachments).Load();
+            }
+
+            return ticket;
         }
 
         public IEnumerable<Ticket> GetTickets()

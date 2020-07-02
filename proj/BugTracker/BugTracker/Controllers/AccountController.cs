@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using BugTracker.Dtos;
 using BugTracker.Data;
 using AutoMapper;
-using System.Linq;
 using BugTracker.Models;
 using Microsoft.AspNetCore.JsonPatch;
 
@@ -23,7 +22,7 @@ namespace BugTracker.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<AccountReadDto>> GetAccounts(int teamID)
+        public ActionResult<IEnumerable<AccountReadDto>> GetAccounts()
         {
             var accounts = _repository.GetAccounts();
             return Ok(_mapper.Map<IEnumerable<AccountReadDto>>(accounts));
@@ -33,19 +32,9 @@ namespace BugTracker.Controllers
         public ActionResult<AccountReadDto> GetAccountById(int id)
         {
             var account = _repository.GetAccountById(id);
-            if (account != null)
-                return Ok(_mapper.Map<AccountReadDto>(account));
-            return NotFound();
-        }
-
-        [HttpGet("{id}/assigned")]
-        public ActionResult<TicketReadDto> GetAssiged(int id)
-        {
-            var account = _repository.GetAccountById(id);
-
-            if (account != null)
-                return Ok(account.Assignments);
-            return NotFound();
+            if (account == null)
+                return NotFound();
+            return Ok(_mapper.Map<AccountReadDto>(account));
         }
 
         [HttpPost]

@@ -19,7 +19,7 @@ namespace BugTracker.Data
         {
             var account = _context.Accounts.FirstOrDefault(a => a.ID == id);
             GetAssigned(account);
-            return account;
+            return account; 
         }
 
         public IEnumerable<Account> GetAccounts()
@@ -29,7 +29,8 @@ namespace BugTracker.Data
 
         private void GetAssigned(Account account)
         {
-            _context.Entry(account).Collection(a => a.Assignments).Load();
+            if (account != null)
+                _context.Entry(account).Collection(a => a.Assignments).Load();
         }
 
         public void CreateAccount(Account account)

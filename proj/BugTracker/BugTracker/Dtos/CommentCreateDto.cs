@@ -17,6 +17,7 @@ namespace BugTracker.Dtos
 
         }
 
+        [Required]
         public int CommenterID { get; set; }
 
         public int TicketID { get; set; }
