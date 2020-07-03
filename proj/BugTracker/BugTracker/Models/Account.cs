@@ -1,15 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace BugTracker.Models
 {
-    public enum Role
-    {
-        Lead,
-        Regular
-    }
-
     public class Account
     {
         public int ID { get; set; }
@@ -34,8 +30,8 @@ namespace BugTracker.Models
         [MaxLength(256)]
         public string Email { get; set; }
 
-        [Required]
-        public Role Role { get; set; }
+        [RegularExpression(@"(admin|regular|lead)")]
+        public string Role { get; set; }
 
         [MaxLength(256)]
         public string SpiritAnimal { get; set; }

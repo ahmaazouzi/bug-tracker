@@ -50,8 +50,8 @@ namespace BugTracker.Migrations
                         .HasColumnType("varchar(1024)")
                         .HasMaxLength(1024);
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
+                    b.Property<string>("Role")
+                        .HasColumnType("text");
 
                     b.Property<string>("SpiritAnimal")
                         .HasColumnType("varchar(256)")
@@ -171,7 +171,6 @@ namespace BugTracker.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("DateReported")
-                        .IsRequired()
                         .HasColumnType("datetime");
 
                     b.Property<string>("Description")

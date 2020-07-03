@@ -6,13 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BugTracker.Models
 {
-    public enum Status
-    {
-        ToDo,
-        InProgress,
-        Done
-    }
-
     public class Ticket
     {
         public Ticket()
@@ -45,8 +38,9 @@ namespace BugTracker.Models
         public int? AssignmentID { get; set; }
 
         [Required]
-        [DefaultValue(Status.ToDo)]
-        public Status Status { get; set; }
+        [DefaultValue("todo")]
+        [RegularExpression("(?i)todo|(?i)in progress|(?i)done")]
+        public string Status { get; set; }
 
         [Required]
         [DefaultValue(true)]

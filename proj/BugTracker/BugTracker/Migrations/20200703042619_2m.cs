@@ -4,7 +4,7 @@ using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace BugTracker.Migrations
 {
-    public partial class fm : Migration
+    public partial class _2m : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,6 +32,7 @@ namespace BugTracker.Migrations
                     LastName = table.Column<string>(maxLength: 256, nullable: false),
                     PhotoUrl = table.Column<string>(maxLength: 1024, nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: false),
+                    Role = table.Column<string>(nullable: true),
                     SpiritAnimal = table.Column<string>(maxLength: 256, nullable: true),
                     Bio = table.Column<string>(maxLength: 5000, nullable: true),
                     TeamID = table.Column<int>(nullable: false)
@@ -55,15 +56,15 @@ namespace BugTracker.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Summary = table.Column<string>(maxLength: 3000, nullable: false),
                     Description = table.Column<string>(maxLength: 30000, nullable: true),
-                    DateReported = table.Column<DateTime>(nullable: false),
+                    DateReported = table.Column<DateTime>(nullable: true),
                     ReporterID = table.Column<int>(nullable: false),
                     DateAssigned = table.Column<DateTime>(nullable: true),
                     AssignmentID = table.Column<int>(nullable: true),
-                    Status = table.Column<int>(nullable: false),
+                    Status = table.Column<string>(nullable: false),
                     Active = table.Column<bool>(nullable: false),
                     DateClosed = table.Column<DateTime>(nullable: true),
                     Points = table.Column<byte>(nullable: false),
-                    TeamID = table.Column<int>(nullable: true)
+                    TeamID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -79,7 +80,7 @@ namespace BugTracker.Migrations
                         column: x => x.TeamID,
                         principalTable: "Teams",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

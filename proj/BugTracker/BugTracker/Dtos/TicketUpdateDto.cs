@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using BugTracker.Models;
 
@@ -19,7 +20,10 @@ namespace BugTracker.Dtos
 
         public int? AssignmentID { get; set; }
 
-        public Status Status { get; set; }
+        [Required]
+        [DefaultValue("todo")]
+        [RegularExpression("(?i)todo|(?i)in progress|(?i)done")]
+        public string Status { get; set; }
 
         public bool Active { get; set; }
 

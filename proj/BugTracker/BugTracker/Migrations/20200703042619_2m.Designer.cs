@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(BugTrackerContext))]
-    [Migration("20200627161151_fm")]
-    partial class fm
+    [Migration("20200703042619_2m")]
+    partial class _2m
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,9 @@ namespace BugTracker.Migrations
                     b.Property<string>("PhotoUrl")
                         .HasColumnType("varchar(1024)")
                         .HasMaxLength(1024);
+
+                    b.Property<string>("Role")
+                        .HasColumnType("text");
 
                     b.Property<string>("SpiritAnimal")
                         .HasColumnType("varchar(256)")
@@ -170,7 +173,6 @@ namespace BugTracker.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<DateTime?>("DateReported")
-                        .IsRequired()
                         .HasColumnType("datetime");
 
                     b.Property<string>("Description")
@@ -183,15 +185,16 @@ namespace BugTracker.Migrations
                     b.Property<int>("ReporterID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Summary")
                         .IsRequired()
                         .HasColumnType("varchar(3000)")
                         .HasMaxLength(3000);
 
-                    b.Property<int?>("TeamID")
+                    b.Property<int>("TeamID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -255,7 +258,9 @@ namespace BugTracker.Migrations
 
                     b.HasOne("BugTracker.Models.Team", null)
                         .WithMany("Tickets")
-                        .HasForeignKey("TeamID");
+                        .HasForeignKey("TeamID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

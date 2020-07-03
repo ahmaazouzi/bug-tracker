@@ -30,7 +30,9 @@ namespace BugTracker.Dtos
         [MaxLength(256)]
         public string Email { get; set; }
 
-        public Role Role { get; set; }
+        [Required]
+        [RegularExpression("(?i)admin|(?i)regular|(?i)lead")]
+        public string Role { get; set; }
 
         [DisplayFormat(NullDisplayText = "You need a spirit animal!")]
         [MaxLength(256)]

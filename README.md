@@ -75,21 +75,17 @@
 
 ## A Checklist (June 28, 2020):
 - As the codebase gets bigger, the problems grow both individually and in the way they affect each other and the program in general. This is a quick list of things I feel I need to do before having a pseudo-finished backend. When all these are done, I might be able to move back to the frontend or maybe start working and learning on authentication/authorization and JWT:
-- [ ] Avoid 500 server errors with good and extensive annotations one the CREATE and UPDATE DTOs.
-- [ ] Work on loading related data.
-- [ ] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
-- [ ] Have uniform and intuitive URIs with a focus on best practices.
-- [ ] Have scripts to seed the database. Maybe some pre-baked JSON snippets.
-- [ ] Fix enums.
-- [ ] Fix ticket/attachment relationship.
+- [x] Avoid 500 server errors with good and extensive annotations on the CREATE and UPDATE DTOs.
+- [x] Work on loading related data.
+- [x] Keep the use of DTOs, models and repositories uniform and simple.
+- [x] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
+- [x] Have uniform and intuitive URIs with a focus on best practices.
+- [ ] Have scripts to seed the database. Maybe some pre-baked JSON snippets. Postman tests!
+- [x] Fix enums. I have to just create a helper method that map roles to strings
+- [ ] Fix ticket/assignment relationship.
 - [ ] Try to eliminate all repetitions where possible. Use composition rather than inheritance.
-- [ ] Minimize data to be entered by the user if it can be derived from the data you have already
-- [ ] Work on the types of users restrictions on what they can do before even starting to work on authentication/authorization. Either add a roles table or add a role field to the account table.
-- [ ] Keep the use of DTOs, models and repositories uniform and simple.
 - [ ] Database redesign
-- [ ] Learn more about the available testing tools and gradually roll them especially unit test.
-- [ ] Eliminate cargo code.
-- [ ] Clean code.
+- [ ] Minimize data to be entered by the user if it can be derived from the data you have already
 
 - Patching a document is done with the following:
 ```json
@@ -110,6 +106,9 @@
 
 ## Analysis Paralysis (June 30, 2020):
 - I am losing it! The URIs are a  showed it was a common problem. I tried several suggestions and none worked except for a comment by somebody that suggested the cause might be the dynamic parts in a URI. The more variables in a URI, the more likely the problem I was having surfaces. I experimented with the idea and it worked! I didn't do much for the rest of the day! I spent most of it thinking of what to do next and how it would take me to finish the whole application. I added a little task list to this document to reduce some of the analysis paralysis, but got stuck on what to start with.
+
+## Postman Automated Testing? (June 02, 2020):
+- A new month and some really impossible waves of heat and humidity. I am tired re-running Postman to test the code and it looks like I have to write some tests that can be run all together at once.
 
 
 

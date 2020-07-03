@@ -7,13 +7,6 @@ using BugTracker.Models;
 
 namespace BugTracker.Dtos
 {
-    public enum Status
-    {
-        ToDo,
-        InProgress,
-        Don
-    }
-
     public class TicketTCreateDto
     {
         public TicketTCreateDto()
@@ -42,8 +35,9 @@ namespace BugTracker.Dtos
         public int? AssignmentID { get; set; }
 
         [Required]
-        [DefaultValue(Status.ToDo)]
-        public Status Status { get; set; }
+        [DefaultValue("todo")]
+        [RegularExpression("(?i)todo|(?i)in progress|(?i)done")]
+        public string Status { get; set; }
 
         [DefaultValue(true)]
         public bool Active { get; set; }
