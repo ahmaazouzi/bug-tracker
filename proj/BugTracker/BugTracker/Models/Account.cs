@@ -30,7 +30,7 @@ namespace BugTracker.Models
         [MaxLength(256)]
         public string Email { get; set; }
 
-        [RegularExpression(@"(admin|regular|lead)")]
+        [RegularExpression(@"((?i)admin|(?i)regular|(?i)lead)")]
         public string Role { get; set; }
 
         [MaxLength(256)]
