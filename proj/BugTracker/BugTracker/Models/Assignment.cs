@@ -7,7 +7,10 @@ namespace BugTracker.Models
     {
         public int ID { get; set; }
 
+        [Required]
         public int TicketID { get; set; }
+
+        [Required]
         public int AccountID { get; set; }
 
         public Account Account { get; set; }

@@ -80,12 +80,12 @@
 - [x] Keep the use of DTOs, models and repositories uniform and simple.
 - [x] Work on granular and correct response messages, e.g. When a resource doesn't exist the correct message should be returned to the client. 
 - [x] Have uniform and intuitive URIs with a focus on best practices.
-- [ ] Have scripts to seed the database. Maybe some pre-baked JSON snippets. Postman tests!
+- [x] Have scripts to seed the database. Maybe some pre-baked JSON snippets. Postman tests!
 - [x] Fix enums. I have to just create a helper method that map roles to strings
-- [ ] Fix ticket/assignment relationship.
-- [ ] Try to eliminate all repetitions where possible. Use composition rather than inheritance.
-- [ ] Database redesign
-- [ ] Minimize data to be entered by the user if it can be derived from the data you have already
+- [x] Fix ticket/assignment relationship.
+- [x] Try to eliminate all repetitions where possible. Use composition rather than inheritance.
+- [x] Database redesign
+- [x] Minimize data to be entered by the user if it can be derived from the data you have already
 
 - Patching a document is done with the following:
 ```json
@@ -109,6 +109,14 @@
 
 ## Postman Automated Testing? (June 02, 2020):
 - A new month and some really impossible waves of heat and humidity. I am tired re-running Postman to test the code and it looks like I have to write some tests that can be run all together at once.
+
+## Stuck with Ticket Assignments (July 03, 2020):
+- "Such empty!""
+
+## Stuck with Ticket Assignments (July 04, 2020):
+- I chose to focus on Postman testing and go back to ticket assignments later. I have also added a "feature", namely sprints. Sprints should have been there from the beginning. This will further slow the process and It will take longer before I can start on the UI. 
+- I finished the harder part of the creating the API "testing suite". With the click of a button, I can now test every request and its response and result. I need to clean and tweak these tests to help speed the development process. I need to finish the sprint and assignment parts of the application tomorrow or by Monday at most and start on the UI and authentication. 
+
 
 
 
