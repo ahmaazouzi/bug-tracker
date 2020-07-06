@@ -21,9 +21,9 @@ namespace BugTracker.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<CommentReadDto>> GetComments(int ticketID)
+        public ActionResult<IEnumerable<CommentReadDto>> GetComments()
         {
-            var comments = _repository.GetComments(ticketID);
+            var comments = _repository.GetComments();
             return Ok(_mapper.Map<IEnumerable<CommentReadDto>>(comments));
         }
 

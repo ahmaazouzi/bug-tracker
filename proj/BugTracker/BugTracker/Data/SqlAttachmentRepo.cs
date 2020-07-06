@@ -21,6 +21,13 @@ namespace BugTracker.Data
             _context.Attachments.Add(attachment);
         }
 
+        public void DeleteAttachment(Attachment attachment)
+        {
+            if (attachment == null)
+                throw new ArgumentNullException(nameof(attachment));
+            _context.Attachments.Remove(attachment);
+        }
+
         public Attachment GetAttachmentById(int id)
         {
             return _context.Attachments.FirstOrDefault(a => a.ID == id);

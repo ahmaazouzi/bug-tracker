@@ -18,7 +18,7 @@ namespace BugTracker.Dtos
             this.TicketID = ticketID;
         }
 
-        public int CommenterID { get; set; }
+        public int AccountID { get; set; }
 
         public int TicketID { get; set; }
 

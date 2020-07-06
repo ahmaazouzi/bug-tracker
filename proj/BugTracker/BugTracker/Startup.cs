@@ -38,6 +38,7 @@ namespace BugTracker
             services.AddScoped<ICommentRepo, SqlCommentRepo>();
             services.AddScoped<IAccountRepo, SqlAccountRepo>();
             services.AddScoped<IAttachmentRepo, SqlAttachmentRepo>();
+            services.AddScoped<IAssignmentRepo, SqlAssignmentRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

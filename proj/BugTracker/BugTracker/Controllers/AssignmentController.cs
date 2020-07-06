@@ -22,9 +22,9 @@ namespace BugTracker.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<AssignmentReadDto>> GetAssignments(int ticketID)
+        public ActionResult<IEnumerable<AssignmentReadDto>> GetAssignments() //(int ticketID)
         {
-            var assignments = _repository.GetAssignments(ticketID);
+            var assignments = _repository.GetAssignments(); //(ticketID);
             return Ok(_mapper.Map<IEnumerable<AssignmentReadDto>>(assignments));
         }
 

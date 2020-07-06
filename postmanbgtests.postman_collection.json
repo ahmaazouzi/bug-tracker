@@ -338,15 +338,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e6d0e1ac-40d3-493b-a554-513e4b11add6",
+								"id": "e401e5f7-791c-49a3-a712-7171fb2edb63",
 								"exec": [
-									"pm.test(\"Get team 1\", function () {",
+									"pm.test(\"Get account 1\", function () {",
 									"    pm.response.to.have.status(200);",
-									"    pm.response.to.be.ok;",
-									"    pm.response.to.be.json;",
-									"    let jsonData = pm.response.json();",
-									"    pm.expect(jsonData.id).to.equal(1);",
-									"    pm.expect(jsonData.name).to.equal(\"Bug Tracker\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -357,14 +352,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:5001/teams/1",
+							"raw": "https://localhost:5001/accounts/1",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams",
+								"accounts",
 								"1"
 							]
 						}
@@ -395,7 +390,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Maazouzi\",\n    \"photoUrl\": \"https://www.photos.ph/2\",\n    \"email\": \"johndoe@bugtracker.com\",\n    \"role\": \"LEad\",\n    \"spiritAnimal\": \"Camouflaged Buzzer\",\n    \"bio\": \"I have multiple lives\",\n    \"teamID\": 1,\n    \"ticketsReported\": null\n}",
+							"raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Maazouzi\",\n    \"photoUrl\": \"https://www.photos.ph/2\",\n    \"email\": \"johndoe@bugtracker.com\",\n    \"role\": \"LEad\",\n    \"spiritAnimal\": \"Camouflaged Buzzer\",\n    \"bio\": \"I have multiple lives\",\n    \"teamID\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -403,14 +398,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/teams",
+							"raw": "https://localhost:5001/accounts",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams"
+								"accounts"
 							]
 						},
 						"description": "\n"
@@ -423,9 +418,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2c2cdebe-d5c4-4e6f-9339-03b1bc3f0d01",
+								"id": "bcc73a25-c32d-400a-88da-0848a94cf1d1",
 								"exec": [
-									"pm.test(\"Patch edit team\", function () {",
+									"pm.test(\"Patch edit account\", function () {",
 									"    pm.response.to.have.status(204);",
 									"});"
 								],
@@ -438,7 +433,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"op\": \"replace\",\n        \"path\": \"/name\",\n        \"value\": \"Bug\"\n    }\n]",
+							"raw": "[\n    {\n        \"op\": \"replace\",\n        \"path\": \"/role\",\n        \"value\": \"regular\"\n    }\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -446,14 +441,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/teams/{{lastCreatedTeam}}",
+							"raw": "https://localhost:5001/accounts/{{lastCreatedTeam}}",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams",
+								"accounts",
 								"{{lastCreatedTeam}}"
 							]
 						}
@@ -466,12 +461,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f1657794-a601-49d5-bad9-02ac336a540b",
+								"id": "b0e9edd5-0ebc-4eae-bc3d-9d4835b1339d",
 								"exec": [
-									" pm.test(\"Get teams\", function () {",
+									" pm.test(\"Get accounts\", function () {",
 									"    pm.response.to.have.status(200);",
 									"    let jsonData = pm.response.json();",
-									"    pm.expect(jsonData.name).to.equal(\"Bug\");",
+									"    pm.expect(jsonData.role).to.equal(\"regular\");",
 									"});  "
 								],
 								"type": "text/javascript"
@@ -489,14 +484,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://localhost:5001/teams/{{lastCreatedTeam}}",
+							"raw": "https://localhost:5001/accounts/{{lastCreatedTeam}}",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams",
+								"accounts",
 								"{{lastCreatedTeam}}"
 							]
 						}
@@ -624,15 +619,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fe81015b-c523-4ca3-89b1-6a8d72164539",
+								"id": "67eeeaa4-fff1-4611-85c4-5d3d62cd5399",
 								"exec": [
 									"pm.test(\"Get ticket 1\", function () {",
 									"    pm.response.to.have.status(200);",
-									"    pm.response.to.be.ok;",
-									"    pm.response.to.be.json;",
-									"    let jsonData = pm.response.json();",
-									"    pm.expect(jsonData.id).to.equal(1);",
-									"    pm.expect(jsonData.name).to.equal(\"Bug Tracker\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -681,7 +671,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\n        \"summary\": \"Fix a bug\",\n        \"description\": \"Fixing a bug that's bugging me\",\n        \"reporterID\": 1,\n        \"status\": \"1\",\n        \"active\": true,\n        \"points\": 5,\n        \"teamID\": 1\n    }",
+							"raw": "    {\n        \"summary\": \"Fix a bug\",\n        \"description\": \"Fixing a bug that's bugging me\",\n        \"reporterID\": 1,\n        \"active\": true,\n        \"status\": \"todo\",\n        \"points\": 5,\n        \"teamID\": 1\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -918,7 +908,7 @@
 									"    pm.response.to.be.json;",
 									"    let jsonData = pm.response.json();",
 									"    pm.expect(jsonData.id).to.equal(1);",
-									"    pm.expect(jsonData.name).to.equal(\"Bug Tracker\");",
+									"    pm.expect(jsonData.payload).to.equal(\"I am commenting, don't you know?!\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -967,7 +957,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"commenterid\": 1,\n    \"payload\": \"This is a great ticket!\"\n}",
+							"raw": "{\n    \"accountid\": 1,\n    \"ticketid\": 1,\n    \"payload\": \"This is a great ticket!\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1249,7 +1239,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"www.attachment.com\",\n    \"ticketid\": 1\n}",
+							"raw": "{\n    \"url\": \"www.attachment.com\",\n    \"ticketid\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1441,10 +1431,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd3b1453-0903-418e-acb0-90438cc62475",
+								"id": "a186264a-168d-4e7d-afad-15e3ec62572b",
 								"exec": [
 									"",
-									"pm.test(\"Get teams\", function () {",
+									"pm.test(\"Get assignments\", function () {",
 									"    pm.response.to.have.status(200);",
 									"    pm.response.to.be.ok;",
 									"    pm.response.to.be.json;",
@@ -1459,14 +1449,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:5001/teams",
+							"raw": "https://localhost:5001/assignments",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams"
+								"assignments"
 							]
 						}
 					},
@@ -1535,7 +1525,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"ticketid\": 1,\n    \"accountid\": 1\n}",
+							"raw": "{\n    \"ticketid\": 2,\n    \"accountid\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1610,8 +1600,6 @@
 								"exec": [
 									" pm.test(\"Get assignments\", function () {",
 									"    pm.response.to.have.status(200);",
-									"    let jsonData = pm.response.json();",
-									"    pm.expect(jsonData.accountid).to.equal(1);",
 									"});  "
 								],
 								"type": "text/javascript"

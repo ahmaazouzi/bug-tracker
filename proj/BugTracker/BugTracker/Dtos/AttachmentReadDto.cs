@@ -3,8 +3,10 @@ namespace BugTracker.Dtos
 {
     public class AttachmentReadDto
     {
-        public AttachmentReadDto()
-        {
-        }
+        public int ID { get; set; }
+
+        public string Url { get; set; }
+
+        public int TicketID { get; set; }
     }
 }

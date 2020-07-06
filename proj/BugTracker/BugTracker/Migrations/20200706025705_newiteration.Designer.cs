@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(BugTrackerContext))]
-    [Migration("20200703042619_2m")]
-    partial class _2m
+    [Migration("20200706025705_newiteration")]
+    partial class newiteration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,7 +88,7 @@ namespace BugTracker.Migrations
                     b.HasIndex("TicketID")
                         .IsUnique();
 
-                    b.ToTable("Assignment");
+                    b.ToTable("Assignments");
                 });
 
             modelBuilder.Entity("BugTracker.Models.Attachment", b =>
@@ -118,7 +118,7 @@ namespace BugTracker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CommenterID")
+                    b.Property<int>("AccountID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -133,6 +133,8 @@ namespace BugTracker.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("AccountID");
 
                     b.HasIndex("TicketID");
 
@@ -241,6 +243,12 @@ namespace BugTracker.Migrations
 
             modelBuilder.Entity("BugTracker.Models.Comment", b =>
                 {
+                    b.HasOne("BugTracker.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BugTracker.Models.Ticket", null)
                         .WithMany("Comments")
                         .HasForeignKey("TicketID")

@@ -9,6 +9,9 @@ namespace BugTracker.Profiles
         public AssignmentProfile()
         {
             CreateMap<Assignment, AssignmentReadDto>();
+            CreateMap<AssignmentCreateDto, Assignment>();
+            CreateMap<AssignmentUpdateDto, Assignment>();
+            CreateMap<Assignment, AssignmentUpdateDto>();
         }
     }
 }

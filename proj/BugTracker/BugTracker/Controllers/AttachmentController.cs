@@ -32,19 +32,21 @@ namespace BugTracker.Controllers
         [HttpGet("{id}", Name = "GetAttachmentById")]
         public ActionResult<Attachment> GetAttachmentById(int id)
         {
-            return Ok(_repository.GetAttachmentById(id));
+            var attachment = _repository.GetAttachmentById(id);
+            if (attachment != null)
+                return Ok(_mapper.Map<AttachmentReadDto>(attachment));
+            return NotFound();
         }
 
         [HttpPost]
-        public ActionResult<Attachment> CreateAttachment(AttachmentCreateDto attachmentCreateDto, int ticketID)
+        public ActionResult<Attachment> CreateAttachment(AttachmentCreateDto attachmentCreateDto)
         {
             var attachmentModel = _mapper.Map<Attachment>(attachmentCreateDto);
-            attachmentModel.TicketID = ticketID;
             _repository.CreateAttachment(attachmentModel);
             _repository.SaveChanges();
 
             return CreatedAtRoute(nameof(GetAttachmentById),
-                new { ticketID = attachmentModel.TicketID ,ID = attachmentModel.ID },
+                new {ID = attachmentModel.ID },
                 attachmentModel);
         }
 
@@ -64,6 +66,15 @@ namespace BugTracker.Controllers
             _mapper.Map(attachmentToPatch, attachment);
             _repository.SaveChanges();
 
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteAttachment(int id)
+        {
+            var attachment = _repository.GetAttachmentById(id);
+            _repository.DeleteAttachment(attachment);
+            _repository.SaveChanges();
             return NoContent();
         }
     }

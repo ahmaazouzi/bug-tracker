@@ -8,6 +8,7 @@ namespace BugTracker
         IEnumerable<Attachment> GetAttachments();
         Attachment GetAttachmentById(int id);
         public void CreateAttachment(Attachment attachment);
+        public void DeleteAttachment(Attachment attachment);
         public bool SaveChanges();
     }
 }

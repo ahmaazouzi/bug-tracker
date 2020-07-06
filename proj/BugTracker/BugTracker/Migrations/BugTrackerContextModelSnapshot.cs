@@ -86,7 +86,7 @@ namespace BugTracker.Migrations
                     b.HasIndex("TicketID")
                         .IsUnique();
 
-                    b.ToTable("Assignment");
+                    b.ToTable("Assignments");
                 });
 
             modelBuilder.Entity("BugTracker.Models.Attachment", b =>
@@ -116,7 +116,7 @@ namespace BugTracker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CommenterID")
+                    b.Property<int>("AccountID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -131,6 +131,8 @@ namespace BugTracker.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("AccountID");
 
                     b.HasIndex("TicketID");
 
@@ -239,6 +241,12 @@ namespace BugTracker.Migrations
 
             modelBuilder.Entity("BugTracker.Models.Comment", b =>
                 {
+                    b.HasOne("BugTracker.Models.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BugTracker.Models.Ticket", null)
                         .WithMany("Comments")
                         .HasForeignKey("TicketID")

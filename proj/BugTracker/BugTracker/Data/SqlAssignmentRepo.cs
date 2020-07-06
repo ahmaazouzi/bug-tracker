@@ -26,6 +26,7 @@ namespace BugTracker.Data
             if (assignment == null)
                 throw new ArgumentNullException(nameof(assignment));
             _context.Assignments.Remove(assignment);
+            _context.SaveChanges();
         }
 
 
@@ -39,9 +40,9 @@ namespace BugTracker.Data
             return _context.Assignments.FirstOrDefault(c => c.ID == id);
         }
 
-        public IEnumerable<Assignment> GetAssignments(int ticketID)
+        public IEnumerable<Assignment> GetAssignments() //(int ticketID)
         {
-            return _context.Assignments.Where(c => c.TicketID == ticketID);
+            return _context.Assignments; //.Where(c => c.TicketID == ticketID);
         }
 
         public bool SaveChanges()

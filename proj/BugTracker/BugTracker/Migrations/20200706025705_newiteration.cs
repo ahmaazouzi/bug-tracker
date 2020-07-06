@@ -4,7 +4,7 @@ using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace BugTracker.Migrations
 {
-    public partial class _2m : Migration
+    public partial class newiteration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -84,7 +84,7 @@ namespace BugTracker.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Assignment",
+                name: "Assignments",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -94,15 +94,15 @@ namespace BugTracker.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Assignment", x => x.ID);
+                    table.PrimaryKey("PK_Assignments", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Assignment_Accounts_AccountID",
+                        name: "FK_Assignments_Accounts_AccountID",
                         column: x => x.AccountID,
                         principalTable: "Accounts",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Assignment_Tickets_TicketID",
+                        name: "FK_Assignments_Tickets_TicketID",
                         column: x => x.TicketID,
                         principalTable: "Tickets",
                         principalColumn: "ID",
@@ -135,7 +135,7 @@ namespace BugTracker.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    CommenterID = table.Column<int>(nullable: false),
+                    AccountID = table.Column<int>(nullable: false),
                     TicketID = table.Column<int>(nullable: false),
                     Payload = table.Column<string>(maxLength: 16000, nullable: false),
                     Date = table.Column<DateTime>(nullable: false)
@@ -143,6 +143,12 @@ namespace BugTracker.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Comments_Accounts_AccountID",
+                        column: x => x.AccountID,
+                        principalTable: "Accounts",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Comments_Tickets_TicketID",
                         column: x => x.TicketID,
@@ -157,13 +163,13 @@ namespace BugTracker.Migrations
                 column: "TeamID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Assignment_AccountID",
-                table: "Assignment",
+                name: "IX_Assignments_AccountID",
+                table: "Assignments",
                 column: "AccountID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Assignment_TicketID",
-                table: "Assignment",
+                name: "IX_Assignments_TicketID",
+                table: "Assignments",
                 column: "TicketID",
                 unique: true);
 
@@ -171,6 +177,11 @@ namespace BugTracker.Migrations
                 name: "IX_Attachments_TicketID",
                 table: "Attachments",
                 column: "TicketID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_AccountID",
+                table: "Comments",
+                column: "AccountID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_TicketID",
@@ -191,7 +202,7 @@ namespace BugTracker.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Assignment");
+                name: "Assignments");
 
             migrationBuilder.DropTable(
                 name: "Attachments");

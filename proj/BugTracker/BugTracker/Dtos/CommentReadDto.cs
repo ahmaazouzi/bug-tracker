@@ -6,7 +6,7 @@ namespace BugTracker.Dtos
     {
         public int ID { get; set; }
 
-        public int CommenterID { get; set; }
+        public int AccountID { get; set; }
 
         public int TicketID { get; set; }
 
