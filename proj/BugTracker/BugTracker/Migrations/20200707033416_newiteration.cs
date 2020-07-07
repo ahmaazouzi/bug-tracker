@@ -49,6 +49,31 @@ namespace BugTracker.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sprints",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    EndDate = table.Column<DateTime>(nullable: false),
+                    Goals = table.Column<string>(maxLength: 30000, nullable: true),
+                    Retrospective = table.Column<string>(maxLength: 30000, nullable: true),
+                    Points = table.Column<int>(nullable: false),
+                    TeamID = table.Column<int>(nullable: false),
+                    PointsEliminated = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sprints", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Sprints_Teams_TeamID",
+                        column: x => x.TeamID,
+                        principalTable: "Teams",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Tickets",
                 columns: table => new
                 {
@@ -61,7 +86,7 @@ namespace BugTracker.Migrations
                     DateAssigned = table.Column<DateTime>(nullable: true),
                     AssignmentID = table.Column<int>(nullable: true),
                     Status = table.Column<string>(nullable: false),
-                    Active = table.Column<bool>(nullable: false),
+                    SprintID = table.Column<int>(nullable: false),
                     DateClosed = table.Column<DateTime>(nullable: true),
                     Points = table.Column<byte>(nullable: false),
                     TeamID = table.Column<int>(nullable: false)
@@ -75,6 +100,11 @@ namespace BugTracker.Migrations
                         principalTable: "Accounts",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Tickets_Sprints_SprintID",
+                        column: x => x.SprintID,
+                        principalTable: "Sprints",
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Tickets_Teams_TeamID",
                         column: x => x.TeamID,
@@ -189,9 +219,19 @@ namespace BugTracker.Migrations
                 column: "TicketID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Sprints_TeamID",
+                table: "Sprints",
+                column: "TeamID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tickets_ReporterID",
                 table: "Tickets",
                 column: "ReporterID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tickets_SprintID",
+                table: "Tickets",
+                column: "SprintID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tickets_TeamID",
@@ -215,6 +255,9 @@ namespace BugTracker.Migrations
 
             migrationBuilder.DropTable(
                 name: "Accounts");
+
+            migrationBuilder.DropTable(
+                name: "Sprints");
 
             migrationBuilder.DropTable(
                 name: "Teams");

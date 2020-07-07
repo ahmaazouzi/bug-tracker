@@ -39,8 +39,7 @@ namespace BugTracker.Dtos
         [RegularExpression("(?i)todo|(?i)in progress|(?i)done")]
         public string Status { get; set; }
 
-        [DefaultValue(true)]
-        public bool Active { get; set; }
+        public int SprintID { get; set; }
 
         public DateTime? DateClosed { get; set; }
 

@@ -22,7 +22,7 @@ namespace BugTracker.Dtos
 
         public string Status { get; set; }
 
-        public bool Active { get; set; }
+        public int SprintID { get; set; }
 
         public DateTime DateClosed { get; set; }
 

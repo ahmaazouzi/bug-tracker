@@ -7,7 +7,8 @@ namespace BugTracker.Models
 {
     public class Sprint
     {
-        private int totalPoints; 
+        private int totalPoints;
+
         public int ID { get; set; }
 
         public DateTime StartDate { get; set; }
@@ -20,17 +21,21 @@ namespace BugTracker.Models
         [MaxLength(30000)]
         public string Retrospective { get; set; }
 
-        public int Points {
-            set {
-                this.totalPoints = this.AssignedTickets.Sum(a => a.Points);
-            }
-            get 
-            {
-                return totalPoints;
-            }
-        }
+        public int Points { get; set; }
+        //{
+        //    set {
+        //        this.totalPoints = this.AssignedTickets.Sum(a => a.Points);
+        //    }
+        //    get 
+        //    {
+        //        return totalPoints;
+        //    }
+        //}
+
+        public int TeamID  { get; set; }
 
         public int PointsEliminated { get; set; }
+
         public ICollection<Ticket> AssignedTickets { get; set; }
     }
 }

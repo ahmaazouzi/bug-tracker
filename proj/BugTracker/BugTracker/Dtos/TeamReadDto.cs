@@ -10,6 +10,10 @@ namespace BugTracker.Dtos
         public string Name { get; set; }
 
         public ICollection<Account> Members { get; set; }
+
+        public ICollection<Sprint> Sprints { get; set; }
+
         public ICollection<Ticket> Tickets { get; set; }
+
     }
 }

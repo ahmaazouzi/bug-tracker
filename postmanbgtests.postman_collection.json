@@ -671,7 +671,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\n        \"summary\": \"Fix a bug\",\n        \"description\": \"Fixing a bug that's bugging me\",\n        \"reporterID\": 1,\n        \"active\": true,\n        \"status\": \"todo\",\n        \"points\": 5,\n        \"teamID\": 1\n    }",
+							"raw": "    {\n        \"summary\": \"Fix a bug\",\n        \"description\": \"Fixing a bug that's bugging me\",\n        \"reporterID\": 1,\n        \"sprintID\": 1,\n        \"status\": \"todo\",\n        \"points\": 5,\n        \"teamID\": 1\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1733,14 +1733,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:5001/sprints",
+							"raw": "https://localhost:5001/sprints/1",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"sprints"
+								"sprints",
+								"1"
 							]
 						}
 					},
@@ -1754,13 +1755,9 @@
 							"script": {
 								"id": "cf90a780-b7f4-4114-a501-d4f14c6c22ee",
 								"exec": [
-									"pm.test(\"Get team 1\", function () {",
+									"pm.test(\"Get sprint 1\", function () {",
 									"    pm.response.to.have.status(200);",
 									"    pm.response.to.be.ok;",
-									"    pm.response.to.be.json;",
-									"    let jsonData = pm.response.json();",
-									"    pm.expect(jsonData.id).to.equal(1);",
-									"    pm.expect(jsonData.name).to.equal(\"Bug Tracker\");",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1793,7 +1790,7 @@
 							"script": {
 								"id": "caebf9d9-07a6-4dc5-93a1-cdcadfb0f958",
 								"exec": [
-									"pm.test(\"Create a new team\", function () {",
+									"pm.test(\"Create a new sprint\", function () {",
 									"    pm.response.to.have.status(201);",
 									"    let jason = pm.response.json();",
 									"    pm.environment.set(\"lastCreatedTeam\", jason.id);",
@@ -1809,7 +1806,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Bug Tracker 2\"\n}",
+							"raw": "{\n    \"startDate\": \"2020-07-06T23:41:50\",\n    \"endDate\": \"2020-07-06T23:41:50\",\n    \"goals\": \"Create a bugtracker\",\n    \"retrospective\": \"We successfully created a bugtracker\",\n    \"points\": 25,\n    \"pointsEliminated\": 5,\n    \"teamID\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1817,14 +1814,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/teams",
+							"raw": "https://localhost:5001/sprints",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams"
+								"sprints"
 							]
 						},
 						"description": "sasasasas"
@@ -1839,7 +1836,7 @@
 							"script": {
 								"id": "eed11cdc-6991-4ffc-919b-7b6260a4dd0c",
 								"exec": [
-									"pm.test(\"Patch edit team\", function () {",
+									"pm.test(\"Patch edit sprint\", function () {",
 									"    pm.response.to.have.status(204);",
 									"});"
 								],
@@ -1852,7 +1849,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"op\": \"replace\",\n        \"path\": \"/name\",\n        \"value\": \"Bug\"\n    }\n]",
+							"raw": "[\n    {\n        \"op\": \"replace\",\n        \"path\": \"/goals\",\n        \"value\": \"Debug a bugtracker\"\n    }\n]",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1860,14 +1857,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:5001/teams/{{lastCreatedTeam}}",
+							"raw": "https://localhost:5001/sprints/{{lastCreatedTeam}}",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams",
+								"sprints",
 								"{{lastCreatedTeam}}"
 							]
 						}
@@ -1880,12 +1877,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d01c0a6c-6711-4554-8be4-96fde932e20a",
+								"id": "6a9800f7-aec9-4ecc-9f55-556e31937f05",
 								"exec": [
-									" pm.test(\"Get teams\", function () {",
+									" pm.test(\"Get sprints\", function () {",
 									"    pm.response.to.have.status(200);",
 									"    let jsonData = pm.response.json();",
-									"    pm.expect(jsonData.name).to.equal(\"Bug\");",
+									"    pm.expect(jsonData.goals).to.equal(\"Debug a bugtracker\");",
 									"});  "
 								],
 								"type": "text/javascript"
@@ -1903,14 +1900,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://localhost:5001/teams/{{lastCreatedTeam}}",
+							"raw": "https://localhost:5001/sprints/{{lastCreatedTeam}}",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams",
+								"sprints",
 								"{{lastCreatedTeam}}"
 							]
 						}
@@ -1926,7 +1923,7 @@
 								"id": "9c72fc9d-0994-4cb2-afe7-468bbe710f4e",
 								"exec": [
 									"",
-									"pm.test(\"Get teams\", function () {",
+									"pm.test(\"Get sprints\", function () {",
 									"    pm.response.to.have.status(204);",
 									"});",
 									""
@@ -1939,14 +1936,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:5001/teams/{{lastCreatedTeam}}",
+							"raw": "https://localhost:5001/sprints/{{lastCreatedTeam}}",
 							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "5001",
 							"path": [
-								"teams",
+								"sprints",
 								"{{lastCreatedTeam}}"
 							]
 						}
@@ -1962,7 +1959,7 @@
 								"id": "5e6d2bea-569d-4b76-9666-d2ac1e97d6df",
 								"exec": [
 									"",
-									"pm.test(\"Check team is deleted\", function () {",
+									"pm.test(\"Check sprint is deleted\", function () {",
 									"    pm.response.to.have.status(404);",
 									"});",
 									""

@@ -24,7 +24,7 @@
 # Logged-in Manager:
 | UR | Verb | Operation | Description | Success | Failure |
 
-# Logged-in Admin:
+# Logged-in App Admin:
 
 | UR | Verb | Operation | Description | Success | Failure
 | --- | --- | --- | --- | --- | --- |

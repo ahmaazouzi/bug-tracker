@@ -18,9 +18,37 @@ INSERT INTO Accounts VALUES(
 	1
 );
 
+INSERT INTO Sprints VALUES(
+	1,
+	NOW(),
+	NOW(),
+	"Create a bugtracker",
+	"We successfully created a bugtracker",
+	25,
+	1,
+	5
+);
+
+
+
 INSERT INTO Tickets VALUES(
 	1,
 	"Fix a bug",
+	"Fixing a bug that's bugging me",
+	NOW(),
+	1,
+	NOW(),
+	1,
+	"todo",
+	1,
+	NOW(),
+	5,
+	1
+);
+
+INSERT INTO Tickets VALUES(
+	2,
+	"Fix another bug",
 	"Fixing a bug that's bugging me",
 	NOW(),
 	1,

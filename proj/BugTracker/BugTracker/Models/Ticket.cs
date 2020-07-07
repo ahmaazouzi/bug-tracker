@@ -42,9 +42,8 @@ namespace BugTracker.Models
         [RegularExpression("(?i)todo|(?i)in progress|(?i)done")]
         public string Status { get; set; }
 
-        [Required]
         [DefaultValue(true)]
-        public bool Active { get; set; }
+        public int SprintID { get; set; }
 
         public DateTime? DateClosed { get; set; }
 

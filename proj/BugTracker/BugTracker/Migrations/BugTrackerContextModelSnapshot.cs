@@ -139,6 +139,42 @@ namespace BugTracker.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("BugTracker.Models.Sprint", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Goals")
+                        .HasColumnType("varchar(30000)")
+                        .HasMaxLength(30000);
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PointsEliminated")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Retrospective")
+                        .HasColumnType("varchar(30000)")
+                        .HasMaxLength(30000);
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("TeamID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("TeamID");
+
+                    b.ToTable("Sprints");
+                });
+
             modelBuilder.Entity("BugTracker.Models.Team", b =>
                 {
                     b.Property<int>("ID")
@@ -159,9 +195,6 @@ namespace BugTracker.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("bit");
 
                     b.Property<int?>("AssignmentID")
                         .HasColumnType("int");
@@ -185,6 +218,9 @@ namespace BugTracker.Migrations
                     b.Property<int>("ReporterID")
                         .HasColumnType("int");
 
+                    b.Property<int>("SprintID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");
@@ -200,6 +236,8 @@ namespace BugTracker.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("ReporterID");
+
+                    b.HasIndex("SprintID");
 
                     b.HasIndex("TeamID");
 
@@ -254,12 +292,27 @@ namespace BugTracker.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BugTracker.Models.Sprint", b =>
+                {
+                    b.HasOne("BugTracker.Models.Team", null)
+                        .WithMany("Sprints")
+                        .HasForeignKey("TeamID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BugTracker.Models.Ticket", b =>
                 {
                     b.HasOne("BugTracker.Models.Account", "Reporter")
                         .WithMany()
                         .HasForeignKey("ReporterID")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BugTracker.Models.Sprint", null)
+                        .WithMany("AssignedTickets")
+                        .HasForeignKey("SprintID")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("BugTracker.Models.Team", null)
