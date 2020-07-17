@@ -117,6 +117,9 @@
 - I chose to focus on Postman testing and go back to ticket assignments later. I have also added a "feature", namely sprints. Sprints should have been there from the beginning. This will further slow the process and It will take longer before I can start on the UI. 
 - I finished the harder part of the creating the API "testing suite". With the click of a button, I can now test every request and its response and result. I need to clean and tweak these tests to help speed the development process. I need to finish the sprint and assignment parts of the application tomorrow or by Monday at most and start on the UI and authentication. 
 
+## Bootstrap and Back to the Frontend (1:28 AM, July 12, 2020):
+- I wasted a lot of time thinking about the frontent design. I totally ditched the UI I worked on in March and went full Bootstrap. The thought and time I spent on the orignal design can show. It looks much more refined than the generic bootstrappy look of the new one, but mine is unresponsive lacks symmetric alignment. CSS alone needs a lot of work and I don't have the time to make it look better. I need to finish the project before the end of July iA. The last couple days I spent relearning Bootstrap. I used it back in 2015 and 2016. Anyways, the process of implementing redesign was extremely easy but the bigger problem was with deciding what views to have. I've also made the rnew design much simpler and tried to resist all perfectionist desires.
+
 
 
 
