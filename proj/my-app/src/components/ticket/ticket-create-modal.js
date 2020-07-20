@@ -9,7 +9,7 @@ class TicketCreateModal extends Component {
             backgroundColor: "#f5f5f5"
         }
         return (
-            <Modal.Dialog className="modal-lg" role="document">
+            <Modal.Dialog className="modal-lg" role="document" style={{display: "hidden"}}>
                 <Modal.Header closeButton>
                     <h5 class="modal-title" id="exampleModalLabel">Create a new issue:</h5>
                 </Modal.Header>
