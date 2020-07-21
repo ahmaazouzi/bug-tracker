@@ -3,12 +3,12 @@ import { Row, Col } from "react-bootstrap";
 import Ticket from "../ticket/ticket-card";
 
 class Body extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            tickets: this.props.tickets
-        };
-    }
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         tickets: this.props.tickets
+    //     };
+    // }
 
     showTickets = (tickets, showModal) => tickets.map(
         i => <Ticket info={i} key={i.id} showModal={showModal}/>);
@@ -17,25 +17,23 @@ class Body extends Component {
 
    
     drop = (ev, status) => {
-
-
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text/plain", ev.target.id);
-        console.log(status);
 
-        this.setState({
-            tickets: this.state.tickets.map(ticket => (ticket.id.toString() === data ? {...ticket, status} : ticket))
-          });
-        this.props.setState({tickets: this.state.tickets})
-        console.log(this.state.tickets.map(i => i.status));
-        console.log(this.props.tickets.map(i => i.status));
+        // this.setState({
+        //     tickets: this.state.tickets.map(ticket => (ticket.id.toString() === data ? {...ticket, status} : ticket))
+        //   });
+        
+        this.props.setState({tickets: this.props.tickets.map(ticket => (ticket.id.toString() === data ? {...ticket, status} : ticket))});
+
+        // this.props.setState({tickets: this.state.tickets})
+
+        // console.log(this.state.tickets.map(i => i.status));
+        // console.log(this.props.tickets.map(i => i.status));
       }  
-    
-    componentDidMount(){
-        console.log("I mounted mounted mounted!")
-    }
 
     render() {
+        console.log("Body rerender!");
         const statuses = {
             "todoCat": "todo",
             "inprogressCat": "in progress",

@@ -20,7 +20,7 @@ class App extends Component {
     this.setState({tickets: tickets });
   }
 
-  showModal = (a) => { this.setState({showModal: true}); console.log(a)};
+  showModal = (a) => { this.setState({showModal: true})};
   
   showCreateModal = () => this.setState({showModal: true});
 
@@ -49,7 +49,6 @@ class App extends Component {
   }
 
 	render(){
-    console.log(this.state.tickets);
     const { error, isLoaded } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
