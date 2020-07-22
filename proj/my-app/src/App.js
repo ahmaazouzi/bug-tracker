@@ -3,7 +3,7 @@ import React, { Component, useState } from 'react';
 import Sidebar from "./components/layout/sidebar";
 import Header from "./components/layout/header";
 import Body from "./components/layout/body";
-import { Row, Container, Col, Spinner, Button, Modal } from "react-bootstrap";
+import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab } from "react-bootstrap";
 
 import {
   BrowserRouter as Router,
@@ -192,22 +192,125 @@ function Settings() {
 
 function Sprints() {
   return (
-    <div>
-      <h1>
-        My Sprints
-      </h1>
-      <p>Here, we fix them sprints</p>
-    </div>)
+    <Row className="justify-content-center">
+      <Col style={{ marginTop: "1em" }} xl="7" className="">
+        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+          <Card.Body>
+            <Card.Title style={{ marginBottom: "1em" }}>Tickets<span style={{ float: "right", marginTop: "-.5em" }}>
+              <a href="#" style={{ color: "white" }}>
+                <svg className="shadow sm" width="1.5em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
+                </svg>
+
+              </a>
+            </span></Card.Title>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Ticket 0</Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Ticket 1</Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Ticket 2</Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Ticket 3</Card.Title>
+              </Card.Body>
+            </Card>
+
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col style={{ marginTop: "1em" }} xl="5">
+        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+          <Card.Body>
+            <Card.Title>Sprints</Card.Title>
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Tabs defaultActiveKey="currrentSprint" id="uncontrolled-tab-example">
+                  <Tab eventKey="currrentSprint" title="Current Spring" style={{marginTop: "2em", fontWeight: "bold"}}>
+                    <div>Full many a glorious morning have I seen Flatter the mountain tops with sovereign eye, Kissing with golden face the meadows green, Gilding pale streams with heavenly alchemy; Anon permit the basest clouds to ride With ugly rack on his celestial face, And from the forlorn world his visage hide, Stealing unseen to west with this disgrace: Even so my sun one early morn did shine, With all triumphant splendour on my brow;</div>
+                  </Tab>
+                  <Tab eventKey="olderSprints" title="Previous Sprints" style={{marginTop: "2em"}}>
+                    <p>some bullshit</p>
+                  </Tab>
+                </Tabs>
+              </Card.Body>
+            </Card>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  )
 }
 
 function Team() {
   return (
-    <div>
-      <h1>
-        My team
-      </h1>
-      <p>Here you discipline (or get disciplined by yout team</p>
-    </div>)
+    <Row className="justify-content-center">
+      <Col style={{ marginTop: "1em" }} xl="4" className="">
+        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+          <Card.Body>
+            <Card.Title style={{ marginBottom: "1em" }}>Team Members<span style={{ float: "right", marginTop: "-.5em" }}>
+              <a href="#" style={{ color: "white" }}>
+                <svg className="shadow sm" width="1.5em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
+                </svg>
+
+              </a>
+            </span></Card.Title>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Team Members</Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Team Members</Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Team Members</Card.Title>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Team Members</Card.Title>
+              </Card.Body>
+            </Card>
+
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col style={{ marginTop: "1em" }} xl="6">
+        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+          <Card.Body>
+            <Card.Title>Profile Details</Card.Title>
+            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Card.Title>Team Members</Card.Title>
+              </Card.Body>
+            </Card>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  )
 }
 
 function Messages() {

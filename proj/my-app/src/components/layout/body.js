@@ -46,8 +46,8 @@ class Body extends Component {
         const inProgress = elems.filter(i => i.status === "in progress");
         const done = elems.filter(i => i.status === "done");
         return (
-            <Row className="justify-content-center">
-                <Col id="todoCat" className="rounded-lg border-0 border-light p-0" style={{height: "auto", minHeight: "85vh", margin: "14px", boxShadow: "0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)" }}
+            <Row className="justify-content-center" style={{backgroundColor: "#F8F8F8"}}>
+                <Col id="todoCat" className="rounded-lg border-0 border-light p-0" style={{backgroundColor: "white", height: "auto", minHeight: "85vh", margin: "14px", boxShadow: "0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)" }}
                 onDrop={(e) => {this.drop(e, statuses["todoCat"])}} onDragOver={e => this.allowDrop(e)}>
                     <div className="card-header bg-info text-light">
                         TO DO
@@ -59,7 +59,7 @@ class Body extends Component {
                     </div>
                 </Col>
 
-                <Col id="inprogressCat" className="rounded-lg border-0 border-light p-0" style={{height: "auto", minHeight: "85vh", margin: "14px", boxShadow: "0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)" }}
+                <Col id="inprogressCat" className="rounded-lg border-0 border-light p-0" style={{backgroundColor: "white", height: "auto", minHeight: "85vh", margin: "14px", boxShadow: "0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)" }}
                 onDrop={(e) => {this.drop(e, statuses["inprogressCat"])}}  onDragOver={e => this.allowDrop(e)}>
                     <div className="card-header text-light" style={{backgroundColor: "#FF8C00"}}>
                         IN PROGRESS
@@ -69,7 +69,7 @@ class Body extends Component {
                     </div>
                 </Col>
 
-                <Col  id="doneCat" className="rounded-lg border-0 border-light p-0" style={{height: "auto", minHeight: "85vh", margin: "14px", boxShadow: "0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)" }}
+                <Col  id="doneCat" className="rounded-lg border-0 border-light p-0" style={{backgroundColor: "white", height: "auto", minHeight: "85vh", margin: "14px", boxShadow: "0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19)" }}
                onDrop={(e) => {this.drop(e, statuses["doneCat"])}} onDragOver={e => this.allowDrop(e)}>
                     <div className="card-header text-light bg-success">
                         DONE
