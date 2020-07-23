@@ -125,10 +125,10 @@
 - [x] Add a user profile and a messages view.
 - [x] Add messaging functionality. I'm thinking of a "last logged field" and probably a text field that will get populated by values separated by something.. These messages are something like facebook notifications. They are efemeral and volatile. Once seen, there is no guarantee that they'd stay around and how long they can stay around. These values might be kept in a small CSV file or something.
 - [x] Handle all API calls and forms (forms with Formik).
-- [x] Handle state management (decide if to use Redux).
-- [x] Add register/login functionality and general.
-- [x] Ddeploy.
-- [x] Maybe unit testing, logging, CI/CD.
+- [ ] Handle state management (decide if to use Redux).
+- [ ] Add register/login functionality and general.
+- [ ] Ddeploy.
+- [ ] Maybe unit testing, logging, CI/CD.
 
 
 
