@@ -122,9 +122,9 @@
 
 ## This is Taking too Long (July 23, 2020):
 - I keep changing my opinion about the app and can't resist wasting a long time thinking about features that might not be really really essential. At this very moment, this is what I have left of the app:
-- [x] Add a user profile and a messages view.
-- [x] Add messaging functionality. I'm thinking of a "last logged field" and probably a text field that will get populated by values separated by something.. These messages are something like facebook notifications. They are efemeral and volatile. Once seen, there is no guarantee that they'd stay around and how long they can stay around. These values might be kept in a small CSV file or something.
-- [x] Handle all API calls and forms (forms with Formik).
+- [ ] Add a user profile and a messages view.
+- [ ] Add messaging functionality. I'm thinking of a "last logged field" and probably a text field that will get populated by values separated by something.. These messages are something like facebook notifications. They are efemeral and volatile. Once seen, there is no guarantee that they'd stay around and how long they can stay around. These values might be kept in a small CSV file or something.
+- [ ] Handle all API calls and forms (forms with Formik).
 - [ ] Handle state management (decide if to use Redux).
 - [ ] Add register/login functionality and general.
 - [ ] Ddeploy.
