@@ -3,7 +3,7 @@ import React, { Component, useState } from 'react';
 import Sidebar from "./components/layout/sidebar";
 import Header from "./components/layout/header";
 import Body from "./components/layout/body";
-import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab } from "react-bootstrap";
+import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab, Table, FormCheck } from "react-bootstrap";
 
 import {
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
 
 const routes = [
   {
@@ -193,56 +194,85 @@ function Settings() {
 function Sprints() {
   return (
     <Row className="justify-content-center">
-      <Col style={{ marginTop: "1em" }} xl="7" className="">
-        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+      <Col style={{ marginTop: "1em"}} xl="7" className="">
+        <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
           <Card.Body>
-            <Card.Title style={{ marginBottom: "1em" }}>Tickets<span style={{ float: "right", marginTop: "-.5em" }}>
-              <a href="#" style={{ color: "white" }}>
-                <svg className="shadow sm" width="1.5em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
-                </svg>
-
-              </a>
-            </span></Card.Title>
-
-            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Ticket 0</Card.Title>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Ticket 1</Card.Title>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Ticket 2</Card.Title>
-              </Card.Body>
-            </Card>
-
-            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Ticket 3</Card.Title>
-              </Card.Body>
-            </Card>
+            <Card.Title style={{ marginBottom: "1em", marginRight: "3em" }}>
+              Tickets
+              <input style={{marginLeft: "4em"}}type="radio" label="dada" id="all"></input>
+              <label for="all" style={{fontSize: ".8em", paddingLeft: ".4em"}}> all</label>
+              <input style={{marginLeft: "2em"}}type="radio" label="dada" id="in sprint"></input>
+              <label for="all" style={{fontSize: ".8em", paddingLeft: ".4em"}}> in sprint</label>
+              <input style={{marginLeft: "2em"}}type="radio" label="dada" id="not in sprint"></input>
+              <label for="all" style={{fontSize: ".8em", paddingLeft: ".4em"}}> not in sprint</label>
+                
+            </Card.Title>
+            <div style={{ backgroundColor: "white", maxHeight: "65vh", overflow: "auto" }} className="shadow l">
+              <Table striped bordered hover overflow style={{height: "100px", overflow: "auto", fontSize: "1em"}} className="overflow-auto">
+                <thead>
+                  <tr>
+                    <th>Ticket</th>
+                    <th>Summary</th>
+                    <th>Date Reporter</th>
+                    <th>Add<br />Sprint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>SPR-233</td>
+                    <td>ome Some stuff</td>
+                    <td>03/01/2020</td>
+                    <td><FormCheck></FormCheck> </td>
+                  </tr>
+                  <tr>
+                    <td>SPR-233</td>
+                    <td>ome Some stuff</td>
+                    <td>03/01/2020</td>
+                    <td><FormCheck></FormCheck> </td>
+                  </tr>
+                  <tr>
+                    <td>SPR-233</td>
+                    <td>ome Some stuff</td>
+                    <td>03/01/2020s</td>
+                    <td><FormCheck></FormCheck> </td>
+                  </tr>
+                  <tr>
+                    <td>SPR-233</td>
+                    <td>ome Some stuff</td>
+                    <td>03/01/2020</td>
+                    <td><FormCheck></FormCheck> </td>
+                  </tr>
+                  <tr>
+                    <td>SPR-233</td>
+                    <td>ome Some stuff</td>
+                    <td>03/01/2020</td>
+                    <td><FormCheck></FormCheck> </td>
+                  </tr>
+                  <tr>
+                    <td>SPR-233</td>
+                    <td>ome Some stuff</td>
+                    <td>03/01/2020</td>
+                    <td><FormCheck></FormCheck> </td>
+                  </tr>
+                 
+                </tbody>
+              </Table>
+            </div>
 
           </Card.Body>
         </Card>
       </Col>
       <Col style={{ marginTop: "1em" }} xl="5">
-        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)", maxHeight: "65vh" }} className="rounded-0 border-0">
           <Card.Body>
             <Card.Title>Sprints</Card.Title>
             <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
               <Card.Body>
                 <Tabs defaultActiveKey="currrentSprint" id="uncontrolled-tab-example">
-                  <Tab eventKey="currrentSprint" title="Current Spring" style={{marginTop: "2em", fontWeight: "bold"}}>
+                  <Tab eventKey="currrentSprint" title="Current Spring" style={{ marginTop: "2em" }}>
                     <div>Full many a glorious morning have I seen Flatter the mountain tops with sovereign eye, Kissing with golden face the meadows green, Gilding pale streams with heavenly alchemy; Anon permit the basest clouds to ride With ugly rack on his celestial face, And from the forlorn world his visage hide, Stealing unseen to west with this disgrace: Even so my sun one early morn did shine, With all triumphant splendour on my brow;</div>
                   </Tab>
-                  <Tab eventKey="olderSprints" title="Previous Sprints" style={{marginTop: "2em"}}>
+                  <Tab eventKey="olderSprints" title="Previous Sprints" style={{ marginTop: "2em" }}>
                     <p>some bullshit</p>
                   </Tab>
                 </Tabs>
@@ -250,6 +280,9 @@ function Sprints() {
             </Card>
           </Card.Body>
         </Card>
+                <Row className="justify-content-center">
+          <Button style={{marginTop: "1em"}}>Save Changes</Button>
+        </Row>
       </Col>
     </Row>
   )
@@ -271,26 +304,77 @@ function Team() {
             </span></Card.Title>
 
             <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Team Members</Card.Title>
+              <Card.Body style={{ floa: "right" }}>
+                <Row>
+                  <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
+                    <a href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                      <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                      </svg>
+                    </a>
+
+                  </div>
+                  <div style={{ marginLeft: "1.5em" }}>
+                    <h5 style={{ marginBottom: "0px" }}>
+                      Ahmed Maazouzi
+                </h5>
+                email.email@emilano.com
+                </div>
+                </Row>
+
+
+
+
               </Card.Body>
             </Card>
 
             <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Team Members</Card.Title>
+              <Card.Body style={{ floa: "right" }}>
+                <Row>
+                  <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
+                    <a href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                      <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                      </svg>
+                    </a>
+
+                  </div>
+                  <div style={{ marginLeft: "1.5em" }}>
+                    <h5 style={{ marginBottom: "0px" }}>
+                      Ahmed Maazouzi
+                </h5>
+                email.email@emilano.com
+                </div>
+                </Row>
+
+
+
+
               </Card.Body>
             </Card>
 
             <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Team Members</Card.Title>
-              </Card.Body>
-            </Card>
+              <Card.Body style={{ floa: "right" }}>
+                <Row>
+                  <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
+                    <a href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                      <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                      </svg>
+                    </a>
 
-            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-              <Card.Body>
-                <Card.Title>Team Members</Card.Title>
+                  </div>
+                  <div style={{ marginLeft: "1.5em" }}>
+                    <h5 style={{ marginBottom: "0px" }}>
+                      Ahmed Maazouzi
+                </h5>
+                email.email@emilano.com
+                </div>
+                </Row>
+
+
+
+
               </Card.Body>
             </Card>
 
@@ -300,10 +384,46 @@ function Team() {
       <Col style={{ marginTop: "1em" }} xl="6">
         <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
           <Card.Body>
-            <Card.Title>Profile Details</Card.Title>
-            <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
+            <Card style={{ width: '100%', marginTop: "" }} className="shadow sm rounded-0">
               <Card.Body>
-                <Card.Title>Team Members</Card.Title>
+                <Row>
+                  <Col>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Name:</h5>
+                  Ahmed Maazouzi
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Email:</h5>
+                  baloon.Drum@aol.org
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Spirit Animal:</h5>
+                  Winged Fire Snake
+                  </div>
+                  </Col>
+                  <Col>
+                    <div style={{ width: "200px", height: "200px", backgroundColor: "#d3d3d3", float: "right" }}></div>
+                  </Col>
+                </Row>
+                <hr></hr>
+                <Row>
+                  <Col>
+                    <div style={{ marginBottom: ".5em" }}>
+                      <h5>Bio:</h5>
+                  Full many a glorious morning have I seen Flatter the mountain tops with sovereign eye, Kissing with golden face the meadows green, Gilding pale streams with heavenly alchemy; Anon permit the basest clouds to ride With ugly rack on his celestial face, And from the forlorn world his visage hide, Stealing unseen to west with this disgrace: Even so my sun one early morn did shine, With all triumphant splendour on my brow;
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Role:</h5>
+                  Admin
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Assigned Tickets:</h5>
+                  Ticket-1, Ticket-2, Ticket-3
+                  </div>
+                  </Col>
+
+
+                </Row>
               </Card.Body>
             </Card>
           </Card.Body>
