@@ -101,12 +101,15 @@ class App extends Component {
                   <Route path="/team">
                     <Team />
                   </Route>
-                  <Route path="/messages">
+                  <Route path="/profile">
+                    <Profile />
+                  </Route>
+                  {/* <Route path="/messages">
                     <Messages />
                   </Route>
                   <Route path="/settings">
                     <Settings />
-                  </Route>
+                  </Route> */}
                 </Switch>
               </Col>
             </Row>
@@ -194,7 +197,7 @@ function Settings() {
 function Sprints() {
   return (
     <Row className="justify-content-center">
-      <Col style={{ marginTop: "1em"}} xl="7" className="">
+      <Col style={{ marginTop: "1em"}} xl="6" className="p-0">
         <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
           <Card.Body>
             <Card.Title style={{ marginBottom: "1em", marginRight: "3em" }}>
@@ -262,8 +265,8 @@ function Sprints() {
           </Card.Body>
         </Card>
       </Col>
-      <Col style={{ marginTop: "1em" }} xl="5">
-        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)", maxHeight: "65vh" }} className="rounded-0 border-0">
+      <Col style={{ marginTop: "1em" }} xl="6" className="p-0"> 
+        <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)", maxHeight: "65vh" }} className="rounded-0 border-0">
           <Card.Body>
             <Card.Title>Sprints</Card.Title>
             <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
@@ -292,7 +295,7 @@ function Team() {
   return (
     <Row className="justify-content-center">
       <Col style={{ marginTop: "1em" }} xl="4" className="">
-        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+        <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
           <Card.Body>
             <Card.Title style={{ marginBottom: "1em" }}>Team Members<span style={{ float: "right", marginTop: "-.5em" }}>
               <a href="#" style={{ color: "white" }}>
@@ -382,7 +385,7 @@ function Team() {
         </Card>
       </Col>
       <Col style={{ marginTop: "1em" }} xl="6">
-        <Card style={{ width: '100%', backgroundColor: "#E7E8EA", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+        <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
           <Card.Body>
             <Card style={{ width: '100%', marginTop: "" }} className="shadow sm rounded-0">
               <Card.Body>
@@ -435,14 +438,99 @@ function Team() {
 
 function Messages() {
   return (
-    <div>
-      <h1>
-        Messages
-      </h1>
-      <p>
-        Here, you sneakily see messages!
-      </p>
-    </div>)
+    <Container>
+      <Row className="justify-content-center">
+      <Col xs="8" style={{border: "1px solid rgb(211, 211, 211)", marginTop: "1em"}}>
+      <Table>
+  <thead>
+    <tr>
+      <th>#</th>
+      {Array.from({ length:  4}).map((_, index) => (
+        <th key={index}>Table heading</th>
+      ))}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      {Array.from({ length: 4 }).map((_, index) => (
+        <td key={index}>Table cell</td>
+      ))}
+    </tr>
+    <tr>
+      <td>2</td>
+      {Array.from({ length: 4 }).map((_, index) => (
+        <td key={index}>Table cell</td>
+      ))}
+    </tr>
+    <tr>
+      <td>3</td>
+      {Array.from({ length: 6 }).map((_, index) => (
+        <td key={index}>Table cell</td>
+      ))}
+    </tr>
+  </tbody>
+</Table>
+</Col>
+</Row>
+    </Container>)
+}
+
+function Profile(){
+  return (
+    <Container>
+    <Row className="justify-content-center">
+    <Col style={{ marginTop: "1em" }} xl="9">
+        <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+          <Card.Body>
+            <Card style={{ width: '100%', marginTop: "" }} className="shadow sm rounded-0">
+              <Card.Body>
+                <Row>
+                  <Col>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Name:</h5>
+                  <p>Ahmed Maazouzi</p>
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Email:</h5>
+                  baloon.Drum@aol.org
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Spirit Animal:</h5>
+                  Winged Fire Snake
+                  </div>
+                  </Col>
+                  <Col>
+                    <div style={{ width: "200px", height: "200px", backgroundColor: "#d3d3d3", float: "right" }}></div>
+                  </Col>
+                </Row>
+                <hr></hr>
+                <Row>
+                  <Col>
+                    <div style={{ marginBottom: ".5em" }}>
+                      <h5>Bio:</h5>
+                  <p>Full many a glorious morning have I seen Flatter the mountain tops with sovereign eye, Kissing with golden face the meadows green, Gilding pale streams with heavenly alchemy; Anon permit the basest clouds to ride With ugly rack on his celestial face, And from the forlorn world his visage hide, Stealing unseen to west with this disgrace: Even so my sun one early morn did shine, With all triumphant splendour on my brow;</p>
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Role:</h5>
+                  Admin
+                  </div>
+                    <div style={{ marginBottom: "1em" }}>
+                      <h5>Assigned Tickets:</h5>
+                  Ticket-1, Ticket-2, Ticket-3
+                  </div>
+                  </Col>
+
+
+                </Row>
+              </Card.Body>
+            </Card>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    </Container>
+  );
 }
 
 

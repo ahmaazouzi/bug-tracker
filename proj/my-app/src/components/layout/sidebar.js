@@ -66,7 +66,7 @@ class Sidebar extends Component {
                     </Link>
                 </p>
 
-                <p style={{paddingTop: "1em", whiteSpace: "nowrap"}} className="text-center">
+                {/* <p style={{paddingTop: "1em", whiteSpace: "nowrap"}} className="text-center">
                     <Link to="/messages" href="http://localhost:3000" style={{color: "white"}}>
                         <span><svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
@@ -74,9 +74,9 @@ class Sidebar extends Component {
                         <br></br>
                         Messages
                     </Link>
-                </p>
+                </p> */}
 
-                <p style={{paddingTop: "1em"}} className="text-center">
+                {/* <p style={{paddingTop: "1em"}} className="text-center">
                     <Link to="/settings" href="http://localhost:3000" style={{color: "white"}}>
                         <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
@@ -84,7 +84,7 @@ class Sidebar extends Component {
                         <br></br>
                         Settings
                     </Link>
-                </p>
+                </p> */}
 
             </Col>
         )
