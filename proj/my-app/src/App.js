@@ -24,7 +24,7 @@ class App extends Component {
       error: null,
       isLoaded: false,
       tickets: [],
-      team: []
+      sprint: {}
     };
   }
 
@@ -57,7 +57,8 @@ class App extends Component {
             this.setState({
               isLoaded: true,
               team: (result[0]).members,
-              tickets: (result[1]).assignedTickets
+              tickets: (result[1]).assignedTickets,
+              sprint: result[1]
             });
  // ====================
         },
@@ -74,7 +75,7 @@ class App extends Component {
   }
 
   render() {
-    const { error, isLoaded } = this.state;
+    const { error, isLoaded, sprint } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -93,10 +94,10 @@ class App extends Component {
                     <Body tickets={this.state.tickets} setState={s => this.setState(s)} showModal={a => this.showModal(a)} />
                   </Route>
                   <Route path="/sprints">
-                    <Sprints />
+                    <Sprints sprint={sprint}/>
                   </Route>
-                  <Route path="/team" team={this.state.team}>
-                    <Team />
+                  <Route path="/team">
+                    <Team team={this.state.team} />
                   </Route>
                   <Route path="/profile">
                     <Profile />
