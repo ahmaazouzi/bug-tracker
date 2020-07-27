@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab, Table, FormCheck } from "react-bootstrap";
 
+const titlesStyle = {
+  color: "grey",
+  fontWeight: "bold"
+}
+
 function Sprints(props) {
-  const { sprint } = props;
-  const ticketThumbs = tickets => tickets.map(ticket => <TicketThumb ticket={ticket} />);
+  const [showAllTickets, setShowAllTickets] = useState(false);
+  const { sprint, tickets } = props;
+  const ticketThumbs = tickets => tickets.map(ticket => <TicketThumb ticket={ticket} sprint={sprint} />);
+
+  const handleRadioClick = e => {setShowAllTickets(!showAllTickets); console.log(showAllTickets)};
 
   return (
     <Row className="justify-content-center">
@@ -13,12 +21,10 @@ function Sprints(props) {
             <Card.Title style={{ marginBottom: "1em", marginRight: "3em" }}>
               Tickets
               <form>
-              <input style={{ marginLeft: "4em" }} type="radio"  name="sprintStatus" id="all" value="all"></input>
-              <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }}> all</label> 
-              <input style={{ marginLeft: "2em" }} type="radio" name="sprintStatus" label="dada" id="in sprint"value="inn sprint" ></input>
-              <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }}> in sprint</label>
-              <input style={{ marginLeft: "2em" }} type="radio" name="sprintStatus" label="dada" id="not in sprint" value="not in sprint"></input>
-              <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }}> not in sprint</label>
+              <input style={{ marginLeft: "4em" }} type="radio" name="sprintStatus" id="all" value="all" checked={showAllTickets} onChange={handleRadioClick}></input>
+  <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }} > all<span style={{fontStyle: "italic", color: "grey", fontWeight: "bold"}}> ({tickets.length})</span></label> 
+              <input style={{ marginLeft: "2em" }} type="radio" defaultChecked="checked" checked={!showAllTickets} onChange={handleRadioClick} name="sprintStatus" label="dada" id="in sprint"value="inn sprint" ></input>
+              <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }}> in sprint<span style={{fontStyle: "italic", color: "grey", fontWeight: "bold"}}> ({sprint.assignedTickets.length})</span></label>
               </form>
             </Card.Title>
             <div style={{ backgroundColor: "white", maxHeight: "65vh", overflow: "auto" }} className="shadow l">
@@ -28,11 +34,11 @@ function Sprints(props) {
                     <th>Ticket</th>
                     <th>Summary</th>
                     <th>Date Reporter</th>
-                    <th>Add<br />Sprint</th>
+                    <th>Add to<br />Sprint</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {ticketThumbs(sprint.assignedTickets)}
+                  {ticketThumbs(showAllTickets ? tickets : tickets.filter(t => t.sprintID === sprint.id))}
                 </tbody>
               </Table>
             </div>
@@ -50,19 +56,29 @@ function Sprints(props) {
 }
 
 function TicketThumb(props) {
-  const { ticket } = props;
+  const { ticket, sprint } = props;
+  const toggleTicket = ticket => {
+    console.log("before: ", ticket.sprintID)
+    if (ticket.sprintID === 1)
+      ticket.sprintID = 3;
+    else
+      ticket.sprintID = 1;
+    console.log("after: ", ticket.sprintID)
+  };
+
   return (
     <tr>
       <td>SPR-{ticket.id}</td>
       <td>{ticket.summary}</td>
       <td>{new Date(ticket.dateReported).toLocaleDateString("en-US")}</td>
-      <td><FormCheck></FormCheck> </td>
+      <td><FormCheck defaultChecked={(sprint.id === ticket.sprintID ? true : false)} onClick={ticket => {toggleTicket(ticket)}}></FormCheck> </td>
     </tr>
   )
 }
 
 function SprintInfo(props) {
   const { sprint } = props;
+  
   return (
     <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)", maxHeight: "65vh" }} className="rounded-0 border-0">
       <Card.Body>
@@ -72,35 +88,35 @@ function SprintInfo(props) {
             <Tabs defaultActiveKey="currrentSprint" id="uncontrolled-tab-example">
               <Tab eventKey="currrentSprint" title="Current Sprint" style={{ marginTop: "2em" }}>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Name:</h6>
+                  <h6 style={titlesStyle}>Name:</h6>
                   SPR-{sprint.id}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Start Date:</h6>
-                  SPR-{new Date(sprint.startDate).toLocaleDateString("en-US")}
+                  <h6 style={titlesStyle}>Start Date:</h6>
+                  {new Date(sprint.startDate).toLocaleDateString("en-US")}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>End Date:</h6>
-                  SPR-{new Date(sprint.endDate).toLocaleDateString("en-US")}
+                  <h6 style={titlesStyle}>End Date:</h6>
+                  {new Date(sprint.endDate).toLocaleDateString("en-US")}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Goals:</h6>
-                  SPR-{sprint.goals}
+                  <h6 style={titlesStyle}>Goals:</h6>
+                  {sprint.goals}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Retrospective:</h6>
-                  SPR-{sprint.retrospective}
+                  <h6 style={titlesStyle}>Retrospective:</h6>
+                  {sprint.retrospective}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Starting Points:</h6>
+                  <h6 style={titlesStyle}>Starting Points:</h6>
                   SPR-{sprint.points}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Points Eliminated:</h6>
-                  SPR-{sprint.pointsEliminated}
+                  <h6 style={titlesStyle}>Points Eliminated:</h6>
+                  {sprint.pointsEliminated}
                 </div>
                 <div style={{ marginBottom: "1em" }}>
-                  <h6>Tickets:</h6>
+                  <h6 style={titlesStyle}>Tickets:</h6>
                   {sprint.assignedTickets.map(ticket => <TicketID id={ticket.id}/> )}
                 </div>
               </Tab>

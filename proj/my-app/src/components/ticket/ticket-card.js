@@ -14,7 +14,7 @@ class Ticket extends Component {
         }
 
         return (
-            <Card id={info.id} onClick={() => this.props.showModal(info.id)} className="shadow-sm" style={{ marginBottom: "0.7em", border: "1px #E7E8EA solid", borderTop: "red .3em solid" }} data-toggle="modal" data-target="#exampleModal" draggable="true" onDragStart={event => this.drag(event)}>
+            <Card id={info.id} onClick={() => this.props.showModal(info.id)} className="shadow-sm" style={{ marginBottom: "0.7em", border: "1px #E7E8EA solid", borderTop: "red .3em solid", cursor: "grab" }} data-toggle="modal" data-target="#exampleModal" draggable="true" onDragStart={event => {this.drag(event); event.target.style.cursor = "grabbing"}}>
                 <Card.Body style={{ padding: "1em" }}>
                     <div className="d-flex justify-content-between">
                         <h6>Some-{info.id}

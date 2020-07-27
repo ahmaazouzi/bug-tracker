@@ -55,8 +55,19 @@ class App extends Component {
         .then(
           (result) => {
             this.setState({
+              user: {
+                id: 1,
+                fullName: "Ahmed A Ahmadi",
+                photoUrl: "https://www.photos.ph/1",
+                email: "ahmed@bugtracker.com",
+                role: "admin",
+                spiritAnimal: "NAD83",
+                bio: "I have no life!",
+                teamID: 1
+              },
               isLoaded: true,
               team: (result[0]).members,
+              allTickets: (result[0]).tickets,
               tickets: (result[1]).assignedTickets,
               sprint: result[1]
             });
@@ -94,7 +105,7 @@ class App extends Component {
                     <Body tickets={this.state.tickets} setState={s => this.setState(s)} showModal={a => this.showModal(a)} />
                   </Route>
                   <Route path="/sprints">
-                    <Sprints sprint={sprint}/>
+                    <Sprints sprint={sprint} tickets={this.state.allTickets} user={this.state.user}/>
                   </Route>
                   <Route path="/team">
                     <Team team={this.state.team} />

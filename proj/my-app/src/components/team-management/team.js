@@ -1,6 +1,11 @@
 import React, {useState} from "react";
 import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab, Table, FormCheck } from "react-bootstrap";
 
+const titlesStyle = {
+    color: "grey",
+    fontWeight: "bold"
+}
+
 function Team(props) {
     const { team } = props;
     const [SelectedProfile, setSelectedProfile] = useState(team[0]);
@@ -43,10 +48,10 @@ function Team(props) {
 function ProfileSummary(props) {
     const { info } = props;
     return (
-        <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0" onClick={() => props.onClick(info.id)}>
+        <Card style={{ width: '100%', marginTop: ".5em", cursor: "pointer"}} className="shadow sm rounded-0" onClick={() => props.onClick(info.id)}>
             <Card.Body style={{ floa: "right" }}>
                 <Row>
-                    <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
+                    <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", marginLeft: "1em", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
                         <a href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
                             <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -54,9 +59,9 @@ function ProfileSummary(props) {
                         </a>
                     </div>
                     <div style={{ marginLeft: "1.5em" }}>
-                        <h5 style={{ marginBottom: "0px" }}>
+                        <h6 style={{ marginBottom: "0px", color: "grey" }}>
                             {info.fullName}
-                        </h5>
+                        </h6>
                         {info.email}
                     </div>
                 </Row>
@@ -74,15 +79,15 @@ function ProfileDetails(props){
                 <Row>
                     <Col>
                         <div style={{ marginBottom: "1em" }}>
-                            <h5>Name:</h5>
+                            <h6 style={titlesStyle}>Name:</h6>
                             {member.fullName}
                         </div>
                         <div style={{ marginBottom: "1em" }}>
-                            <h5>Email:</h5>
+                            <h6 style={titlesStyle}>Email:</h6>
                             {member.email}
                         </div>
                         <div style={{ marginBottom: "1em" }}>
-                            <h5>Spirit Animal:</h5>
+                            <h6 style={titlesStyle}>Spirit Animal:</h6>
                             {member.spiritAnimal}
                         </div>
                     </Col>
@@ -94,15 +99,15 @@ function ProfileDetails(props){
                 <Row>
                     <Col>
                         <div style={{ marginBottom: ".5em" }}>
-                            <h5>Bio:</h5>
+                            <h6 style={titlesStyle}>Bio:</h6>
                             {member.bio}
                         </div>
                         <div style={{ marginBottom: "1em" }}>
-                            <h5>Role:</h5>
+                            <h6 style={titlesStyle}>Role:</h6>
                             {member.role}
                         </div>
                         <div style={{ marginBottom: "1em" }}>
-                            <h5>Assigned Tickets:</h5>
+                            <h6 style={titlesStyle}>Assigned Tickets:</h6>
                            {member.tic}
                         </div>
                     </Col>
