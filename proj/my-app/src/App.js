@@ -6,6 +6,7 @@ import Body from "./components/layout/body";
 import Profile from "./components/user-management/user";
 import Team from "./components/team-management/team";
 import Sprints from "./components/sprint/sprint-settings";
+import TicketCreateModal from "./components/ticket/ticket-create-modal";
 import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab, Table, FormCheck } from "react-bootstrap";
 
 import {
@@ -15,6 +16,7 @@ import {
   Link
 } from "react-router-dom";
 import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
+import Ticket from './components/ticket/ticket-card';
 
 class App extends Component {
   constructor(props) {
@@ -145,6 +147,7 @@ function Spinit() {
 
 function Example(props) {
   const [status, setStatus] = useState("todo");
+  const [lgShow, setLgShow] = useState(true);
 
   function handleChange(event) {
     setStatus(event.target.value);
@@ -160,20 +163,22 @@ function Example(props) {
 
   return (
     <>
-      <Modal show={props.showModal} onHide={handleShows}>
+      <Modal show={props.showModal} onHide={handleShows} animation={false} size="lg" >
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
 
+        {/* <Modal.Body>
           <form onSubmit={handleSubmit}>
             <label>
               Name:
           <input type="text" value={status} onChange={handleChange} />
             </label>
           </form>
+        </Modal.Body> */}
 
-        </Modal.Body>
+        <TicketCreateModal />
+
         <Modal.Footer>
           <Button variant="secondary" onClick={handleShows}>
             Close

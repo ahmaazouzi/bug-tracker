@@ -9,10 +9,6 @@ class TicketCreateModal extends Component {
             backgroundColor: "#f5f5f5"
         }
         return (
-            <Modal.Dialog className="modal-lg" role="document" style={{display: "hidden"}}>
-                <Modal.Header closeButton>
-                    <h5 class="modal-title" id="exampleModalLabel">Create a new issue:</h5>
-                </Modal.Header>
                 <Modal.Body>
                     <Container>
                         <Row>
@@ -49,12 +45,6 @@ class TicketCreateModal extends Component {
 
                     <div class="col-md-8 offset-md-2"></div>
                 </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant="secondary">Close</Button>
-                    <Button variant="primary">Save changes</Button>
-                </Modal.Footer>
-            </Modal.Dialog>
         );
     }
 }
