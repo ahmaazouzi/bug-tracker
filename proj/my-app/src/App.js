@@ -183,7 +183,7 @@ function Example(props) {
           <Button variant="secondary" onClick={handleShows}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => { props.addTicket(status); handleShows() }} >
+          <Button variant="primary" type="submit" onClick={() => { props.addTicket(status); handleShows() }} >
             Save Changes
           </Button>
         </Modal.Footer>

@@ -86,7 +86,12 @@ ReactDOM.render(
 //   }
 // }
 
-// ReactDOM.render(<MyComponent />, document.getElementById("root"));
+
+
+// export default Basic;
+
+// ReactDOM.render(<SignupForm />, document.getElementById("root"));
+
 
 
 

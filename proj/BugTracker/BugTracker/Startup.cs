@@ -31,7 +31,11 @@ namespace BugTracker
                                   builder =>
                                   {
                                       builder.WithOrigins("https://localhost:5001",
-                                                          "http://localhost:3000");
+                                                          "http://localhost:3000")
+                                        .AllowAnyMethod()
+                                        //.WithExposedHeaders("content-disposition")
+                                        .AllowAnyHeader()
+                                        .AllowCredentials();
                                   });
             });
 
