@@ -118,17 +118,21 @@
 - I finished the harder part of the creating the API "testing suite". With the click of a button, I can now test every request and its response and result. I need to clean and tweak these tests to help speed the development process. I need to finish the sprint and assignment parts of the application tomorrow or by Monday at most and start on the UI and authentication. 
 
 ## Bootstrap and Back to the Frontend (1:28 AM, July 12, 2020):
-- I wasted a lot of time thinking about the frontent design. I totally ditched the UI I worked on in March and went full Bootstrap. The thought and time I spent on the orignal design can show. It looks much more refined than the generic bootstrappy look of the new one, but mine is unresponsive lacks symmetric alignment. CSS alone needs a lot of work and I don't have the time to make it look better. I need to finish the project before the end of July iA. The last couple days I spent relearning Bootstrap. I used it back in 2015 and 2016. Anyways, the process of implementing redesign was extremely easy but the bigger problem was with deciding what views to have. I've also made the rnew design much simpler and tried to resist all perfectionist desires.
+- I wasted a lot of time thinking about the frontent design. I totally ditched the UI I worked on in March and went full Bootstrap. The thought and time I spent on the original design can show. It looks much more refined than the generic bootstrappy look of the new one, but mine is unresponsive lacks symmetric alignment. CSS alone needs a lot of work and I don't have the time to make it look better. I need to finish the project before the end of July iA. The last couple days I spent relearning Bootstrap. I used it back in 2015 and 2016. Anyways, the process of implementing redesign was extremely easy but the bigger problem was with deciding what views to have. I've also made the new design much simpler and tried to resist all perfectionist desires.
 
 ## This is Taking too Long (July 23, 2020):
 - I keep changing my opinion about the app and can't resist wasting a long time thinking about features that might not be really really essential. At this very moment, this is what I have left of the app:
 - [ ] Add a user profile and a messages view.
-- [ ] Add messaging functionality. I'm thinking of a "last logged field" and probably a text field that will get populated by values separated by something.. These messages are something like facebook notifications. They are efemeral and volatile. Once seen, there is no guarantee that they'd stay around and how long they can stay around. These values might be kept in a small CSV file or something.
+- [ ] Add messaging functionality. I'm thinking of a "last logged field" and probably a text field that will get populated by values separated by something.. These messages are something like facebook notifications. They are ephemeral and volatile. Once seen, there is no guarantee that they'd stay around and how long they can stay around. These values might be kept in a small CSV file or something.
 - [ ] Handle all API calls and forms (forms with Formik).
 - [ ] Handle state management (decide if to use Redux).
 - [ ] Add register/login functionality and general.
-- [ ] Ddeploy.
+- [ ] Deploy.
 - [ ] Maybe unit testing, logging, CI/CD.
+
+## I Forgot Everything and Thinking a Redesign Is Necessary (September 22, 2020):
+- The last time I touched the backend code, I discovered some critical bugs that have to do with validating data creation, but I have forgotten everything.
+- I am also thinking of rewiring 
 
 
 
