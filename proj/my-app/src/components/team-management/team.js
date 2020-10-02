@@ -17,9 +17,9 @@ function Team(props) {
         <Row className="justify-content-center">
 
             <Col style={{ marginTop: "1em" }} xl="4" className="">
-                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
-                    <Card.Body>
-                        <Card.Title style={{ marginBottom: "1em" }}>
+                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0" className="shadow sm rounded-0">
+                    <Card.Body style={{ padding: "0px"}}>
+                        <Card.Title style={{padding:"1em", borderBottom:"1px solid rgba(0,0,0,.125)"}}>
                             Team Members
                             <span style={{ float: "right", marginTop: "-.5em" }}>
                                 <a href="#" style={{ color: "white" }}>
@@ -28,14 +28,14 @@ function Team(props) {
                                     </svg>
                                 </a>
                             </span>
-                        </Card.Title>
+                        </Card.Title>  
                         {showTeam(props)}
                     </Card.Body>
                 </Card>
             </Col>
 
-            <Col style={{ marginTop: "1em" }} xl="6">
-                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+            <Col style={{ marginTop: ""}} xl="8">
+                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0 border-0">
                     <Card.Body>
                         <ProfileDetails member={SelectedProfile}/>
                     </Card.Body>
@@ -48,8 +48,8 @@ function Team(props) {
 function ProfileSummary(props) {
     const { info } = props;
     return (
-        <Card style={{ width: '100%', marginTop: ".5em", cursor: "pointer"}} className="shadow sm rounded-0" onClick={() => props.onClick(info.id)}>
-            <Card.Body style={{ floa: "right" }}>
+        <Card style={{ borderTop: "none", borderLeft: "none", borderRight: "none", width: '100%', marginTop: "", cursor: "pointer"}} className="shadowzzzz sm rounded-0" onClick={() => props.onClick(info.id)}>
+            <Card.Body style={{ float: "right" }}>
                 <Row>
                     <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", marginLeft: "1em", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
                         <a href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
@@ -74,7 +74,7 @@ function ProfileDetails(props){
     const { member } = props;
     console.log(member)
     return (
-        <Card style={{ width: '100%', marginTop: "" }} className="shadow sm rounded-0">
+        <Card style={{ width: '100%', marginTop: "", minHeight: "85vh" }} className="shadow sm rounded-0">
             <Card.Body>
                 <Row>
                     <Col>
