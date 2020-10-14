@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab, Table, FormCheck, Nav } from "react-bootstrap";
 
 const titlesStyle = {
@@ -54,46 +54,41 @@ function Team(props) {
     return (
         <div>
             <Row>
-                <Col>
-                    <Button onClick={() => setTeamView(true)}>Current Team</Button>
-                </Col>
-                <Col>
-                <Button onClick={() => setTeamView(false)}>My Teams</Button>
-                </Col>
+                <h3><Nav.Link onClick={() => setTeamView(true)}>Current Team</Nav.Link></h3>
+                <h3><Nav.Link onClick={() => setTeamView(false)}>My Teams</Nav.Link></h3>
             </Row>
             <Row>
                 <Col>
-                    <TeamViewSwitch CurrentTeam={CurrentTeam} team={team}/>
+                    <TeamViewSwitch CurrentTeam={CurrentTeam} team={team} />
                 </Col>
             </Row>
-
         </div>
     )
 }
 
 const TeamViewSwitch = props => {
     const { team } = props;
-    const CurrentTeamOn = props.CurrentTeam;    
+    const CurrentTeamOn = props.CurrentTeam;
     console.log(CurrentTeamOn);
-    return CurrentTeamOn ? <CurrentTeamView team={team}/> : <MyTeamsView />
+    return CurrentTeamOn ? <CurrentTeamView team={team} /> : <MyTeamsView />
 }
 
 function CurrentTeamView(props) {
     const { team } = props;
     const [CurrentTeam, setTeamView] = useState(true);
     const [SelectedProfile, setSelectedProfile] = useState(team[0]);
-    
 
-    const showTeam = () => team.map(i => <ProfileSummary info={i} key={i.id} onClick={i => {const profile = showProfileDetails(i); setSelectedProfile(profile)}}/>);
-    const showProfileDetails = i => team.find( member => i === member.id);
+
+    const showTeam = () => team.map(i => <ProfileSummary info={i} key={i.id} onClick={i => { const profile = showProfileDetails(i); setSelectedProfile(profile) }} />);
+    const showProfileDetails = i => team.find(member => i === member.id);
 
     return (
         <Row className="justify-content-center">
 
             <Col style={{ marginTop: "1em" }} xl="4" className="">
                 <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0" className="shadow sm rounded-0">
-                    <Card.Body style={{ padding: "0px"}}>
-                        <Card.Title style={{padding:"1em", borderBottom:"1px solid rgba(0,0,0,.125)"}}>
+                    <Card.Body style={{ padding: "0px" }}>
+                        <Card.Title style={{ padding: "1em", borderBottom: "1px solid rgba(0,0,0,.125)" }}>
                             Team Members
                             <span style={{ float: "right", marginTop: "-.5em" }}>
                                 <a href="#" style={{ color: "white" }}>
@@ -102,25 +97,95 @@ function CurrentTeamView(props) {
                                     </svg>
                                 </a>
                             </span>
-                        </Card.Title>  
+                        </Card.Title>
                         {showTeam(props)}
                     </Card.Body>
                 </Card>
             </Col>
 
-            <Col style={{ marginTop: ""}} xl="8">
-                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0 border-0">
+            <Col style={{ marginTop: "" }} xl="8">
+                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
                     <Card.Body>
-                        <ProfileDetails member={SelectedProfile}/>
+                        <ProfileDetails member={SelectedProfile} />
                     </Card.Body>
                 </Card>
             </Col>
         </Row>
     )
 }
-  
+
 function MyTeamsView(props) {
-    return <h1 style={{fontSize: "600%"}}>My Teams</h1>;
+    return (
+        <Row className="justify-content-center">
+
+            <Col style={{ marginTop: "1em" }} xl="4" className="">
+                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0" className="shadow sm rounded-0">
+                    <Card.Body style={{ padding: "0px" }}>
+                        <Card.Title style={{ padding: "1em", borderBottom: "1px solid rgba(0,0,0,.125)" }}>
+                            Current Team
+                        {/* <span style={{ float: "right", marginTop: "-.5em" }}>
+                            <a href="#" style={{ color: "white" }}>
+                                <svg className="shadow sm" width="1.5em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
+                                </svg>
+                            </a>
+                        </span> */}
+                        </Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+    </Card.Text>
+                    </Card.Body>
+                </Card>
+
+
+                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)", marginTop: "15px" }} className="rounded-0 border-0" className="shadow sm rounded-0">
+                    <Card.Body style={{ padding: "0px" }}>
+                        <Card.Title style={{ padding: "1em", borderBottom: "1px solid rgba(0,0,0,.125)" }}>
+                            My Teams
+                        {/* <span style={{ float: "right", marginTop: "-.5em" }}>
+                            <a href="#" style={{ color: "white" }}>
+                                <svg className="shadow sm" width="1.5em" height="2em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
+                                </svg>
+                            </a>
+                        </span> */}
+                        </Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+    </Card.Text>
+    <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+    </Card.Text>
+    <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+    </Card.Text>
+    <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+    </Card.Text>
+                    </Card.Body>
+                </Card>
+
+            </Col>
+
+            <Col style={{ marginTop: "" }} xl="8">
+                <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
+                    <Card.Body style={{textAlign: "center"}}>
+                                <a href="#" style={{ color: "white" }}>
+                                    <svg className="shadow sm" width="4em" height="4em" viewBox="0 0 16 16" className="bi bi-plus-circle-fill" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
+                                    </svg>
+                                </a>
+
+                </Card.Body>
+                </Card>
+            </Col>
+        </Row>
+    );
 }
 // ===========================================================================================================
 
@@ -128,7 +193,7 @@ function MyTeamsView(props) {
 function ProfileSummary(props) {
     const { info } = props;
     return (
-        <Card style={{ borderTop: "none", borderLeft: "none", borderRight: "none", width: '100%', marginTop: "", cursor: "pointer"}} className="shadowzzzz sm rounded-0" onClick={() => props.onClick(info.id)}>
+        <Card style={{ borderTop: "none", borderLeft: "none", borderRight: "none", width: '100%', marginTop: "", cursor: "pointer" }} className="shadowzzzz sm rounded-0" onClick={() => props.onClick(info.id)}>
             <Card.Body style={{ float: "right" }}>
                 <Row>
                     <div style={{ height: "50px", width: "50px", backgroundColor: "#A8A8A8", marginRight: "7px", marginLeft: "1em", padding: "5px", verticalAlign: "bottom" }} className="rounded-circle">
@@ -150,7 +215,7 @@ function ProfileSummary(props) {
     );
 }
 
-function ProfileDetails(props){
+function ProfileDetails(props) {
     const { member } = props;
     console.log(member)
     return (
@@ -188,7 +253,7 @@ function ProfileDetails(props){
                         </div>
                         <div style={{ marginBottom: "1em" }}>
                             <h6 style={titlesStyle}>Assigned Tickets:</h6>
-                           {member.tic}
+                            {member.tic}
                         </div>
                     </Col>
                 </Row>
