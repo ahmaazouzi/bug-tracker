@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BugTracker.Migrations
 {
     [DbContext(typeof(BugTrackerContext))]
-    [Migration("20200707033416_newiteration")]
-    partial class newiteration
+    [Migration("20201101025845_im")]
+    partial class im
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

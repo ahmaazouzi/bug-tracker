@@ -1,4 +1,4 @@
-DROP Table Comments;DROP Table Attachments;DROP Table Assignments;DROP Table Tickets;DROP Table Accounts;DROP Table Teams;
+-- DROP Table Comments;DROP Table Attachments;DROP Table Assignments;DROP Table Tickets;DROP Table Accounts;DROP Table Teams;
 
 INSERT INTO Teams VALUES(
 	1,

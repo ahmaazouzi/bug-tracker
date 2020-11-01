@@ -4,7 +4,7 @@ using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace BugTracker.Migrations
 {
-    public partial class newiteration : Migration
+    public partial class im : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
