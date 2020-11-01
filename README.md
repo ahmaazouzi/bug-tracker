@@ -27,9 +27,9 @@
 ## `<div contenteditable="true">`, a not so Primitive Simple Text Editor (March 17, 2020):
 - I just came across this HTML5 div attribute `contenteditable`, which when set to true  allows you to edit HTML content without having to deal with the awkward limitations of a textarea or input field. This is amazing. It's now even possible to show formatting of the text live as the user types. There is no need for showing markdown symbols to the user, although these symbols can be still available. After all, the bug tracker is supposed to be used mainly by software makers.
 - At this very moment, I am wondering what the next step is going to be. I am torn between the following:
-	+ Rework the description section of the ticket modal and replace the textarea with a contenteditable div.
-	+ Work on the general layout of the application and make it mobile friendly. As it stands, the app's layout is terrible and can't accommodate different screen sizes.
-	+ Start converting the mockup into React components. This step, however, needs to have the previous step done correctly. The messed up layout is preventing me from moving to componentizing the mockup. React will also require a revision of Redux, webpack, probably Gulp and some testing library.
+    + Rework the description section of the ticket modal and replace the textarea with a contenteditable div.
+    + Work on the general layout of the application and make it mobile friendly. As it stands, the app's layout is terrible and can't accommodate different screen sizes.
+    + Start converting the mockup into React components. This step, however, needs to have the previous step done correctly. The messed up layout is preventing me from moving to componentizing the mockup. React will also require a revision of Redux, webpack, probably Gulp and some testing library.
 
 ## Corona Rattles the World, and I am a little bored of CSS (March 20, 2020):
 - This disease is wreaking havoc in the northern hemisphere and I'm starting to get paranoid.
@@ -132,8 +132,23 @@
 
 ## I Forgot Everything and Thinking a Redesign Is Necessary (September 22, 2020):
 - The last time I touched the backend code, I discovered some critical bugs that have to do with validating data creation, but I have forgotten everything.
-- I am also thinking of rewiring 
 
+## No Need for a Redesign: Just Improve on the Existing Design (Sometime between September 22 and September 30):
+- Any valid email can be used to create an account.
+- Any account can create as many projects as it wishes (Limits might apply/projects might replace teams).
+- An account can add any other account to the project. An email without an account gets an invitation to create an account.
+- An email with an account gets to choose if it wants to join a project. 
+
+## Let's Keep things simple; UI Is Hard (October 2, 2020):
+- I abandoned the idea of replacing teams with projects. I want keep teams and also want every account/user to be able to create its own team and be added to other teams. Team ownership/administration can also be extended to other accounts and transferred between different accounts. Accounts might be able to request joining a team. 
+- The problems arise in the UI part!! Multiple teams should be shown! Should there be one single entry to a team and teams can be switched maybe in the same way you can switch emails in Gmail??!!! Changing teams shouldn't be part of the SPA but it requires a refresh.. Something that can be saved in cookies.. When first entering the app or even logging in, you should be directed to the currently selected team... 
+
+## Data modeling (October 18, 2020):
+- Bad .....
+
+## Lost (October 31, 2020):
+- Bugs keep popping up everywhere and only I feel the dark side of so-called scaffolding. It's unnecessarily complicated to configure a relationship that is not a "one-to-many" relationship. Many-to-many relationships are the worst. Serializing the data makes things worse, especially that I am using some package to do that and I don't have no idea what's causing the problem I am having. I want a ticket to be part of multiple sprints and a sprint should obviously have multiple tickets... This results in a circular reference loop. I don't remember exactly how I got around these loops before without having to explicitly ignore them. When I explicitly ignore the loop reference I get a sprint which instead of having a list of tickets, it has a list containing references to the spring itself along with null values for the tickets. I have to admit, this should be more about the dark site of me not understanding what the *malarky* I'm doing! I might have to break the many to many relationship into two one-to-many relationships to avoid these problems.
+- Maybe I need to also relearn the basics of git and other stuff!!
 
 
 
