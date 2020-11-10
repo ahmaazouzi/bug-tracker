@@ -42,6 +42,10 @@ namespace BugTracker.Models
         [Required]
         public int TeamID { get; set; }
 
+        public int? MembershipID { get; set; }
+
+        public Membership Membership { get; set; }
+
         public ICollection<Assignment> Assignments { get; set; }
     }
 }
