@@ -19,7 +19,8 @@ namespace BugTracker.Data
         public DbSet<Attachment> Attachments { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Sprint> Sprints { get; set; }
-        
+        public DbSet<AccountTeam> AccountTeam { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,7 +39,7 @@ namespace BugTracker.Data
 
             modelBuilder.Entity<AccountTeam>()
                 .HasOne(at => at.Account)
-                .WithMany(a => a.AccountTeams)
+                .WithMany(a => a.AccountTeam)
                 .HasForeignKey(at => at.AccountID);
 
             modelBuilder.Entity<AccountTeam>()

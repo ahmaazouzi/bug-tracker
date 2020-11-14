@@ -26,7 +26,9 @@ namespace BugTracker.Data
             {
                 _context.Entry(team).Collection(v => v.AccountTeams).Load();
                 _context.Entry(team).Collection(t => t.Tickets).Load();
+                team.AccountTeams.ForEach(a => _context.Entry(a).Reference(a => a.Account).Load());
             }
+
 
             return team;
         }

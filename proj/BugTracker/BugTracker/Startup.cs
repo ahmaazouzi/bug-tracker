@@ -43,7 +43,7 @@ namespace BugTracker
              opt.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers()
-                //.AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
                 .AddNewtonsoftJson(s => s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
             services.AddControllers(options => options.SuppressAsyncSuffixInActionNames = false);
 

@@ -9,7 +9,7 @@ namespace BugTracker.Dtos
 
         public string Name { get; set; }
 
-        public ICollection<Account> Members { get; set; }
+        public ICollection<AccountTeam> AccountTeams { get; set; }
 
         public ICollection<Sprint> Sprints { get; set; }
 
