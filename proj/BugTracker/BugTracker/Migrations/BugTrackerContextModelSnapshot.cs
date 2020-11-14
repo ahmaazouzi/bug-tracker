@@ -42,9 +42,6 @@ namespace BugTracker.Migrations
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<int?>("MembershipID")
-                        .HasColumnType("int");
-
                     b.Property<string>("MiddleName")
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
@@ -60,14 +57,24 @@ namespace BugTracker.Migrations
                         .HasColumnType("varchar(256)")
                         .HasMaxLength(256);
 
+                    b.HasKey("ID");
+
+                    b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("BugTracker.Models.AccountTeam", b =>
+                {
+                    b.Property<int>("AccountID")
+                        .HasColumnType("int");
+
                     b.Property<int>("TeamID")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("AccountID", "TeamID");
 
                     b.HasIndex("TeamID");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("AccountTeam");
                 });
 
             modelBuilder.Entity("BugTracker.Models.Assignment", b =>
@@ -142,23 +149,6 @@ namespace BugTracker.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("BugTracker.Models.Membership", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("AccountID")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("AccountID")
-                        .IsUnique();
-
-                    b.ToTable("Memberships");
-                });
-
             modelBuilder.Entity("BugTracker.Models.Sprint", b =>
                 {
                     b.Property<int>("ID")
@@ -201,16 +191,11 @@ namespace BugTracker.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("MembershipID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("MembershipID");
 
                     b.ToTable("Teams");
                 });
@@ -269,10 +254,16 @@ namespace BugTracker.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("BugTracker.Models.Account", b =>
+            modelBuilder.Entity("BugTracker.Models.AccountTeam", b =>
                 {
-                    b.HasOne("BugTracker.Models.Team", null)
-                        .WithMany("Members")
+                    b.HasOne("BugTracker.Models.Account", "Account")
+                        .WithMany("AccountTeams")
+                        .HasForeignKey("AccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BugTracker.Models.Team", "Team")
+                        .WithMany("AccountTeams")
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -317,15 +308,6 @@ namespace BugTracker.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BugTracker.Models.Membership", b =>
-                {
-                    b.HasOne("BugTracker.Models.Account", "Account")
-                        .WithOne("Membership")
-                        .HasForeignKey("BugTracker.Models.Membership", "AccountID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("BugTracker.Models.Sprint", b =>
                 {
                     b.HasOne("BugTracker.Models.Team", null)
@@ -333,13 +315,6 @@ namespace BugTracker.Migrations
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("BugTracker.Models.Team", b =>
-                {
-                    b.HasOne("BugTracker.Models.Membership", null)
-                        .WithMany("Teams")
-                        .HasForeignKey("MembershipID");
                 });
 
             modelBuilder.Entity("BugTracker.Models.Ticket", b =>

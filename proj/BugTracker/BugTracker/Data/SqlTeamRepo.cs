@@ -24,7 +24,7 @@ namespace BugTracker.Data
             var team = _context.Teams.FirstOrDefault(t => t.ID == id);
             if (team != null)
             {
-                _context.Entry(team).Collection(v => v.Members).Load();
+                _context.Entry(team).Collection(v => v.AccountTeams).Load();
                 _context.Entry(team).Collection(t => t.Tickets).Load();
             }
 

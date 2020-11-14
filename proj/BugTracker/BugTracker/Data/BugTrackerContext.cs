@@ -19,7 +19,7 @@ namespace BugTracker.Data
         public DbSet<Attachment> Attachments { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Sprint> Sprints { get; set; }
-        public DbSet<Membership> Memberships { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,10 +33,19 @@ namespace BugTracker.Data
                 .WithOne()
                 .OnDelete(DeleteBehavior.NoAction);
 
-            modelBuilder.Entity<Account>()
-                .HasOne(a => a.Membership).WithOne(m => m.Account)
-                .HasForeignKey<Membership>(m => m.AccountID)
-                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<AccountTeam>()
+                .HasKey(a => new { a.AccountID, a.TeamID });
+
+            modelBuilder.Entity<AccountTeam>()
+                .HasOne(at => at.Account)
+                .WithMany(a => a.AccountTeams)
+                .HasForeignKey(at => at.AccountID);
+
+            modelBuilder.Entity<AccountTeam>()
+                .HasOne(at => at.Team)
+                .WithMany(t => t.AccountTeams)
+                .HasForeignKey(at => at.TeamID);
+
         }
     }
 }

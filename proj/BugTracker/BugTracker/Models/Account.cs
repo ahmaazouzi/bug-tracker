@@ -39,13 +39,8 @@ namespace BugTracker.Models
         [MaxLength(5000)]
         public string Bio { get; set; }
 
-        [Required]
-        public int TeamID { get; set; }
-
-        public int? MembershipID { get; set; }
-
-        public Membership Membership { get; set; }
-
         public ICollection<Assignment> Assignments { get; set; }
+
+        public List<AccountTeam> AccountTeams { get; set; }
     }
 }
