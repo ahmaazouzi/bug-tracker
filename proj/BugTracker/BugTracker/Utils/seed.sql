@@ -1,9 +1,9 @@
 -- DROP Table Comments;DROP Table Attachments;DROP Table Assignments;DROP Table Tickets;DROP Table Accounts;DROP Table Teams;
 
--- INSERT INTO Teams VALUES(
--- 	1,
--- 	"Bug Tracker"
--- );
+INSERT INTO Teams VALUES(
+	1,
+	"Bug Tracker"
+);
 
 INSERT INTO Accounts VALUES(
 	1,
