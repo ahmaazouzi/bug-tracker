@@ -5,7 +5,7 @@ using BugTracker.Models;
 
 namespace BugTracker.Data
 {
-    public class SqlAccountRepo: IAccountRepo
+    public class SqlAccountRepo : IAccountRepo
 
     {
         private readonly BugTrackerContext _context;
@@ -18,9 +18,20 @@ namespace BugTracker.Data
         public Account GetAccountById(int id)
         {
             var account = _context.Accounts.FirstOrDefault(a => a.ID == id);
-            GetAssigned(account);
-            return account; 
+            if (account != null)
+            {
+                GetAssigned(account);
+                _context.Entry(account).Collection(v => v.AccountTeam).Load();
+                account.AccountTeam.ForEach(a => _context.Entry(a).Reference(a => a.Team).Load());
+
+                account.AccountTeam.ForEach(a => a.Account = null);
+                account.Assignments.ToList().ForEach(a => a.Account.AccountTeam = null);
+
+            }
+
+            return account;
         }
+
 
         public IEnumerable<Account> GetAccounts()
         {

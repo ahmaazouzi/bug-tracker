@@ -3,13 +3,14 @@ using BugTracker.Models;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 
-namespace BugTracker.Data
+namespace BugTracker.Data 
 {
     public class BugTrackerContext: DbContext
     {
-        public BugTrackerContext(DbContextOptions<BugTrackerContext> options)
+        public BugTrackerContext(DbContextOptions<BugTrackerContext> options) 
             : base(options)
         {
+            ChangeTracker.LazyLoadingEnabled = false;
         }
 
         public DbSet<Ticket> Tickets { get; set; }

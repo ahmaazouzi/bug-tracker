@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BugTracker.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BugTracker.Data
 {
@@ -16,7 +17,7 @@ namespace BugTracker.Data
 
         public IEnumerable<Team> GetTeams()
         {
-            return _context.Teams.ToList();
+            return _context.Teams.Include(t => t.AccountTeams).ThenInclude(a => a.Team);
         }
 
         public Team GetTeamById(int id)
@@ -24,11 +25,16 @@ namespace BugTracker.Data
             var team = _context.Teams.FirstOrDefault(t => t.ID == id);
             if (team != null)
             {
+
                 _context.Entry(team).Collection(v => v.AccountTeams).Load();
                 _context.Entry(team).Collection(t => t.Tickets).Load();
                 team.AccountTeams.ForEach(a => _context.Entry(a).Reference(a => a.Account).Load());
-            }
 
+                team.AccountTeams.ForEach(a => a.Team = null);
+                team.Tickets.ToList().ForEach(t => t.Reporter = null);
+                
+
+            }
 
             return team;
         }
