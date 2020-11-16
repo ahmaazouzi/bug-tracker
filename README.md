@@ -150,6 +150,14 @@
 - Bugs keep popping up everywhere and only I feel the dark side of so-called scaffolding. It's unnecessarily complicated to configure a relationship that is not a "one-to-many" relationship. Many-to-many relationships are the worst. Serializing the data makes things worse, especially that I am using some package to do that and I don't have no idea what's causing the problem I am having. I want a ticket to be part of multiple sprints and a sprint should obviously have multiple tickets... This results in a circular reference loop. I don't remember exactly how I got around these loops before without having to explicitly ignore them. When I explicitly ignore the loop reference I get a sprint which instead of having a list of tickets, it has a list containing references to the spring itself along with null values for the tickets. I have to admit, this should be more about the dark site of me not understanding what the *malarky* I'm doing! I might have to break the many to many relationship into two one-to-many relationships to avoid these problems.
 - Maybe I need to also relearn the basics of git and other stuff!!
 
+## Back on Track (November 16, 2020):
+- I finally mangaged to get a many-to-many relationship between accounts and teams to work and get related data to be loaded from the database.
+- I also managed to disrupt circular references that resulted in loading too much unncessary duplicated data. It was a hack, but I don't know of and couldn't find a better way.
+- I need now to work on allowing accounts to be added to/removed from teams. 
+- I Might also imporove teams by adding (an) owner(s) field(s).
+- Fix all bugs that lead to server errors!
+- The next steps will involve spending some time relearning redux and finishing the UI before moving on to authentication and authorization iA. Good Night!
+
 
 
 
