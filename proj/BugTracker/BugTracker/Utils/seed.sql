@@ -61,12 +61,6 @@ INSERT INTO Tickets VALUES(
 	1
 );
 
-INSERT INTO Assignments VALUES(
-	1,
-	1,
-	1
-);
-
 INSERT INTO Comments VALUES(
 	1,
 	1,

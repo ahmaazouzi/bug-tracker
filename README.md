@@ -151,12 +151,14 @@
 - Maybe I need to also relearn the basics of git and other stuff!!
 
 ## Back on Track (November 16, 2020):
-- I finally mangaged to get a many-to-many relationship between accounts and teams to work and get related data to be loaded from the database.
-- I also managed to disrupt circular references that resulted in loading too much unncessary duplicated data. It was a hack, but I don't know of and couldn't find a better way.
+- I finally managed to get a many-to-many relationship between accounts and teams to work and get related data to be loaded from the database.
+- I also managed to disrupt circular references that resulted in loading too much unnecessary duplicated data. It was a hack, but I don't know of and couldn't find a better way.
 - I need now to work on allowing accounts to be added to/removed from teams. 
-- I Might also imporove teams by adding (an) owner(s) field(s).
+- I Might also improve teams by adding (an) owner(s) field(s).
 - Fix all bugs that lead to server errors!
 - The next steps will involve spending some time relearning redux and finishing the UI before moving on to authentication and authorization iA. Good Night!
+- At this very moment, I am stuck with **how to trigger adding a user to a team**. A user can add themselves to a team, an owner of the team gets notified and allows the user to join the team. The owner of a team can also add user and the user gets notified.
+- I should start the more obvious and simpler situation where the owner of the team adds a user to the team. Receiving an invitation and accepting or adding oneself to a team can be done later. 
 
 
 

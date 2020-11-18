@@ -40,7 +40,7 @@ namespace BugTracker.Data
 
             modelBuilder.Entity<AccountTeam>()
                 .HasOne(at => at.Account)
-                .WithMany(a => a.AccountTeam)
+                .WithMany(a => a.AccountTeams)
                 .HasForeignKey(at => at.AccountID);
 
             modelBuilder.Entity<AccountTeam>()

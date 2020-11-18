@@ -21,17 +21,15 @@ namespace BugTracker.Data
             if (account != null)
             {
                 GetAssigned(account);
-                _context.Entry(account).Collection(v => v.AccountTeam).Load();
-                account.AccountTeam.ForEach(a => _context.Entry(a).Reference(a => a.Team).Load());
+                _context.Entry(account).Collection(v => v.AccountTeams).Load();
+                account.AccountTeams.ForEach(a => _context.Entry(a).Reference(a => a.Team).Load());
 
-                account.AccountTeam.ForEach(a => a.Account = null);
-                account.Assignments.ToList().ForEach(a => a.Account.AccountTeam = null);
-
+                account.AccountTeams.ForEach(a => a.Account = null);
+                account.Assignments.ToList().ForEach(a => a.Account = null);
             }
 
             return account;
         }
-
 
         public IEnumerable<Account> GetAccounts()
         {

@@ -19,7 +19,7 @@ namespace BugTracker.Dtos
 
         public string Bio { get; set; }
 
-        public ICollection<AccountTeam> AccountTeam { get; set; }
+        public List<AccountTeam> AccountTeams { get; set; }
 
         public ICollection<Ticket> TicketsReported { get; set; }
 

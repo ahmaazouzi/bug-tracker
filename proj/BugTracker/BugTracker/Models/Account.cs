@@ -41,6 +41,6 @@ namespace BugTracker.Models
 
         public ICollection<Assignment> Assignments { get; set; }
 
-        public List<AccountTeam> AccountTeam { get; set; }
+        public List<AccountTeam> AccountTeams { get; set; }
     }
 }
