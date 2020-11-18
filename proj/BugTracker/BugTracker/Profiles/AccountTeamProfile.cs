@@ -10,6 +10,8 @@ namespace BugTracker.Profiles
         {
             CreateMap<AccountTeamCreateDto, AccountTeam>();
             CreateMap<AccountTeam, AccountTeamCreateDto>();
+            CreateMap<AccountTeamReadDto, AccountTeam>();
+            CreateMap<AccountTeam, AccountTeamReadDto>();
         }
     }
 }

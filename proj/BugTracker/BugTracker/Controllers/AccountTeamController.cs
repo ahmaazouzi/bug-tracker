@@ -29,16 +29,25 @@ namespace BugTracker.Controllers
             _repository.CreateAccountTeam(accountTeamModel);
             _repository.SaveChanges();
 
-            //var accountReadDto = _mapper.Map<AccountReadDto>(accountModel);
+            var accountTeamReadDto = _mapper.Map<AccountTeamReadDto>(accountTeamModel);
 
-            return NoContent(); //CreatedAtRoute(nameof(GetAccountById),
-               // new { ID = accountReadDto.ID }, accountReadDto);
+            return CreatedAtRoute(nameof(GetAccountTeamById),
+               new { TeamID = accountTeamReadDto.TeamID, AccountID = accountTeamReadDto.AccountID }, accountTeamReadDto);
+        }
+
+        [HttpGet("{teamid}/{accountid}", Name = "GetAccountTeamById")]
+        public ActionResult<AccountReadDto> GetAccountTeamById(int teamid, int accountid)
+        {
+            var accountTeam = _repository.GetAccountTeamById(teamid, accountid);
+            if (accountTeam == null)
+                return NotFound();
+            return Ok(_mapper.Map<AccountTeamReadDto>(accountTeam));
         }
 
         [HttpDelete("{teamid}/{accountid}")]
-        public ActionResult DeleteAccount(AccountTeamCreateDto accountTeamCreateDto)
+        public ActionResult DeleteAccount(int teamid, int accountid)
         {
-            var accountTeam = _repository.GetAccountTeamById(accountTeamCreateDto.TeamID, accountTeamCreateDto.AccountID);
+            var accountTeam = _repository.GetAccountTeamById(teamid, accountid);
             if (accountTeam == null)
                 return NotFound();
 
