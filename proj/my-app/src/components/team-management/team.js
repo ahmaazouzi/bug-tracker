@@ -53,7 +53,8 @@ function Team(props) {
 
     return (
         <div>
-            <Row>
+            <h1>Lalalal</h1>
+            {/* <Row>
                 <h3><Nav.Link onClick={() => setTeamView(true)}>Current Team</Nav.Link></h3>
                 <h3><Nav.Link onClick={() => setTeamView(false)}>My Teams</Nav.Link></h3>
             </Row>
@@ -61,7 +62,7 @@ function Team(props) {
                 <Col>
                     <TeamViewSwitch CurrentTeam={CurrentTeam} team={team} />
                 </Col>
-            </Row>
+            </Row> */}
         </div>
     )
 }

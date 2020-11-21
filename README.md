@@ -160,6 +160,11 @@
 - At this very moment, I am stuck with **how to trigger adding a user to a team**. A user can add themselves to a team, an owner of the team gets notified and allows the user to join the team. The owner of a team can also add user and the user gets notified.
 - I should start the more obvious and simpler situation where the owner of the team adds a user to the team. Receiving an invitation and accepting or adding oneself to a team can be done later. 
 
+## Back to the Front, Sorta (November 18, 2020):
+- I still need to figure how to link the `AccountTeam` to accounts and teams or rather how to seamlessly access it from those two!
+- I still need to make things robust and avoid all sorts of runtime errors
+- I might have to do a little bit of Redux learning. 
+
 
 
 
