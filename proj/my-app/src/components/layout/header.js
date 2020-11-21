@@ -7,7 +7,7 @@ class Header extends Component {
 		return (
 				<Row>
 					<Navbar expand="lg" style={{ width: "100%", borderBottom: "1px solid #D3D3D3", backgroundColor: "#E7E8EA" }} className="justify-content-between">
-						<Nav><h2>SPRINT22: 5 DAYS LEFT</h2></Nav>
+						{/* <Nav><h2>SPRINT22: 5 DAYS LEFT</h2></Nav> */}
 						<Nav style={{ width: "45%" }}>
 							<FormControl type="text" placeholder="Search" className="mr-sm-2" />
 							<Button variant="outline-secondary">Search</Button>
