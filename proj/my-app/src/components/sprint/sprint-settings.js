@@ -14,42 +14,152 @@ function Sprints(props) {
   const handleRadioClick = e => {setShowAllTickets(!showAllTickets); console.log(showAllTickets)};
 
   return (
-    <Row className="justify-content-center">
-      <Col style={{ marginTop: "1em" }} xl="6" className="p-0">
-        <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0 border-0">
-          <Card.Body>
-            <Card.Title style={{ marginBottom: "1em", marginRight: "3em" }}>
-              Tickets
-              <form>
-              <input style={{ marginLeft: "4em" }} type="radio" name="sprintStatus" id="all" value="all" checked={showAllTickets} onChange={handleRadioClick}></input>
-  <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }} > all<span style={{fontStyle: "italic", color: "grey", fontWeight: "bold"}}> ({tickets.length})</span></label> 
-              <input style={{ marginLeft: "2em" }} type="radio" defaultChecked="checked" checked={!showAllTickets} onChange={handleRadioClick} name="sprintStatus" label="dada" id="in sprint"value="inn sprint" ></input>
-              <label for="all" style={{ fontSize: ".8em", paddingLeft: ".4em" }}> in sprint<span style={{fontStyle: "italic", color: "grey", fontWeight: "bold"}}> ({sprint.assignedTickets.length})</span></label>
-              </form>
-            </Card.Title>
-            <div style={{ backgroundColor: "white", maxHeight: "65vh", overflow: "auto" }} className="shadow l">
-              <Table striped bordered hover overflow style={{ height: "100px", overflow: "auto", fontSize: "1em" }} className="overflow-auto">
-                <thead>
-                  <tr>
-                    <th>Ticket</th>
-                    <th>Summary</th>
-                    <th>Date Reporter</th>
-                    <th>Add to<br />Sprint</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ticketThumbs(showAllTickets ? tickets : tickets.filter(t => t.sprintID === sprint.id))}
-                </tbody>
-              </Table>
-            </div>
+    <Row className="justify-content-center" style={{height:"90%"}}>
+      <Col style={{}} xl="8" className="p-0">
+        <Card style={{ width: '100%', height: "40%", marginTop: "1em" }} className="rounded-0 border-0">
+          <Card.Body className="" style={{border: "1px solid rgb(211, 211, 211)", backgroundColor: "#EAEAEA", borderBottom: "0px"}} >
+            
+                  <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} >
+                            <Row style={{margin: "0px", padding: "0px"}}>
+                            <b style={{width: "10%"}}>Nana</b>
+                            <span style={{width: "70%", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", paddingRight: "5px"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span>
+                            {/* <b style={{color: "grey", width: "20%"}}> Nana B</b> */}
+                                                      {/* ===================================================== */}
+                                                      <span style={{width: "4%"}}>
+                                                      <div style={{ height: "20px", width: "20px", backgroundColor: "#A8A8A8", paddingLeft: "2px" }}>
+                       
+                                <svg style={{marginBottom: "6px"}} width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="#F4EFEB" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                        </div>
+                        </span>
+                          {/* ================================ */}
+                          <b style={{color: "grey", width: "11%"}}>Ahmed </b>
+                            <span style={{textAlign: "right", width: "5%"}}>
+                            <span style={{backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span>
+                            </span>
+                            </Row>
+                          </Card.Body>
+                    </Card>
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} >
+                            <Row style={{margin: "0px", padding: "0px"}}>
+                            <b style={{width: "10%"}}>Nana</b>
+                            <span style={{width: "70%", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", paddingRight: "5px"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span>
+                            {/* <b style={{color: "grey", width: "20%"}}> Nana B</b> */}
+                                                      {/* ===================================================== */}
+                                                      <span style={{width: "4%"}}>
+                                                      <div style={{ height: "20px", width: "20px", backgroundColor: "#A8A8A8", paddingLeft: "2px" }}>
+                       
+                                <svg style={{marginBottom: "6px"}} width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="#F4EFEB" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                        </div>
+                        </span>
+                          {/* ================================ */}
+                          <b style={{color: "grey", width: "11%"}}>Ahmed </b>
+                            <span style={{textAlign: "right", width: "5%"}}>
+                            <span style={{backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span>
+                            </span>
+                            </Row>
+                          </Card.Body>
+                    </Card>
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} >
+                            <Row style={{margin: "0px", padding: "0px"}}>
+                            <b style={{width: "10%"}}>Nana</b>
+                            <span style={{width: "70%", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", paddingRight: "5px"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span>
+                            {/* <b style={{color: "grey", width: "20%"}}> Nana B</b> */}
+                                                      {/* ===================================================== */}
+                                                      <span style={{width: "4%"}}>
+                                                      <div style={{ height: "20px", width: "20px", backgroundColor: "#A8A8A8", paddingLeft: "2px" }}>
+                       
+                                <svg style={{marginBottom: "6px"}} width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="#F4EFEB" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                        </div>
+                        </span>
+                          {/* ================================ */}
+                          <b style={{color: "grey", width: "11%"}}>Ahmed </b>
+                            <span style={{textAlign: "right", width: "5%"}}>
+                            <span style={{backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span>
+                            </span>
+                            </Row>
+                          </Card.Body>
+                    </Card>
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} >
+                            <Row style={{margin: "0px", padding: "0px"}}>
+                            <b style={{width: "10%"}}>Nana</b>
+                            <span style={{width: "70%", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", paddingRight: "5px"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span>
+                            {/* <b style={{color: "grey", width: "20%"}}> Nana B</b> */}
+                                                      {/* ===================================================== */}
+                                                      <span style={{width: "4%"}}>
+                                                      <div style={{ height: "20px", width: "20px", backgroundColor: "#A8A8A8", paddingLeft: "2px" }}>
+                       
+                                <svg style={{marginBottom: "6px"}} width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="#F4EFEB" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                        </div>
+                        </span>
+                          {/* ================================ */}
+                          <b style={{color: "grey", width: "11%"}}>Ahmed </b>
+                            <span style={{textAlign: "right", width: "5%"}}>
+                            <span style={{backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span>
+                            </span>
+                            </Row>
+                          </Card.Body>
+                    </Card>      
+
+          </Card.Body>
+        </Card>
+        <Card style={{ width: '100%', height: "60%" }} className="rounded-0 border-0">
+          <Card.Body  className="" style={{border: "1px solid rgb(211, 211, 211)"}}>  
+
+
+
+                   <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} ><b style={{paddingRight: "2em"}}>Nana</b> <span style={{width: "50%"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span><b style={{paddingRight: "2em", paddingLeft: "2em", color: "grey"}}>Nana B</b> <span style={{width: "30%", backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span></Card.Body>
+                    </Card>
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} ><b style={{paddingRight: "2em"}}>Nana</b> <span style={{width: "50%"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span><b style={{paddingRight: "2em", paddingLeft: "2em", color: "grey"}}>Nana B</b> <span style={{width: "30%", backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span></Card.Body>
+                    </Card>         
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} ><b style={{paddingRight: "2em"}}>Nana</b> <span style={{width: "50%"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span><b style={{paddingRight: "2em", paddingLeft: "2em", color: "grey"}}>Nana B</b> <span style={{width: "30%", backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span></Card.Body>
+                    </Card>
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} ><b style={{paddingRight: "2em"}}>Nana</b> <span style={{width: "50%"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span><b style={{paddingRight: "2em", paddingLeft: "2em", color: "grey"}}>Nana B</b> <span style={{width: "30%", backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span></Card.Body>
+                    </Card>          
+                    <Card style={{border: "1px solid #5B5B5B", borderLeft: "5px solid red", border: "1px solid rgb(211, 211, 211)"}} className="rounded-0">
+                          <Card.Body style={{padding: "5px"}} ><b style={{paddingRight: "2em"}}>Nana</b> <span style={{width: "50%"}}>I am didi snan sdnasdnnsadnsdan dsdsdsds s d sd s ds d s ds d s </span><b style={{paddingRight: "2em", paddingLeft: "2em", color: "grey"}}>Nana B</b> <span style={{width: "30%", backgroundColor: "#000008", paddingRight: "5px", paddingLeft: "5px", color: "#F4EFEB", borderRadius: "15px", marginTop: "3px"}}>55</span></Card.Body>
+                    </Card>
+
+
+
+
           </Card.Body>
         </Card>
       </Col>
-      <Col style={{ marginTop: "1em" }} xl="6" className="p-0">
-        <SprintInfo sprint={sprint} />
-        <Row className="justify-content-center">
-          <Button style={{ marginTop: "1em" }}>Save Changes</Button>
-        </Row>
+      <Col style={{ height: "100%"}} xl="3" className="p-0">
+      <Card style={{ width: '100%', border: "1px solid rgb(211, 211, 211)", height: "100%" }} className="rounded-0 border-0">
+          <Card.Body style={{margin: "1em", backgroundColor: "rgb(231, 232, 234)"}} className="rounded-0 border-0">
+
+            <Card className="shadow p-3 mb-5 rounded text-center" style={{height: "25%", backgroundColor: "rgb(16, 34, 52)", margin: "20px 40px 0px 40px", padding: "20px", fontWeight: "bold", color: "white" }}>
+                          Days Left:
+                          <h1 style={{fontSize: "400%"}}>12</h1>
+            </Card>
+            <Card className="shadow p-3 mb-5 rounded text-center" style={{height: "25%", backgroundColor: "rgb(16, 34, 52)", margin: "20px 40px 0px 40px", padding: "20px", fontWeight: "bold", color: "white" }}>
+                          Days Left:
+                          <h1 style={{fontSize: "400%"}}>12</h1>
+            </Card>
+            <Card className="shadow p-3 mb-5 rounded text-center" style={{height: "25%", backgroundColor: "rgb(16, 34, 52)", margin: "20px 40px 0px 40px", padding: "20px", fontWeight: "bold", color: "white" }}>
+                          Days Left:
+                          <h1 style={{fontSize: "400%"}}>12</h1>
+            </Card>
+
+          </Card.Body>
+        </Card>
       </Col>
     </Row>
   )
@@ -80,52 +190,8 @@ function SprintInfo(props) {
   const { sprint } = props;
   
   return (
-    <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)", maxHeight: "65vh" }} className="rounded-0 border-0">
-      <Card.Body>
-        <Card.Title>Sprints</Card.Title>
-        <Card style={{ width: '100%', marginTop: ".5em" }} className="shadow sm rounded-0">
-          <Card.Body>
-            <Tabs defaultActiveKey="currrentSprint" id="uncontrolled-tab-example">
-              <Tab eventKey="currrentSprint" title="Current Sprint" style={{ marginTop: "2em" }}>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Name:</h6>
-                  SPR-{sprint.id}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Start Date:</h6>
-                  {new Date(sprint.startDate).toLocaleDateString("en-US")}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>End Date:</h6>
-                  {new Date(sprint.endDate).toLocaleDateString("en-US")}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Goals:</h6>
-                  {sprint.goals}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Retrospective:</h6>
-                  {sprint.retrospective}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Starting Points:</h6>
-                  SPR-{sprint.points}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Points Eliminated:</h6>
-                  {sprint.pointsEliminated}
-                </div>
-                <div style={{ marginBottom: "1em" }}>
-                  <h6 style={titlesStyle}>Tickets:</h6>
-                  {sprint.assignedTickets.map(ticket => <TicketID id={ticket.id}/> )}
-                </div>
-              </Tab>
-              <Tab eventKey="olderSprints" title="Previous Sprints" style={{ marginTop: "2em" }}>
-                <p>some bullshit</p>
-              </Tab>
-            </Tabs>
-          </Card.Body>
-        </Card>
+    <Card style={{ width: '100%', backgroundColor: "", border: "1px solid rgb(211, 211, 211)", height: "100%"}} className="rounded-0 border-0">
+      <Card.Body style={{height: "100%", backgroundColor: "red", margin: "1em"}}>
       </Card.Body>
     </Card>
   );
