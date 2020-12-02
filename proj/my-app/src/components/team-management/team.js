@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Row, Container, Col, Spinner, Button, Modal, Card, Tabs, Tab, Table, FormCheck, Nav } from "react-bootstrap";
 
 // const titlesStyle = {
@@ -272,24 +273,202 @@ function Team(props) {
                 <Card style={{ width: '100%', maxHeight: "45%", minHeight: "40vh", marginTop: "1em" }} className="rounded-0 border-0">
                     <Card.Body className="" style={{ border: "1px solid rgb(211, 211, 211)", backgroundColor: "#F6F6F6", paddingTop: "5px" }} >
                         <Row className="justify-content-center" style={{ padding: "5px", paddingBottom: "10px" }}>
-                            <Col style={{borderRight: "1px solid rgb(211, 211, 211)"}}><span style={{ fontWeight: "bold" }}>Team Settings</span><span style={{ color: "grey", fontSize: "80%" }}>4</span></Col>
-                            <Col style={{ fontWeight: "bold", color: "grey" }}><span> Team Members</span><span style={{ fontSize: "70%" }}></span></Col>
+                            <Col style={{ borderRight: "1px solid rgb(211, 211, 211)", width: "40%" }}><span style={{ fontWeight: "bold" }}>My Teams</span><span style={{ color: "grey", fontSize: "80%" }}> 4</span></Col>
+                            <Col style={{ fontWeight: "bold", color: "grey", }}><span> Linkedin Team Members:</span><span style={{ fontSize: "70%" }}></span></Col>
                         </Row>
                         <hr style={{ margin: "0px" }}></hr>
                         <Row className="justify-content-center" style={{ padding: "5px", paddingBottom: "10px" }}>
-                            <Col style={{borderRight: "1px solid rgb(211, 211, 211)", height: "200px" }}>
-                            <span style={{ fontWeight: "bold"}}>dsds
-                            </span><span style={{ color: "grey", fontSize: "80%" }}></span></Col>
-                            <Col style={{ textAlign: "right", fontSize: "", color: "grey" }}><span> dw</span><span style={{ fontSize: "70%" }}></span></Col>
+                            <Col style={{ borderRight: "1px solid rgb(211, 211, 211)", height: "200px" }}>
+                                <span style={{ fontWeight: "bold" }}>Current Team:
+                            </span>
+                                <span style={{ paddingLeft: "1em" }}><br></br>
+                            Linkedin</span>
+                                <p>
+                                    <b>Teams I own:</b><br></br>
+                                    Karma<br></br>
+                                    Linkedin<br></br>
+                                </p>
+                                <p>
+                                    <b>Teams I've joined:</b>
+                                    Fafa<br></br>
+                                    Haha<br></br>
+                                    Wawa<br></br>
+                                </p>
+                            </Col>
+                            <Col style={{}}>
+                                <div style={{ maxHeight: "31vh", minHeight: "10vh", overflowY: "scroll" }}>
+                                    <Card style={{ border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0">
+                                        <Card.Body style={{ padding: "5px" }} >
+                                            <Row style={{ margin: "0px", padding: "0px" }}>
+
+                                                <span style={{ width: "20%" }}>
+
+
+
+                                                    <Nav className="Justify-content-end">
+                                                        <div style={{ height: "40px", width: "40px", backgroundColor: "#A8A8A8", marginRight: "5px", padding: "3px", float: "right" }} className="rounded-circle">
+                                                            <Link to="/profile" href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                                                                <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                                </svg>
+                                                            </Link>
+                                                        </div>
+                                                    </Nav>
+
+                                                </span>
+
+                                                <b style={{ color: "grey", width: "" }}>Ahmed Bonbonawi</b>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card style={{ border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0">
+                                        <Card.Body style={{ padding: "5px" }} >
+                                            <Row style={{ margin: "0px", padding: "0px" }}>
+
+                                                <span style={{ width: "20%" }}>
+
+
+
+                                                    <Nav className="Justify-content-end">
+                                                        <div style={{ height: "40px", width: "40px", backgroundColor: "#A8A8A8", marginRight: "5px", padding: "3px", float: "right" }} className="rounded-circle">
+                                                            <Link to="/profile" href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                                                                <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                                </svg>
+                                                            </Link>
+                                                        </div>
+                                                    </Nav>
+
+                                                </span>
+
+                                                <b style={{ color: "grey", width: "" }}>Ahmed Bonbonawi</b>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card style={{ border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0">
+                                        <Card.Body style={{ padding: "5px" }} >
+                                            <Row style={{ margin: "0px", padding: "0px" }}>
+
+                                                <span style={{ width: "20%" }}>
+
+
+
+                                                    <Nav className="Justify-content-end">
+                                                        <div style={{ height: "40px", width: "40px", backgroundColor: "#A8A8A8", marginRight: "5px", padding: "3px", float: "right" }} className="rounded-circle">
+                                                            <Link to="/profile" href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                                                                <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                                </svg>
+                                                            </Link>
+                                                        </div>
+                                                    </Nav>
+
+                                                </span>
+
+                                                <b style={{ color: "grey", width: "" }}>Ahmed Bonbonawi</b>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card style={{ border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0">
+                                        <Card.Body style={{ padding: "5px" }} >
+                                            <Row style={{ margin: "0px", padding: "0px" }}>
+
+                                                <span style={{ width: "20%" }}>
+
+
+
+                                                    <Nav className="Justify-content-end">
+                                                        <div style={{ height: "40px", width: "40px", backgroundColor: "#A8A8A8", marginRight: "5px", padding: "3px", float: "right" }} className="rounded-circle">
+                                                            <Link to="/profile" href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                                                                <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                                </svg>
+                                                            </Link>
+                                                        </div>
+                                                    </Nav>
+
+                                                </span>
+
+                                                <b style={{ color: "grey", width: "" }}>Ahmed Bonbonawi</b>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+                                    <Card style={{ border: "1px solid #5B5B5B", borderLeft: "5px solid red", borderBottom: "0px", border: "1px solid rgb(211, 211, 211)" }} className="rounded-0">
+                                        <Card.Body style={{ padding: "5px" }} >
+                                            <Row style={{ margin: "0px", padding: "0px" }}>
+
+                                                <span style={{ width: "20%" }}>
+
+
+
+                                                    <Nav className="Justify-content-end">
+                                                        <div style={{ height: "40px", width: "40px", backgroundColor: "#A8A8A8", marginRight: "5px", padding: "3px", float: "right" }} className="rounded-circle">
+                                                            <Link to="/profile" href="http://localhost:3000" style={{ color: "#F4EFEB" }}>
+                                                                <svg width="2em" height="2em" viewBox="0 0 16 16" className="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                                </svg>
+                                                            </Link>
+                                                        </div>
+                                                    </Nav>
+
+                                                </span>
+
+                                                <b style={{ color: "grey", width: "" }}>Ahmed Bonbonawi</b>
+                                            </Row>
+                                        </Card.Body>
+                                    </Card>
+
+                                </div>
+                            </Col>
                         </Row>
                     </Card.Body>
                 </Card>
             </Col>
             <Col style={{ margin: "0em 1em 0em 0em" }} xl="4" className="p-0">
-                <Card style={{ width: '100%', maxHeight: "45%", minHeight: "20vh", marginTop: "1em" }} className="rounded-0 border-0">
+                <Card style={{ width: '100%', marginTop: "1em" }} className="rounded-0 border-0">
                     <Card.Body className="" style={{ border: "1px solid rgb(211, 211, 211)", backgroundColor: "#F6F6F6", paddingTop: "5px" }} >
                         <Row className="justify-content-center" style={{ padding: "5px", paddingBottom: "10px" }}>
                             <Col><span style={{ fontWeight: "bold" }}>Sprint 12 </span><span style={{ color: "grey", fontSize: "80%" }}>4</span></Col>
+
+                            <Row>
+                                <Col>
+                                    <div style={{ marginBottom: "1em" }}>
+                                        <h5>Name:</h5>
+                                        <p>Ahmed Maazouzi</p>
+                                    </div>
+                                    <div style={{ marginBottom: "1em" }}>
+                                        <h5>Email:</h5>
+                    baloon.Drum@aol.org
+                    </div>
+                                    <div style={{ marginBottom: "1em" }}>
+                                        <h5>Spirit Animal:</h5>
+                    Winged Fire Snake
+                    </div>
+                                </Col>
+                                <Col>
+                                    <div style={{ width: "200px", height: "200px", backgroundColor: "#d3d3d3", float: "right" }}></div>
+                                </Col>
+                            </Row>
+                            <hr></hr>
+                            <Row>
+                                <Col>
+                                    <div style={{ marginBottom: ".5em" }}>
+                                        <h5>Bio:</h5>
+                                        <p>Full many a glorious morning have I seen Flatter the mountain tops with sovereign eye, Kissing with golden face the meadows green, Gilding pale streams with heavenly alchemy; Anon permit the basest clouds to ride With ugly rack on his celestial face, And from the forlorn world his visage hide, Stealing unseen to west with this disgrace: Even so my sun one early morn did shine, With all triumphant splendour on my brow;</p>
+                                    </div>
+                                    <div style={{ marginBottom: "1em" }}>
+                                        <h5>Role:</h5>
+                    Admin
+                    </div>
+                                    <div style={{ marginBottom: "1em" }}>
+                                        <h5>Assigned Tickets:</h5>
+                    Ticket-1, Ticket-2, Ticket-3
+                    </div>
+                                </Col>
+
+
+                            </Row>
+
                             <Col style={{ textAlign: "right", fontSize: "", color: "grey" }}><span> </span><span style={{ fontSize: "70%" }}></span></Col>
                         </Row>
                     </Card.Body>

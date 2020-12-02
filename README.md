@@ -165,6 +165,10 @@
 - I still need to make things robust and avoid all sorts of runtime errors
 - I might have to do a little bit of Redux learning. 
 
+## Design and New Bugs and Realizations (December 1, 2020):
+- A single team can have a many tickets at a time.. Each session (or SPA session, I don't know what to call it) should only load the data of a single team. Teams should be separated at the URL level.??
+- I've been working on the front end redesign in the last few days!! I still have a lot of work to do concerning UI and state management and authentication.
+
 
 
 
